@@ -6,7 +6,7 @@ import useTranslation from '../../hooks/useTranslation'
 
 
 
-const Sidebar = ({activeMenu,langEn,langId}) => {
+const Sidebar = ({activeMenu,langEn,langId,withSlug}) => {
     const { locale, t } = useTranslation()
 
     return (
@@ -43,10 +43,17 @@ const Sidebar = ({activeMenu,langEn,langId}) => {
                                 <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
                                 <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
                             </div>
-                            <div className="lang">
-                                <li><Links route={langId} params={{project: 'pantai-mutiara'}}><a className={locale === 'id' ? 'active' : ''}>ID.</a></Links></li>
-                                <li><Links route={langEn} params={{project: 'pantai-mutiara'}}><a className={locale === 'en' ? 'active' : ''}>EN.</a></Links></li>
-                            </div>
+                            {withSlug? 
+                                <div className="lang">
+                                    <li><Links route={langId} params={{project: 'pantai-mutiara'}}><a className={locale === 'id' ? 'active' : ''}>ID.</a></Links></li>
+                                    <li><Links route={langEn} params={{project: 'pantai-mutiara'}}><a className={locale === 'en' ? 'active' : ''}>EN.</a></Links></li>
+                                </div>
+                                :
+                                <div className="lang">
+                                    <li><Links route={langId}><a className={locale === 'id' ? 'active' : ''}>ID.</a></Links></li>
+                                    <li><Links route={langEn}><a className={locale === 'en' ? 'active' : ''}>EN.</a></Links></li>
+                                </div>
+                            }
                         </ul>
                     </ul>
                 </div>

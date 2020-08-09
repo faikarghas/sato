@@ -142,6 +142,102 @@ const Intouch = () => {
                                     </Link>
                                 </div>
                             </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <div className="section_others-boxImg">
+                                    <Link href="/">
+                                        <a>
+                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <div className="img-overlay-skew">
+                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </Col>
                         </Row>
                     </section>
                 </div>

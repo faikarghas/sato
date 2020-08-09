@@ -20,7 +20,7 @@ const Project = () => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project_detail_en' langId='project_detail_id'/>
+            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project_detail_en' langId='project_detail_id' withSlug={true}/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <Link href="/[lang]/project" as={`/${locale}/project`}><a className="back-to">Back to previous page</a></Link>
