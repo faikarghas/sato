@@ -1,0 +1,46 @@
+.form-contact-wrapper{
+    margin-top: 4rem;
+
+    textarea{
+        height: 70px;
+    }
+
+    .form-control{
+        border: none;
+    }
+    button{
+        width: 100%;
+        border: none;
+        padding: 10px 0px;
+
+    }
+
+    .bg-redHover{
+        background-color: $color_red;
+        color: white;
+        &:hover{
+            background-color: white;
+                color: $color_red;
+        }
+    }
+
+    .bg-whiteHover{
+        background-color: $white;
+        color: $color_red;
+
+        &:hover{
+            background-color: color_red;
+            color: white;
+        }
+    }
+
+    .bg-blueHover{
+        background-color: $color_darkBlue;
+        color: white;
+
+        &:hover{
+            background-color: white;
+            color: $color_darkBlue;
+        }
+    }
+}

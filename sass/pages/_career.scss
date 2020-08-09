@@ -1,0 +1,103 @@
+.page_career{
+    margin-top: 5rem;
+    overflow: auto;
+    height: calc(100% - 7rem);
+    &-cw{
+        height: calc(100% - 113px);
+    }
+
+    h2{
+        color: $color_darkBlue;
+        font-size: 3rem;
+        text-transform: uppercase;
+        span{
+            color: $color_red;
+        }
+    }
+
+    &-img{
+        margin-top: 4rem;
+    }
+
+    &-info{
+        margin-top: 4rem;
+        padding-left: 2rem;
+        h4{
+            font-size: 1.6rem;
+            color: white;
+        }
+    }
+
+    &-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 2.5rem;
+        h3{
+            color: $color_lightGrey;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            line-height: 1em;
+            margin-bottom: 0;
+        }
+        .hidebt{
+            cursor: pointer;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            li{
+                display: inline-block;
+                margin-right: 2rem;
+                p{
+                    margin-bottom: 0;
+                    line-height: 1em;
+                }
+            }
+            &-text{
+                color: $color_red;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-contact{
+        margin-top: 2.5rem;
+        h4,p{
+            color: white;
+            margin-bottom: 1rem;
+        }
+        h4{
+            font-weight: bold;
+        }
+        p{
+            margin: 0;
+            &:first-child{
+                margin-bottom: .5rem;
+            }
+            &:last-child{
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    &-detail{
+        overflow: hidden;
+        height: auto;
+        max-height: 0;
+        transition: all 0.3s;
+        p{
+            color: white;
+            margin: 0;
+        }
+        &.show{
+            padding: 15px 0;
+            margin: 20px 0;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            max-height: 100%;
+            transition: all 0.3s ;
+        }
+    }
+
+}

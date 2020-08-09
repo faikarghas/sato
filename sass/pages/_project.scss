@@ -1,0 +1,160 @@
+.page_project{
+    margin-top: 5rem;
+    overflow: auto;
+    height: 100%;
+    h2{
+        color: $color_red;
+        font-size: 3.7rem;
+        text-transform: uppercase;
+    }
+
+    &-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 5rem;
+        h3{
+            color: $color_lightGrey;
+            font-size: 2.7rem;
+            text-transform: uppercase;
+            line-height: 1em;
+            margin-bottom: 0;
+        }
+        .hidebt{
+            cursor: pointer;
+            margin-bottom: 0;
+            li{
+                display: inline-block;
+                margin-right: 2rem;
+                p{
+                    margin-bottom: 0;
+                    line-height: 1em;
+                }
+            }
+            &-text{
+                color: $color_red;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-detail{
+        margin-top: 4rem;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+        height: auto;
+        max-height: 0;
+        &.show{
+            max-height: 100%;
+            transition: all 0.3s ease-out;
+            margin: 4rem 0;
+        }
+
+        .detail-wrapper{
+            border-bottom: 1px solid #B7B5AE;
+            height: 100%;
+            p{
+                color: white;
+                margin-top: 1rem;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                line-height: 30px;
+            }
+
+            ul{
+                list-style: none;
+                margin: 0;
+                li{
+                    display: inline-block;
+                    &:nth-child(2){
+                        p{
+                            color: $color_lightGrey;
+                        }
+                    }
+                    p{
+                        color: white;
+                        margin-top: 1rem;
+                        font-size: 1.1rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    &-imgList{
+        img{
+            object-fit: contain;
+            margin: 15px 0;
+        }
+    }
+
+    .tab_menu{
+        margin: 4rem 0;
+        ul{
+            padding: 0;
+            list-style: none;
+            li{
+                display: inline-block;
+                margin-right: 4rem;
+                a{
+                    text-decoration: none;
+                    color: $color_lightGrey;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+
+                    &:hover{
+                        color: $color_red;
+                    }
+                    &.active{
+                        color: $color_red;
+                    }
+                }
+            }
+        }
+    }
+
+    &_list{
+        display: grid;
+        grid-column-gap: 25px;
+        grid-template-columns: repeat(2,1fr);
+        a{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 1.5rem 0;
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+            .img-overlay-skew{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                background-color: rgba(155, 155, 155, 0.651);
+                transform: translateY(120%) skewY(15deg);
+                transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h4{
+                    color: white;
+                    font-size: 1.6rem;
+                }
+            }
+
+            &:hover{
+                .img-overlay-skew{
+                    transform: translateY(0%) skewY(0deg);
+                    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+                }
+            }
+        }
+    }
+}
+

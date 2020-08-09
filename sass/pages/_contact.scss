@@ -1,0 +1,43 @@
+.title-contact-wrapper{
+    h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    p{
+        color: white;
+    }
+}
+
+
+.vid-contact-wrapper{
+    margin-top: 4rem;
+    p{
+        color: white;
+    }
+    &--iframe{
+
+    }
+}
+
+.faq-contact-wrapper{
+    ul{
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+        border-bottom: 1px solid $color_lightGrey;
+        li{
+            list-style: none;
+            p{
+                color: white;
+            }
+
+            &:last-child{
+                p{
+                    color: $color_lightGrey;
+                }
+            }
+        }
+        &:not(:first-child){
+            padding-top: 2rem;
+        }
+    }
+}

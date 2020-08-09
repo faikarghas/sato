@@ -1,0 +1,160 @@
+.page_intouch{
+    margin-top: 5rem;
+    overflow: auto;
+    height: calc(100% - 5rem);
+
+    .section_slider{
+        padding: 0 5rem;
+    }
+
+    .section_info{
+        padding: 0 5rem;
+    }
+
+    .section_form{
+        padding: 5rem;
+        margin-top: 4rem;
+
+        .page_intouch-form{
+            padding-right: 4rem;
+            h3{
+                color: white;
+            }
+        }
+    }
+
+    .section_others{
+        padding: 0 5rem;
+        margin-top: 4rem;
+        h2{
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        &-boxImg{
+            a{
+                display: block;
+                position: relative;
+                overflow: hidden;
+                .img-overlay-skew{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 5rem;
+                    z-index: 2;
+                    background-color: rgba(155, 155, 155, 0.651);
+                    transform: translateY(120%) skewY(15deg);
+                    transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    h4{
+                        color: white;
+                        font-size: 1.6rem;
+                    }
+                }
+                &:hover{
+                    .img-overlay-skew{
+                        transform: translateY(0%) skewY(0deg);
+                        transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+                    }
+                }
+            }
+        }
+    }
+
+    .row{
+        outline: none;
+    }
+
+    &-titleProject{
+        margin-bottom: 4rem;
+        h2{
+            color: $color_red;
+            span{
+                color: $color_lightGrey;
+            }
+        }
+    }
+
+    &-imgProject{
+        position: relative;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .actionSlides{
+            position: absolute;
+            top: -17px;
+            right: 0;
+            margin: 0;
+            display: flex;
+            li{
+                width: 28px;
+                height: 4px;
+                background-color: $color_lightGrey;
+                // background: linear-gradient(to right, $color_lightGrey 50%, $color_red 50%);
+                // background-size: 200% 100%;
+                list-style: none;
+                display: inline-block;
+                margin-left: 0.6rem;
+                cursor: pointer;
+            }
+
+            li.active{
+                // animation-name: example;
+                // animation-duration: 2s;
+                background-color: $color_red;
+            }
+
+            @keyframes example {
+                from { background-position:right bottom;}
+                to {background-position:left bottom;}
+            }
+        }
+    }
+
+    &-desc{
+        margin-top: 4rem;
+        padding: 0 3rem;
+        p{
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+
+    &-acc{
+        margin-top: 4rem;
+        h4{
+            color: white;
+            text-transform: uppercase;
+        }
+        ul{
+            margin-top: 2rem;
+            li{
+                list-style: none;
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+
+                .box{
+                    width: 50px;
+                    height: 50px;
+                    border: 1px solid $color_lightGrey;
+                    padding: 10px;
+                    color: white;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+}

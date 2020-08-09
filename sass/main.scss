@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+@import "abstracts/_mixins";
+@import "abstracts/_variables";
+
+@import "base/_animations";
+@import "base/_base";
+@import "base/_typography";
+@import "base/_utilities";
+
+@import "layout/_sidebar";
+@import "layout/_layout";
+
+@import "components/_contact";
+
+
+@import "pages/_home";
+@import "pages/_project";
+@import "pages/_about";
+@import "pages/_studies";
+@import "pages/_career";
+@import "pages/_contact";
+@import "pages/_intouch";
+
+
+body{
+    overflow: hidden;
+}
+
+

@@ -1,0 +1,72 @@
+p,li,a{
+    font-family: "Futura-Medium-Bt";
+    letter-spacing: 2px;
+}
+
+p{
+    font-size: 1.1rem;
+}
+
+h1,h2,h3,h4,h5,th,td{
+    // font-family: "Futura-Medium-Bt";
+    font-family: "Futura-Medium-Bt";
+    // font-family: "Futura";
+
+    letter-spacing: 5px;
+    line-height: 1.2em;
+}
+
+label,button,span{
+    font-family: "Futura-Medium-Bt";
+    letter-spacing: 2px;
+}
+
+input{
+    font-family: "Futura-Medium-Bt";
+    letter-spacing: 2px;
+    background-color: #B7B5AE !important;
+    &:focus{
+        outline: none;
+    }
+
+    &::placeholder{
+        font-family: "Futura-Medium-Bt";
+        color: black !important;
+        text-transform: uppercase;
+    }
+}
+
+textarea{
+    font-family: "Futura-Medium-Bt";
+    letter-spacing: 2px;
+    background-color: #B7B5AE !important;
+    &:focus{
+        outline: none;
+    }
+
+    &::placeholder{
+        font-family: "Futura-Medium-Bt";
+        color: black !important;
+        text-transform: uppercase;
+    }
+}
+
+
+@font-face {
+    font-family: "Futura";
+    src:
+        url('/fonts/Futura.woff') format('woff')
+}
+
+@font-face {
+    font-family: "Futura-Medium-Bt";
+    src:
+        url('/fonts/Futura-medium-bt.woff') format('woff')
+}
+
+@font-face {
+    font-family: "Futura-Bold";
+    src:
+        url('/fonts/Futura-Bold-font.woff') format('woff'),
+}
+

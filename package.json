@@ -3,13 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js",
+    "idb": "npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@popmotion/popcorn": "^0.4.4",
+    "bootstrap": "^4.5.0",
+    "compression": "^1.7.4",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "framer-motion": "^2.3.0",
     "next": "9.5.0",
+    "next-routes": "^1.4.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "16.13.1",
+    "react-slick": "^0.27.3",
+    "sass": "^1.26.10",
+    "slick-carousel": "^1.8.1"
   }
 }
