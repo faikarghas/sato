@@ -32,6 +32,7 @@
         }
 
         &-boxImg{
+            padding: 15px 0;
             a{
                 display: block;
                 position: relative;
@@ -61,6 +62,24 @@
                         transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
                     }
                 }
+            }
+        }
+
+        .moreAbout{
+            height: calc(100% - 30px);
+            padding: 0;
+            margin-top: 15px;
+            background-color: $color_red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                color: white;
+                text-decoration: none;
+                font-size: 2rem;
+                text-align: center;
+                padding: 3rem 4rem;
+                border: 1px solid white;
             }
         }
     }

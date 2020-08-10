@@ -8,7 +8,7 @@ const Index = () => {
   const router = useRouter()
   React.useEffect(() => {
     // router.replace('/[lang]', `/${getInitialLocale ()}`)
-    window.location.href = `/${getInitialLocale()}`
+    window.location.href = `/en`
   })
   return (
     <Head>

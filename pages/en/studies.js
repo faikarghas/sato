@@ -4,8 +4,6 @@ import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
 
 import {dataSlides} from '../../lib/data'
-import withLocale from '../../hocs/withLocale'
-
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
@@ -103,4 +101,4 @@ const Studies = () => {
     )
 }
 
-export default withLocale(Studies)
+export default Studies

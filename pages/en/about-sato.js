@@ -2,8 +2,6 @@ import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 
-import withLocale from '../../hocs/withLocale'
-
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 
@@ -11,7 +9,7 @@ const About = () => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about' langId='tentang'/>
+            <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about-sato' langId='tentang-sato'/>
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
@@ -129,4 +127,4 @@ const About = () => {
     )
 }
 
-export default withLocale(About)
+export default About

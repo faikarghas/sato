@@ -1,5 +1,4 @@
 import React from 'react'
-import withLocale from '../../hocs/withLocale'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col,Form,Button} from 'react-bootstrap'
 
@@ -11,7 +10,7 @@ import ContactForm from '../../components/form/index'
 const Contact = () => {
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact' langId='kontak'/>
+            <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
@@ -58,4 +57,4 @@ const Contact = () => {
     )
 }
 
-export default withLocale(Contact)
+export default Contact

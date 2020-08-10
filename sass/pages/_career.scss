@@ -1,6 +1,7 @@
 .page_career{
     margin-top: 5rem;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: calc(100% - 7rem);
     &-cw{
         height: calc(100% - 113px);

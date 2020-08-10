@@ -1,10 +1,9 @@
-import React,{useRef,useState} from 'react'
+import React,{useRef,useState,useEffect} from 'react'
 import {Row,Col, Container} from 'react-bootstrap'
 import { AnimatePresence,motion } from "framer-motion";
 import Slider from 'react-slick';
 import Link from 'next/link'
 
-import withLocale from '../../hocs/withLocale'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
@@ -23,6 +22,11 @@ const settings = {
 
 const Intouch = () => {
     const refSlider = useRef(null)
+    const [lang, setLang] = useState()
+
+    useEffect(() => {
+        setLang(window.location.href.split('/')[3])
+    }, [])
 
     const [] = useState([
         {id:0},
@@ -35,7 +39,7 @@ const Intouch = () => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch_id'/>
+            <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
             <motion.div className="page_layout-main2"  initial='initial' animate='animate' exit="exit">
                 <div className="intouch page_intouch">
                     <section className="section_slider">
@@ -179,14 +183,9 @@ const Intouch = () => {
                                 </div>
                             </Col>
                             <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
+                                <div className="section_others-boxImg moreAbout">
+                                    <Link href={`/${lang}/${lang ? 'about-sato':'tentang-sato'}`}>
+                                        <a>MORE<br/>ABOUT<br/>SATO</a>
                                     </Link>
                                 </div>
                             </Col>
@@ -246,4 +245,4 @@ const Intouch = () => {
     )
 }
 
-export default withLocale(Intouch)
+export default Intouch

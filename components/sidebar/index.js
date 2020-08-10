@@ -1,13 +1,13 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import Link from 'next/link'
 
-import {Link as Links} from '../../routes'
-import useTranslation from '../../hooks/useTranslation'
 
+const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
+    const [lang, setLang] = useState()
 
-
-const Sidebar = ({activeMenu,langEn,langId,withSlug}) => {
-    const { locale, t } = useTranslation()
+    useEffect(() => {
+        setLang(window.location.href.split('/')[3])
+    }, [])
 
     return (
         <aside className="menu_sidebar">
@@ -15,12 +15,12 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug}) => {
                 <div className="menu_sidebar-content--top">
                     <Link href="/"><a><img className="logo" src="/static/logo-sato.svg" /></a></Link>
                     <ul className="link">
-                        <li><Link href={`/[lang]/project`} as={`/${locale}/project`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>PROJECT</a></Link></li>
-                        <li><Link href={`/[lang]/about-sato`} as={`/${locale}/about-sato`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
-                        <li><Link href={`/[lang]/studies`} as={`/${locale}/studies`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
-                        <li><Link href={`/[lang]/intouch`} as={`/${locale}/intouch`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>INTOUCH</a></Link></li>
-                        <li><Link href={`/[lang]/career`} as={`/${locale}/career`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>CAREER</a></Link></li>
-                        <li><Link href={`/[lang]/contact-faq`} as={`/${locale}/contact-faq`}><a className={activeMenu.act && activeMenu.menu === 'contact' ? 'active' : ''}>CONTACT + FAQ</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>PROJECT</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'about-sato':'tentang-sato'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'studies':'pembelajaran'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>INTOUCH</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>CAREER</a></Link></li>
+                        <li><Link href={`/${lang}/${lang === 'en'?'contact-faq':'kontak-faq'}`}><a className={activeMenu.act && activeMenu.menu === 'contact' ? 'active' : ''}>CONTACT + FAQ</a></Link></li>
                     </ul>
                 </div>
                 <div className="menu_sidebar-content--bottom">
@@ -45,13 +45,13 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug}) => {
                             </div>
                             {withSlug? 
                                 <div className="lang">
-                                    <li><Links route={langId} params={{project: 'pantai-mutiara'}}><a className={locale === 'id' ? 'active' : ''}>ID.</a></Links></li>
-                                    <li><Links route={langEn} params={{project: 'pantai-mutiara'}}><a className={locale === 'en' ? 'active' : ''}>EN.</a></Links></li>
+                                    <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                                    <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
                                 </div>
                                 :
                                 <div className="lang">
-                                    <li><Links route={langId}><a className={locale === 'id' ? 'active' : ''}>ID.</a></Links></li>
-                                    <li><Links route={langEn}><a className={locale === 'en' ? 'active' : ''}>EN.</a></Links></li>
+                                    <li><Link href={`/${lang === 'en' ? 'id' : 'id'}/${langId}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                                    <li><Link href={`/${lang === 'id' ? 'en' : 'en'}/${langEn}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
                                 </div>
                             }
                         </ul>

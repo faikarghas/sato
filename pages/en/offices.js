@@ -1,5 +1,4 @@
 import React from 'react'
-import withLocale from '../../hocs/withLocale'
 import { AnimatePresence,motion } from "framer-motion";
 
 
@@ -7,18 +6,18 @@ import SideBar from '../../components/sidebar/index'
 import TabProject from '../../components/tabProject/index'
 import Main from '../../components/layout/mainPageLayout'
 
-const Resedentials = () => {
+const Offices = () => {
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='resedentials_en' langId='resedentials_id'/>
+            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='offices' langId='intouch'/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <h2>WE DON’T CREATE SPACES. MOREOVER, SPACES ARE NOT MADE. WE CONSTRUCT FLOOR, WALLS, AND CEILINGS, THROUGH DISCUSSION WITH ARCHITECTS, SUB-CON, SUPPLIERS, AND CLIENTS TO THE HIGHEST STANDARD ACHIEVEABLE.</h2>
-                    <TabProject activeMenu={{act:'active',menu:'resedentials'}}/>
+                    <TabProject activeMenu={{act:'active',menu:'offices'}}/>
                 </div>
             </motion.div>
         </div>
     )
 }
 
-export default withLocale(Resedentials)
+export default Offices

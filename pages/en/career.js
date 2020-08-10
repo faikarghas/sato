@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import withLocale from '../../hocs/withLocale'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import InfoDetail from '../../components/infoProject/index'
@@ -52,4 +51,4 @@ const Career = () => {
     )
 }
 
-export default withLocale(Career)
+export default Career
