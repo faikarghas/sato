@@ -138,7 +138,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x261" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -150,7 +150,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x262" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -162,7 +162,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x263" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -174,7 +174,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x264" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -184,7 +184,7 @@ const Intouch = () => {
                             </Col>
                             <Col xs={12} md={4}>
                                 <div className="section_others-boxImg moreAbout">
-                                    <Link href={`/${lang}/${lang ? 'about-sato':'tentang-sato'}`}>
+                                    <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
                                         <a>MORE<br/>ABOUT<br/>SATO</a>
                                     </Link>
                                 </div>
@@ -193,7 +193,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x265" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -205,7 +205,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x266" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -217,7 +217,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x267" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
@@ -229,7 +229,7 @@ const Intouch = () => {
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
-                                            <img src="https://source.unsplash.com/random/266x260" width="100%"/>
+                                            <img src="https://source.unsplash.com/random/266x268" width="100%"/>
                                             <div className="img-overlay-skew">
                                                 <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                             </div>
