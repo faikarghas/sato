@@ -1,11 +1,14 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
+import Slider from 'react-slick';
 
 
 import SideBar from '../../components/sidebar/index'
 import TabProject from '../../components/tabProject/index'
 import Menu from '../../components/menuMobile/index'
+
+const settings = {}
 
 const Projects = () => {
     const [lang, setLang] = useState()
@@ -76,6 +79,7 @@ const Projects = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

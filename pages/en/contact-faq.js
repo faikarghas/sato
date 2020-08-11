@@ -1,12 +1,15 @@
 import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col,Form,Button} from 'react-bootstrap'
+import Slider from 'react-slick';
 
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
+
+const settings ={}
 
 const Contact = () => {
     return (
@@ -54,6 +57,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

@@ -1,16 +1,21 @@
 import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col,Form,Button} from 'react-bootstrap'
+import Slider from 'react-slick';
 
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
+import Menu from '../../components/menuMobile/index'
+
+const settings ={}
 
 const Contact = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
+            <Menu />
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
@@ -52,6 +57,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

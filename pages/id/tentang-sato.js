@@ -1,15 +1,27 @@
 import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
+import Slider from 'react-slick';
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
+import Menu from '../../components/menuMobile/index'
+
+const settings = {
+    // dots: false,
+    // infinite: true,
+    // speed: 500,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // fade: true,
+};
 
 const About = () => {
 
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about-sato' langId='tentang-sato'/>
+            <Menu />
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
@@ -122,6 +134,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

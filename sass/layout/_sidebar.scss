@@ -117,24 +117,23 @@
 }
 
 .menu_sidebar_M{
-    width: 22%;
+    width: 100%;
     background-color: #1C1E1E;
     height: 100vh;
-    position: sticky;
+    position: fixed;
     top: 0;
     justify-content: space-between;
     flex-direction: column;
-    transition: all .4s ease-out;
+    transition: transform 0.2s ease-out;
     display: none;
+    transform: translateX(-100%);
     @include respond(down-tab-land){
-        transform: translateX(-100%);
-        position: fixed;
         z-index: 5;
-        width: 100%;
         display: flex;
     }
-    &.open{
+    &.openn{
         transform: translateX(0);
+
     }
     .logo{
         width: 100%;

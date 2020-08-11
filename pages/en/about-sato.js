@@ -1,10 +1,20 @@
 import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
+import Slider from 'react-slick';
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import Menu from '../../components/menuMobile/index'
+
+const settings = {
+    // dots: false,
+    // infinite: true,
+    // speed: 500,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // fade: true,
+};
 
 const About = () => {
 
@@ -124,6 +134,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

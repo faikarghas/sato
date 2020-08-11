@@ -1,10 +1,14 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
+import Slider from 'react-slick';
 
 
 import SideBar from '../../components/sidebar/index'
 import TabProject from '../../components/tabProject/index'
+import Menu from '../../components/menuMobile/index'
+
+const settings = {}
 
 const Projects = () => {
     const [lang, setLang] = useState()
@@ -16,6 +20,7 @@ const Projects = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
+            <Menu />
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <h2>WE DON’T CREATE SPACES. MOREOVER, SPACES ARE NOT MADE. WE CONSTRUCT FLOOR, WALLS, AND CEILINGS, THROUGH DISCUSSION WITH ARCHITECTS, SUB-CON, SUPPLIERS, AND CLIENTS TO THE HIGHEST STANDARD ACHIEVEABLE.</h2>
@@ -32,7 +37,8 @@ const Projects = () => {
                                 <div className="img-overlay-skew">
                                     <h4>PANTAI MUTIARA RESIDENTIAL</h4>
                                 </div>
-                            </a></Link>
+                            </a>
+                            </Link>
                             <Link href="/"><a><img src="https://source.unsplash.com/random/400x302" height="400px"/>
                                 <div className="img-overlay-skew">
                                     <h4>PANTAI MUTIARA RESIDENTIAL</h4>
@@ -73,6 +79,7 @@ const Projects = () => {
                         </div>
                     </div>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

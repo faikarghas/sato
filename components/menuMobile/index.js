@@ -6,17 +6,17 @@ const Menu = () => {
     const [menu, setMenu] = useState(false)
 
     function _openMenuHandler(params) {
-        dispatch({type:'SHOW_MENU',payload:'open'})
+        dispatch({type:'SHOW_MENU',payload:'openn'})
         setMenu(true)
     }
 
     function _closeMenuHandler(params) {
-        dispatch({type:'CLOSE_MENU',payload:''})
+        dispatch({type:'CLOSE_MENU',payload:'closee'})
         setMenu(false)
     }
 
     useEffect(() => {
-        dispatch({type:'CLOSE_MENU',payload:''})
+        dispatch({type:'CLOSE_MENU',payload:'closee'})
     }, [])
 
     return (

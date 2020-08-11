@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
+import Slider from 'react-slick';
+
 import InfoDetail from '../../components/infoProject/index'
-
-
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import TitleCareer from '../../components/career/title'
 import Menu from '../../components/menuMobile/index'
+
+const settings ={}
 
 const Career = () => {
     const [show,setShow] = useState(false)
@@ -48,6 +50,7 @@ const Career = () => {
                         </Col>
                     </Row>
                 </div>
+                <Slider {...settings} ></Slider>
             </motion.div>
         </div>
     )

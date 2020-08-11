@@ -7,6 +7,7 @@ import {dataSlides} from '../../lib/data'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
+import Menu from '../../components/menuMobile/index'
 
 
 const settings = {
@@ -36,6 +37,7 @@ const Studies = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='pembelajaran'/>
+            <Menu />
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="studies page_studies">
                     <Row>
