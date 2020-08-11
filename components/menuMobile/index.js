@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import {Context} from '../../hocs/store'
 
 const Menu = () => {
@@ -14,6 +14,10 @@ const Menu = () => {
         dispatch({type:'CLOSE_MENU',payload:''})
         setMenu(false)
     }
+
+    useEffect(() => {
+        dispatch({type:'CLOSE_MENU',payload:''})
+    }, [])
 
     return (
         <div className="menuMobile">
