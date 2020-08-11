@@ -3,7 +3,13 @@
     overflow: auto;
     height: calc(100% - 7rem);
     .slick-list {overflow: unset;}
+    @include respond(down-tab-land){
+        height:unset;
 
+        .slick-slider{
+            padding-top: 5rem;
+        }
+    }
     h2{
         color: $color_red;
         font-size: 3rem;
@@ -38,6 +44,12 @@
     .studies_sliderWrapper{
         outline: none;
         display: flex !important;
+        @include respond(down-tab-medium){
+            margin: 0;
+            div{
+                padding: 0;
+            }
+        }
         .studies_img{
             height: 370px;
             object-fit: contain;

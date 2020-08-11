@@ -2,9 +2,20 @@
     margin-top: 5rem;
     overflow: auto;
     height: calc(100% - 5rem);
+    @include respond(down-tab-land){
+        height:unset;
+    }
 
     .section_slider{
         padding: 0 5rem;
+        @include respond(down-tab-land){
+            .row{
+                margin: 0;
+                .col-12{
+                    padding: 0;
+                }
+            }
+        }
     }
 
     .section_info{
@@ -17,6 +28,10 @@
 
         .page_intouch-form{
             padding-right: 4rem;
+            @include respond(down-tab-medium){
+                padding-right: 0;
+                margin-bottom: 4rem;
+            }
             h3{
                 color: white;
             }
@@ -138,6 +153,9 @@
     &-desc{
         margin-top: 4rem;
         padding: 0 3rem;
+        @include respond(down-tab-medium){
+            padding: 0;
+        }
         p{
             color: white;
             text-transform: uppercase;

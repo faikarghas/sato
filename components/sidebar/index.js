@@ -1,16 +1,19 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useContext} from 'react'
+import {Context} from '../../hocs/store'
 import Link from 'next/link'
 
 
 const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
     const [lang, setLang] = useState()
+    const [state, dispatch] = useContext(Context);
+
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
     }, [])
 
     return (
-        <aside className="menu_sidebar">
+        <aside className={`menu_sidebar ${state.menu}`}>
             <div className="menu_sidebar-content">
                 <div className="menu_sidebar-content--top">
                     <Link href="/"><a><img className="logo" src="/static/logo-sato.svg" /></a></Link>

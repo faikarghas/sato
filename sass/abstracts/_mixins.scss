@@ -30,7 +30,7 @@
 //MEDIA QUERY MANAGER
 /*
 0 - 650px       :   Phone
-650 - 900px     :   Tablet Potrait
+650 - 992px     :   Tablet Potrait
 650 - 1200px    :   Tablet Landscape
 [1200 - 1800px] :   Desktop
 1800px +        :   Big Desktop
@@ -68,8 +68,11 @@ ORDER:  Base + typography > general layout + grid > page layout > components
     @if $breakpoint == down-phone {
         @media only screen and (max-width: 40.625em) { @content };    //650px
     }
+    @if $breakpoint == down-tab-medium {
+        @media only screen and (max-width: 48em) { @content };    //768px
+    }
     @if $breakpoint == down-tab-port {
-        @media only screen and (max-width: 56.25em) { @content };     //900px
+        @media only screen and (max-width: 62em) { @content };     //992px
     }
     @if $breakpoint == down-tab-land {
         @media only screen and (max-width: 64em) { @content };    //1024px

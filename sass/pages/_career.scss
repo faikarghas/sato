@@ -3,8 +3,15 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: calc(100% - 7rem);
+    @include respond(down-tab-land){
+        height:unset;
+    }
     &-cw{
         height: calc(100% - 113px);
+        @include respond(down-tab-land){
+            height:unset;
+            padding-bottom: 4rem;
+        }
     }
 
     h2{
@@ -23,6 +30,9 @@
     &-info{
         margin-top: 4rem;
         padding-left: 2rem;
+        @include respond(down-tab-land){
+            padding-left: 0;
+        }
         h4{
             font-size: 1.6rem;
             color: white;

@@ -64,6 +64,9 @@
     width: 50%;
     position: relative;
     margin-top: 5rem;
+    @include respond(down-tab-land){
+        width: 100%;
+    }
     h2{
         color: $color_darkBlue;
         font-size: 5rem;
@@ -99,7 +102,9 @@
     width: 50%;
     position: relative;
     margin-top: 5rem;
-
+    @include respond(down-tab-land){
+        width: 100%;
+    }
     h2{
         color: $color_darkBlue;
         font-size: 5rem;

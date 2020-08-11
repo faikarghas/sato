@@ -6,6 +6,9 @@
         color: $color_red;
         font-size: 3.7rem;
         text-transform: uppercase;
+        @include respond(down-tab-medium){
+            font-size: 2rem;
+        }
     }
 
     &-title{
@@ -98,6 +101,9 @@
             li{
                 display: inline-block;
                 margin-right: 4rem;
+                @include respond(down-tab-medium){
+                    margin-right: 2rem;
+                }
                 a{
                     text-decoration: none;
                     color: $color_lightGrey;
@@ -119,6 +125,9 @@
         display: grid;
         grid-column-gap: 25px;
         grid-template-columns: repeat(2,1fr);
+        @include respond(down-tab-land){
+            grid-template-columns: repeat(1, 1fr);
+        }
         a{
             position: relative;
             display: block;

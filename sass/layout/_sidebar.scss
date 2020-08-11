@@ -7,10 +7,23 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    transition: all .4s ease-out;
+    @include respond(down-tab-land){
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+    }
+    &.open{
+        transform: translateX(0);
+    }
     .logo{
         width: 100%;
         object-fit: contain;
         margin-left: -54px;
+        @include respond(down-tab-land){
+            display: none;
+        }
     }
     &-content{
         height: 100%;
@@ -21,6 +34,13 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include respond(down-tab-land){
+            height: calc(100% - (110px + 2rem));
+            padding: 4rem 5rem 4rem 8rem;
+            margin-top: 115px;
+            margin-bottom: 0;
+            margin-right: 2rem;
+        }
         &--top{
             img{
                 margin-bottom: 4rem;

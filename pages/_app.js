@@ -3,8 +3,19 @@ import App from "next/app";
 import Router from 'next/router';
 import { AnimatePresence } from "framer-motion";
 import Head from 'next/head'
+import NProgress from 'nprogress'
+
+import Store from '../hocs/store'
 
 import '../sass/main.scss'
+
+// NProgress
+Router.events.on('routeChangeStart', url => {
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
+
 
 class MyApp extends App {
   componentDidMount() {
@@ -21,7 +32,9 @@ class MyApp extends App {
 
     return (
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+        <Store>
+          <Component {...pageProps} key={router.route} />
+        </Store>
       </AnimatePresence>
     );
   }
