@@ -8,6 +8,7 @@ import Link from 'next/link'
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
+import Menu from '../../components/menuMobile/index'
 
 const settings = {
     dots: false,
@@ -40,6 +41,7 @@ const Intouch = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
+            <Menu />
             <motion.div className="page_layout-main2"  initial='initial' animate='animate' exit="exit">
                 <div className="intouch page_intouch">
                     <section className="section_slider">

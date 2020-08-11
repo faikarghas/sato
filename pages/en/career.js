@@ -7,6 +7,7 @@ import InfoDetail from '../../components/infoProject/index'
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import TitleCareer from '../../components/career/title'
+import Menu from '../../components/menuMobile/index'
 
 const Career = () => {
     const [show,setShow] = useState(false)
@@ -18,6 +19,7 @@ const Career = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>
+            <Menu />
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="career page_career">
                     <Row>

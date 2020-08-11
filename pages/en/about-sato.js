@@ -4,12 +4,14 @@ import {Row,Col} from 'react-bootstrap'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
+import Menu from '../../components/menuMobile/index'
 
 const About = () => {
 
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about-sato' langId='tentang-sato'/>
+            <Menu />
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>

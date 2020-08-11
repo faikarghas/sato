@@ -9,10 +9,129 @@
     flex-direction: column;
     transition: all .4s ease-out;
     @include respond(down-tab-land){
+        display: none;
+    }
+    &.open{
+        transform: translateX(0);
+    }
+    .logo{
+        width: 100%;
+        object-fit: contain;
+        margin-left: -54px;
+    }
+    &-content{
+        height: 100%;
+        margin: 2rem 0;
+        border-right: 1px solid #B7B5AE;
+        padding: 0rem 5rem 0 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--top{
+            img{
+                margin-bottom: 4rem;
+            }
+            .link{
+                list-style: none;
+                li {
+                    margin-bottom: 1rem;
+                    a{
+                        text-decoration: none;
+                        font-size: 1.1rem;
+                        color: #B7B5AE;
+                        cursor: pointer;
+                        &:hover{
+                            color: $color_red;
+                        }
+                        &.active{
+                            color: $color_red;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--bottom{
+            .information{
+                list-style: none;
+                position: relative;
+
+                .logo_info{
+                    position: absolute;
+                    top: 0;
+                    left: -32px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    li{
+                        list-style: none;
+                        a{
+                            color: white;
+                            font-size: 1.2rem;
+                            img{
+                                width: 12px;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+
+                    .sosmed{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .lang{
+                        margin-bottom: 0.9rem;
+                        li{
+                            transform: rotate(-90deg);
+                            &:first-child{
+                                margin-bottom: 0.6rem;
+                            }
+                            a{
+                                font-weight: bold;
+                                text-decoration: none;
+                                &.active{
+                                    color: $color_red;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                li {
+                    a{
+                        font-size: 0.8rem;
+                        font-family: "Futura-Bold";
+                    }
+                    p{
+                        font-size: 0.8rem;
+                        font-family: "Futura-Bold";
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu_sidebar_M{
+    width: 22%;
+    background-color: #1C1E1E;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: all .4s ease-out;
+    display: none;
+    @include respond(down-tab-land){
         transform: translateX(-100%);
         position: fixed;
         z-index: 5;
         width: 100%;
+        display: flex;
     }
     &.open{
         transform: translateX(0);
@@ -28,7 +147,7 @@
     &-content{
         height: 100%;
         margin: 2rem 0;
-        border-right: 1px solid #B7B5AE;
+        // border-right: 1px solid #B7B5AE;
         padding: 0rem 5rem 0 8rem;
         display: flex;
         flex-direction: column;
