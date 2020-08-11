@@ -154,7 +154,7 @@
 
         @include respond(down-tab-land){
             height: calc(100% - (110px + 2rem));
-            padding: 4rem 5rem 4rem 8rem;
+            padding: 4rem 5rem 4rem 5rem;
             margin-top: 115px;
             margin-bottom: 0;
             margin-right: 2rem;

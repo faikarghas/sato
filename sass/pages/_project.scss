@@ -22,16 +22,28 @@
             text-transform: uppercase;
             line-height: 1em;
             margin-bottom: 0;
+            @include respond(down-tab-medium){
+                font-size: 2rem;
+            }
         }
         .hidebt{
             cursor: pointer;
             margin-bottom: 0;
+            @include respond(down-tab-medium){
+                display: flex;
+                align-items: center;
+            }
             li{
                 display: inline-block;
                 margin-right: 2rem;
                 p{
                     margin-bottom: 0;
                     line-height: 1em;
+                }
+                @include respond(down-tab-medium){
+                    &:last-child{
+                        margin-right: 0;
+                    }
                 }
             }
             &-text{
