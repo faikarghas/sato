@@ -78,8 +78,6 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                     </div>
                     <div className="menu_sidebar_M-content--bottom">
                         <ul className="information">
-                            <li className="mb-4"> <a className="color_wa logo-wrapper ">CHAT WITH US</a> </li>
-                            <br/>
                             <li className="logo-wrapper"> <p className="color_white">FOR ANY ENQUIRIES,<br/>PLEASE CONTACT</p>
                             </li>
                             <br/>
@@ -89,14 +87,14 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                             <li><p className="color_lightGrey m-0">GRAHA SUNTER PRATAMA<br/>Jl. SELAT MADURA N/20-14,<br/>SUNTER AGUNG, TANJUNG PRIOK,<br/>14350, JAKARTA UTARA, INDONESIA</p></li>
 
                             <ul className="logo_info">
-                                <div className="sosmed">
+                                {/* <div className="sosmed">
                                     <li className="mb-4"><a><img src="/static/wa-sato.png" alt="logo wa"/></a></li>
                                     <br/>
                                     <li className="mb-2"><a><img src="/static/facebook.png" alt="logo sosmed"/></a></li>
                                     <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
                                     <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
-                                </div>
-                                {withSlug? 
+                                </div> */}
+                                {/* {withSlug?
                                     <div className="lang">
                                         <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
                                         <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
@@ -106,7 +104,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                                         <li><Link href={`/${lang === 'en' ? 'id' : 'id'}/${langId}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
                                         <li><Link href={`/${lang === 'id' ? 'en' : 'en'}/${langEn}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
                                     </div>
-                                }
+                                } */}
                             </ul>
                         </ul>
                     </div>

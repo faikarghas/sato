@@ -21,7 +21,7 @@ const Career = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>
-            <Menu />
+            <Menu langEn='career' langId='karir'/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="career page_career">
                     <Row>

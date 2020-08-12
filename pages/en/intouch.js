@@ -41,7 +41,7 @@ const Intouch = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
-            <Menu />
+            <Menu langEn='intouch' langId='intouch'/>
             <motion.div className="page_layout-main2"  initial='initial' animate='animate' exit="exit">
                 <div className="intouch page_intouch">
                     <section className="section_slider">

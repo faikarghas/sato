@@ -1,8 +1,11 @@
 import React,{useState,useContext,useEffect} from 'react'
 import {Context} from '../../hocs/store'
+import Link from 'next/link'
+import HamburgerMenu from 'react-hamburger-menu'
 
-const Menu = () => {
+const Menu = ({withSlug,langEn,langId,slug}) => {
     const [state, dispatch] = useContext(Context);
+    const [lang, setLang] = useState()
     const [menu, setMenu] = useState(false)
 
     function _openMenuHandler(params) {
@@ -17,12 +20,46 @@ const Menu = () => {
 
     useEffect(() => {
         dispatch({type:'CLOSE_MENU',payload:'closee'})
+        setLang(window.location.href.split('/')[3])
     }, [])
 
     return (
         <div className="menuMobile">
-            <img src="/logo-sato.svg" alt="logo sato" />
-            <p onClick={menu ? _closeMenuHandler : _openMenuHandler }>Menu</p>
+            <div className="menuMobile-1">
+                <img src="/logo-sato.svg" alt="logo sato" />
+                {withSlug?
+                    <ul className="lang">
+                        <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
+                        <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                    </ul>
+                    :
+                    <ul className="lang">
+                        <li><Link href={`/${lang === 'id' ? 'en' : 'en'}/${langEn}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
+                        <li><Link href={`/${lang === 'en' ? 'id' : 'id'}/${langId}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                    </ul>
+                }
+            </div>
+            <div className="menuMobile-2">
+                {/* <p onClick={menu ? _closeMenuHandler : _openMenuHandler }>Menu</p> */}
+                <HamburgerMenu
+                    isOpen={menu}
+                    menuClicked={menu ? _closeMenuHandler : _openMenuHandler}
+                    width={24}
+                    height={15}
+                    strokeWidth={1}
+                    rotate={0}
+                    color='white'
+                    borderRadius={0}
+                    animationDuration={0.5}
+                />
+                <div className="sosmed">
+                    <ul>
+                        <li className="mb-2"><a><img src="/static/facebook.png" alt="logo sosmed"/></a></li>
+                        <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
+                        <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }

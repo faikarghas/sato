@@ -83,6 +83,9 @@
         position: absolute;
         top: -3rem;
         content: "";
+        @include respond(down-tab-medium){
+            display: none;
+        }
     }
 
 
@@ -96,6 +99,16 @@
             }
         }
     }
+
+    .award-img{
+        margin: 2rem 0;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 }
 
 .about-second{
@@ -108,6 +121,29 @@
     h2{
         color: $color_darkBlue;
         font-size: 5rem;
+    }
+    h3{
+        color: #32445E;
+        font-size: 3rem;
+
+        span{
+            color: $color_red;
+        }
+    }
+    p{
+        color: white;
+        span{
+            color: $color_lightGrey;
+        }
+    }
+    a{
+        color: white;
+    }
+
+    .logoSaso{
+        width: 250px;
+        object-fit: contain;
+        margin: 2rem 0;
     }
 
     .content-about-wrapper{

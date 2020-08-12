@@ -11,7 +11,7 @@ const Offices = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='offices' langId='intouch'/>
-            <Menu />
+            <Menu langEn='offices' langId='intouch'/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <h2>WE DON’T CREATE SPACES. MOREOVER, SPACES ARE NOT MADE. WE CONSTRUCT FLOOR, WALLS, AND CEILINGS, THROUGH DISCUSSION WITH ARCHITECTS, SUB-CON, SUPPLIERS, AND CLIENTS TO THE HIGHEST STANDARD ACHIEVEABLE.</h2>

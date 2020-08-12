@@ -21,7 +21,7 @@ const About = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about-sato' langId='tentang-sato'/>
-            <Menu />
+            <Menu langEn='about-sato' langId='tentang-sato'/>
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
@@ -95,7 +95,12 @@ const About = () => {
                         </div>
                         <h2>NOW IT’S TIME TO US TELL A BIT ABOUT OUR SELF</h2>
                         <h3 className="mb-5"><span className="color_red">WE ALWAYS PUT YOU INTO THE FRAME.</span> EVERYTHING WE DO IS ALL ABOUT OUR CLIENT. OUR GOAL IS TO BUILD AN EXCEPTIONAL  ARCHITECTURAL, INTERIOR AND CONSTRUCTION PROJECT. AS A FIRM, WE ARE COMMITTED TO AND STRIVE FOR CREATE A UNIQUE AND INNOVATIVE DESIGN SOLUTIONS THAT RESPOND TO EACH CLIENT'S AESTHETIC AND BUDGETARY NEEDS.</h3>
-                        <p className="color_darkblue">RECOQNITIONS</p>
+                        <p className="color_darkblue">RECOQNITIONS :</p>
+                        <Row className="award-img">
+                            <Col xs={4}><img src="/award.png" width="100%" alt="award"/></Col>
+                            <Col xs={4}><img src="/award2.png" width="100%" alt="award"/></Col>
+                            <Col xs={4}><img src="/award3.png" width="100%" alt="award"/></Col>
+                        </Row>
                         <p className="color_white">
                         LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
 
@@ -131,6 +136,15 @@ const About = () => {
                             <p className="color_white">
                             LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
                             </p>
+                            <br/>
+                            <br/>
+                            <h3>IN <span>PARTNERSHIP</span> <br/>WITH SASO ARCHITECTURE</h3>
+                            <img className="logoSaso" src="/saso-logo.png" alt="saso" />
+                            <p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.</p>
+                            <br/>
+                            <br/>
+                            <p><span>PLEASE VISIT US FOR MORE INFORMATION</span></p>
+                            <a href="www.sasoarchitects.com">www.sasoarchitects.com</a>
                         </div>
                     </div>
                 </div>
