@@ -94,24 +94,20 @@ const Intouch = () => {
                                     <h4>Projects Accomplisment</h4>
                                     <ul>
                                         <li>
-                                            <span className="box">12</span>
-                                            RESEDENTIALS
+                                            <Link href={`/${lang}/resedentials`}><a><span className="box">12</span></a></Link>
+                                            <Link href={`/${lang}/resedentials`}><a>RESEDENTIALS</a></Link>
                                         </li>
                                         <li>
-                                            <span className="box">9</span>
-                                            offices
+                                            <Link href={`/${lang}/offices`}><a><span className="box">9</span></a></Link>
+                                            <Link href={`/${lang}/offices`}><a>offices</a></Link>
                                         </li>
                                         <li>
-                                            <span className="box">8</span>
-                                            retails
+                                            <Link href={`/${lang}/retails`}><a><span className="box">8</span></a></Link>
+                                            <Link href={`/${lang}/retails`}><a>retails</a></Link>
                                         </li>
                                         <li>
-                                            <span className="box">5</span>
-                                            show units
-                                        </li>
-                                        <li>
-                                            <span className="box">9</span>
-                                            offices
+                                            <Link href={`/${lang}/show-units`}><a><span className="box">5</span></a></Link>
+                                            <Link href={`/${lang}/show-units`}><a>show units</a></Link>
                                         </li>
                                     </ul>
                                 </div>
