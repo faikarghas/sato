@@ -110,6 +110,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                     </div>
                 </div>
             </aside>
+            <Link href="/"><a className="wa-float"><img src="/wa-sato2.png" alt="wa-logo"/></a></Link>
         </React.Fragment>
     )
 }

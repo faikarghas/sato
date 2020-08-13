@@ -41,7 +41,7 @@ const Intouch = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
-            <Menu />
+            <Menu langEn='intouch' langId='intouch'/>
             <motion.div className="page_layout-main2"  initial='initial' animate='animate' exit="exit">
                 <div className="intouch page_intouch">
                     <section className="section_slider">
@@ -114,7 +114,7 @@ const Intouch = () => {
                             </Col>
                         </Row>
                     </section>
-                    <section className="section_form bg_red">
+                    <section className="section_form bg_red" id="form">
                         <Row>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-form">
@@ -237,6 +237,9 @@ const Intouch = () => {
                             </Col>
                         </Row>
                     </section>
+                </div>
+                <div className="freequote">
+                    <a  href="#form">GET A FREE QUOTE</a>
                 </div>
             </motion.div>
         </div>

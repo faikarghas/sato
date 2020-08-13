@@ -11,7 +11,7 @@ html{
     /* default 16px */
     /* font-size: 10px; */
     font-size: 62.5%;
-
+    scroll-behavior: smooth;
     @include respond(big-desktop) { // width >= 1800
         font-size: 77%; //1rem = 12, 12/16
     }

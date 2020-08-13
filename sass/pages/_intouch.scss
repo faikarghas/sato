@@ -88,6 +88,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @include respond(down-tab-land){
+                padding: 4rem;
+            }
             a{
                 color: white;
                 text-decoration: none;
@@ -196,5 +199,22 @@
                 }
             }
         }
+    }
+}
+
+.freequote{
+    position: fixed;
+    top: 5rem;
+    right: 4rem;
+    background-color: #1C1E1E;
+    padding: 1rem;
+    border: 1px solid white;
+    @include respond(down-tab-land){
+        top: 170px;
+    }
+    a{
+        color: $color_red;
+        font-size: 1.4rem;
+        text-decoration: none;
     }
 }

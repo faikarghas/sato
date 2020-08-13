@@ -22,7 +22,7 @@ const Project = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
-            <Menu />
+            <Menu langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <Link href={`/${lang}/project`} ><a className="back-to">Back to previous page</a></Link>

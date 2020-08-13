@@ -114,7 +114,7 @@ const Intouch = () => {
                             </Col>
                         </Row>
                     </section>
-                    <section className="section_form bg_red">
+                    <section className="section_form bg_red" id="form">
                         <Row>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-form">
@@ -237,6 +237,9 @@ const Intouch = () => {
                             </Col>
                         </Row>
                     </section>
+                </div>
+                <div className="freequote">
+                    <a  href="#form">GET A FREE QUOTE</a>
                 </div>
             </motion.div>
         </div>

@@ -24,43 +24,47 @@ const Menu = ({withSlug,langEn,langId,slug}) => {
     }, [])
 
     return (
+        <React.Fragment>
         <div className="menuMobile">
-            <div className="menuMobile-1">
-                <img src="/logo-sato.svg" alt="logo sato" />
-                {withSlug?
-                    <ul className="lang">
-                        <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
-                        <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
-                    </ul>
-                    :
-                    <ul className="lang">
-                        <li><Link href={`/${lang === 'id' ? 'en' : 'en'}/${langEn}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
-                        <li><Link href={`/${lang === 'en' ? 'id' : 'id'}/${langId}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
-                    </ul>
-                }
-            </div>
-            <div className="menuMobile-2">
-                {/* <p onClick={menu ? _closeMenuHandler : _openMenuHandler }>Menu</p> */}
-                <HamburgerMenu
-                    isOpen={menu}
-                    menuClicked={menu ? _closeMenuHandler : _openMenuHandler}
-                    width={24}
-                    height={15}
-                    strokeWidth={1}
-                    rotate={0}
-                    color='white'
-                    borderRadius={0}
-                    animationDuration={0.5}
-                />
-                <div className="sosmed">
-                    <ul>
-                        <li className="mb-2"><a><img src="/static/facebook.png" alt="logo sosmed"/></a></li>
-                        <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
-                        <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
-                    </ul>
+            <div className="menuMobile_wrapper">
+                <div className="menuMobile-1">
+                    <img src="/logo-sato.svg" alt="logo sato" />
+                    {withSlug?
+                        <ul className="lang">
+                            <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
+                            <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                        </ul>
+                        :
+                        <ul className="lang">
+                            <li><Link href={`/${lang === 'id' ? 'en' : 'en'}/${langEn}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
+                            <li><Link href={`/${lang === 'en' ? 'id' : 'id'}/${langId}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                        </ul>
+                    }
+                </div>
+                <div className="menuMobile-2">
+                    <HamburgerMenu
+                        isOpen={menu}
+                        menuClicked={menu ? _closeMenuHandler : _openMenuHandler}
+                        width={24}
+                        height={15}
+                        strokeWidth={1}
+                        rotate={0}
+                        color='white'
+                        borderRadius={0}
+                        animationDuration={0.5}
+                    />
+                    <div className="sosmed">
+                        <ul>
+                            <li className="mb-2"><a><img src="/static/facebook.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        <div className="br-bottom"></div>
+        </React.Fragment>
     )
 }
 

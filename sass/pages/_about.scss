@@ -52,6 +52,9 @@
         height: 280px;
         max-height: 280px;
         overflow-y: hidden;
+        @include respond(down-tab-land){
+            height: 200px;
+        }
         p{
             color: white;
             text-transform: uppercase;
@@ -93,9 +96,15 @@
         .padding-rl{
             &:nth-child(odd){
                 padding-right: 1rem;
+                @include respond(down-tab-land){
+                    padding: 0;
+                }
             }
             &:nth-child(even){
                 padding-left: 1rem;
+                @include respond(down-tab-land){
+                    padding: 0;
+                }
             }
         }
     }
