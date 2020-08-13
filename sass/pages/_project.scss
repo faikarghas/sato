@@ -8,6 +8,7 @@
         text-transform: uppercase;
         @include respond(down-tab-medium){
             font-size: 2rem;
+            margin-bottom: 2rem;
         }
     }
 
@@ -105,42 +106,7 @@
         }
     }
 
-    .tab_menu{
-        margin: 4rem 0;
-        ul{
-            padding: 0;
-            list-style: none;
-
-            @include respond(down-tab-medium){
-                border-top: 1px solid #B7B5AE;
-                padding-top: 2rem;
-                border-bottom: 1px solid #B7B5AE;
-                margin-bottom: 0;
-            }
-            li{
-                display: inline-block;
-                margin-right: 4rem;
-                @include respond(down-tab-medium){
-                    margin-right: 2rem;
-                    margin-bottom: 2rem;
-                }
-                a{
-                    text-decoration: none;
-                    color: $color_lightGrey;
-                    font-size: 1.1rem;
-                    text-transform: uppercase;
-
-                    &:hover{
-                        color: $color_red;
-                    }
-                    &.active{
-                        color: $color_red;
-                    }
-                }
-            }
-        }
-    }
-
+    
     &_list{
         display: grid;
         grid-column-gap: 25px;

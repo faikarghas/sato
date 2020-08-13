@@ -46,3 +46,68 @@ background: transparent;
 // slick
 
 .slick-slide {outline: none;}
+
+.hide-mobile{
+    @include respond(down-tab-land){
+        display: none;
+    }
+}
+
+.hide-desktop{
+    display: none;
+    @include respond(down-tab-land){
+        display: block;
+    }
+}
+
+.tab_menu{
+    padding: 4rem 0;
+    background-color: #1C1E1E;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    @include respond(down-tab-land){
+        top: 171px;
+        margin: 0 4.9rem 0 4.9rem;
+        padding: 0;
+        z-index: 4;
+        width: 100%;
+        display: none;
+    }
+    &.thisproject{
+        @include respond(down-tab-land){
+            display: block !important;
+        }
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+
+        @include respond(down-tab-land){
+            padding-top: 2rem;
+            border-bottom: 1px solid #B7B5AE;
+            margin-bottom: 0;
+        }
+        li{
+            display: inline-block;
+            margin-right: 4rem;
+            @include respond(down-tab-land){
+                margin-right: 2rem;
+                margin-bottom: 2rem;
+            }
+            a{
+                text-decoration: none;
+                color: $color_lightGrey;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+
+                &:hover{
+                    color: $color_red;
+                }
+                &.active{
+                    color: $color_red;
+                }
+            }
+        }
+    }
+}

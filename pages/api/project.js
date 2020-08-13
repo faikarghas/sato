@@ -7,7 +7,6 @@ export default  async (req, res) => {
     select * from project
   `)
 
-  console.log(req,res);
   // res.statusCode = 200
   res.json({ project: project })
 }

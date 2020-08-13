@@ -2,8 +2,9 @@ import React,{useState,useContext,useEffect} from 'react'
 import {Context} from '../../hocs/store'
 import Link from 'next/link'
 import HamburgerMenu from 'react-hamburger-menu'
+import TabProject from '../../components/tabProject/index'
 
-const Menu = ({withSlug,langEn,langId,slug}) => {
+const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject}) => {
     const [state, dispatch] = useContext(Context);
     const [lang, setLang] = useState()
     const [menu, setMenu] = useState(false)
@@ -63,6 +64,7 @@ const Menu = ({withSlug,langEn,langId,slug}) => {
                 </div>
             </div>
         </div>
+        <TabProject className="hide-desktop" activeMenu={activeMenu} thisproject={thisproject}/>
         <div className="br-bottom"></div>
         </React.Fragment>
     )

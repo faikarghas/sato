@@ -20,11 +20,11 @@ const Projects = () => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
-            <Menu langEn='project' langId='project'/>
+            <Menu activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject="thisproject"/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <h2>WE DON’T CREATE SPACES. MOREOVER, SPACES ARE NOT MADE. WE CONSTRUCT FLOOR, WALLS, AND CEILINGS, THROUGH DISCUSSION WITH ARCHITECTS, SUB-CON, SUPPLIERS, AND CLIENTS TO THE HIGHEST STANDARD ACHIEVEABLE.</h2>
-                    <TabProject activeMenu={{act:'active',menu:'all'}}/>
+                    <TabProject className="hide-mobile" activeMenu={{act:'active',menu:'all'}}/>
                     <div className="page_project_list">
                         <div>
                             <Link href={`/${lang}/project/[project]`} as={`/${lang}/project/pantai-mutiara`}>

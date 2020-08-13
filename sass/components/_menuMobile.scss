@@ -9,9 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4rem;
+    padding: 0 5rem;
     display: none;
-    padding: 4rem;
+    padding: 5rem;
     @include respond(down-tab-land){
         display: flex;
     }
@@ -84,7 +84,7 @@
 }
 
 .br-bottom{
-    width: calc(100% - 8rem);
+    width: calc(100% - 10rem);
     height: 1px;
     position: fixed;
     left: 50%;
