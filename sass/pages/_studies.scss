@@ -1,6 +1,7 @@
 .page_studies{
     margin-top: 5rem;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: calc(100% - 7rem);
     .slick-list {overflow: unset;}
     @include respond(down-tab-land){
