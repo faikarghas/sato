@@ -56,9 +56,9 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject}) => {
                     />
                     <div className="sosmed">
                         <ul>
-                            <li className="mb-2"><a><img src="/static/facebook.png" alt="logo sosmed"/></a></li>
-                            <li className="mb-2"><a><img src="/static/instagram.png" alt="logo sosmed"/></a></li>
-                            <li className="mb-2"><a><img src="/static/twitter.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a><img src="/facebook.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a><img src="/instagram.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li>
                         </ul>
                     </div>
                 </div>

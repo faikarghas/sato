@@ -124,7 +124,7 @@ const Intouch = () => {
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-img">
-                                    <img src="/static/contact-img.png" width="100%" height="360px"/>
+                                    <img src="/contact-img.png" width="100%" height="360px"/>
                                 </div>
                             </Col>
                         </Row>
