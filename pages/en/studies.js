@@ -22,7 +22,7 @@ const settings = {
 
 
 const Studies = () => {
-    const [kasus, setKasus] = useState("/static/studies1.jpg")
+    const [kasus, setKasus] = useState("/studies1.jpg")
     const refSlider = useRef(null)
 
     function _nextArrow(params) {
@@ -46,7 +46,7 @@ const Studies = () => {
                             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                         </Col>
                         <Col xs={12} md={4}>
-                            <img className="" src="/static/studies3.jpg" alt="studies-img" width="100%" height="190px" />
+                            <img className="" src="/studies3.jpg" alt="studies-img" width="100%" height="190px" />
                         </Col>
                     </Row>
                     <Slider {...settings} ref={refSlider}>
@@ -55,8 +55,8 @@ const Studies = () => {
                                 <div className="studies_img mt-5">
                                     <img src={kasus} width="100%" />
                                     <ul className="btn-arrow">
-                                        <li onClick={_nextArrow}><img className="arrow_next" src="/static/arrow.png" width="100%" /></li>
-                                        <li onClick={_prevArrow}><img className="arrow_next" src="/static/arrow.png" width="100%" /></li>
+                                        <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                        <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
                                     </ul>
                                 </div>
                             </Col>
@@ -76,10 +76,10 @@ const Studies = () => {
                         <Row className="studies_sliderWrapper">
                             <Col xs={12} md={8}>
                                 <div className="studies_img mt-5">
-                                    <img src={`/static/studies2.jpg`} width="100%" />
+                                    <img src={`/studies2.jpg`} width="100%" />
                                     <ul className="btn-arrow">
-                                        <li onClick={_nextArrow}><img className="arrow_next" src="/static/arrow.png" width="100%" /></li>
-                                        <li onClick={_prevArrow}><img className="arrow_next" src="/static/arrow.png" width="100%" /></li>
+                                        <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                        <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
                                     </ul>
                                 </div>
                             </Col>

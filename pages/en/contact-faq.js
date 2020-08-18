@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
             <Menu langEn='contact-faq' langId='kontak-faq'/>
-            <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
+            <motion.div className="page_layout-main d-flex p-0" initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>
                         <div className="title-contact-wrapper">

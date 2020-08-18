@@ -31,11 +31,11 @@ class MyApp extends App {
     // exitBeforeEnter: AnimatePresence will only render one component at a time. The exiting component will finished its exit animation before the entering component is rendered
 
     return (
-      <AnimatePresence exitBeforeEnter>
-        <Store>
-          <Component {...pageProps} key={router.route} />
-        </Store>
-      </AnimatePresence>
+      <Store>
+        <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </Store>
     );
   }
 }

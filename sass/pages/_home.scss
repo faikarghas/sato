@@ -1,0 +1,68 @@
+.fullImgSlider{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    // background-image: url('/sato-bg.jpg');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    .logo{
+        width: 170px;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+    }
+    .text{
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        color: white;
+        font-family: "Futura-Light-font";
+        font-size: 5rem;
+        font-weight: bold;
+        letter-spacing: normal;
+    }
+    .linkToGo{
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        width: 15px;
+        object-fit: contain;
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+        transition: all 1s ;
+        transform: scale(1.01);
+    }
+    .dots-slider{
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        li{
+            display: inline-block;
+            width: 30px;
+            height: 3px;
+            background-color: rgba(211, 211, 211, 0.678);
+            margin: 0 2.5px;
+            cursor: pointer;
+            z-index: 10;
+            &.active{
+                background-color: $color_red;
+            }
+        }
+    }
+
+}
+
+.slick-active{
+    .fullImgSlider{
+        img{
+            transform: scale(1);
+        }
+    }
+}
