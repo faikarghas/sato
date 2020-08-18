@@ -30,7 +30,7 @@ const Project = () => {
                         <h3>PANTAI MUTIARA RESIDENCE</h3>
                         <ul className="hidebt" onClick={ShowInfo}>
                             <li><p className="hidebt-text">{show? 'hide detail': 'show detail'}</p></li>
-                            <li><img src="/static/hidebt.png"/></li>
+                            <li><img src="/hidebt.png"/></li>
                         </ul>
                     </div>
                     <InfoDetailM show={show?'show':''}/>
