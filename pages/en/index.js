@@ -22,10 +22,10 @@ const Index = () => {
 
     useEffect(() => {
         console.log(refSlider);
-        console.log(process.env.DB_HOST_DEV);
-        console.log(process.env.DB_NAME_DEV);
-        console.log(process.env.DB_USER_DEV);
-        console.log(process.env.PORT_MYSQL_DEV);
+        console.log(process.env.MYSQL_HOST);
+        console.log(process.env.MYSQL_DATABASE);
+        console.log(process.env.MYSQL_USER);
+        console.log(process.env.MYSQL_PORT);
     }, [])
 
 
