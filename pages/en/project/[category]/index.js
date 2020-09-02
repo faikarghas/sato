@@ -70,18 +70,18 @@ const Offices = ({data,slug,data2,data3}) => {
 
 
 Offices.getInitialProps = async (ctx) => {
-    const pageRequest = `http://localhost:3013/api/category`
+    const pageRequest = `http://dev.sato.id/api/category`
     const category = ctx.query.category
 
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `http://localhost:3013/api/getCategory/${category}`
+    const pageRequest2 = `http://dev.sato.id/api/getCategory/${category}`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
 
-    const pageRequest3 = `http://localhost:3013/api/projectTitle`
+    const pageRequest3 = `http://dev.sato.id/api/projectTitle`
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 

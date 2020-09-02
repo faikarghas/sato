@@ -53,9 +53,9 @@ const Project = ({data}) => {
 }
 
 Project.getInitialProps = async (ctx) => {
-    const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3013'
+    const host = ctx.req ? ctx.req.headers['host'] : 'dev.sato.id'
     const slug = ctx.query.slug
-    const pageRequest = `http://localhost:3013/api/projectDetail/${slug}`
+    const pageRequest = `http://dev.sato.id/api/projectDetail/${slug}`
 
     const res = await fetch(pageRequest)
     const json = await res.json()
