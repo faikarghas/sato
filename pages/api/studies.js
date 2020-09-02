@@ -3,14 +3,10 @@ const db = require('../../lib/db')
 const escape = require('sql-template-strings')
 
 export default  async (req, res) => {
-  const project = await db.query(escape`
-    select * from project
-  `)
-
-  const projectTitle = await db.query(escape`
-    select * from global where type = "project_title"
+  const studies = await db.query(escape`
+    select * from studies
   `)
 
   // res.statusCode = 200
-  res.json({ project: project,projectTitle:projectTitle })
+  res.json({ data: studies })
 }

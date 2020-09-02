@@ -49,7 +49,7 @@
         }
     }
     .client-desc{
-        height: 280px;
+        min-height: 200px;
         max-height: 280px;
         overflow-y: hidden;
         @include respond(down-tab-land){
@@ -141,8 +141,10 @@
     }
     p{
         color: white;
+        text-transform: uppercase;
         span{
             color: $color_lightGrey;
+            text-transform: uppercase;
         }
     }
     a{

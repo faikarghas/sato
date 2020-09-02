@@ -21,7 +21,7 @@ const settings = {
 
 
 
-const Studies = () => {
+const Studies = ({data}) => {
     const [kasus, setKasus] = useState("/studies1.jpg")
     const refSlider = useRef(null)
 
@@ -50,52 +50,32 @@ const Studies = () => {
                         </Col>
                     </Row>
                     <Slider {...settings} ref={refSlider}>
-                        <Row className="studies_sliderWrapper">
-                            <Col xs={12} md={8}>
-                                <div className="studies_img mt-5">
-                                    <img src={kasus} width="100%" />
-                                    <ul className="btn-arrow">
-                                        <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
-                                        <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
-                                    </ul>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="studies_desc mt-5">
-                                    <h3>CASE STUDY: ENGINEERS AND ARCHITECTS TEAM UP TO DESIGN A SUSTAINABLE ICON FOR BEIJING</h3>
-                                    <div className="studies_desc--p">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                    </div>
-                                    <div>
-                                        <p className="next_action" >Next Case</p>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row className="studies_sliderWrapper">
-                            <Col xs={12} md={8}>
-                                <div className="studies_img mt-5">
-                                    <img src={`/studies2.jpg`} width="100%" />
-                                    <ul className="btn-arrow">
-                                        <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
-                                        <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
-                                    </ul>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="studies_desc mt-5">
-                                    <h3>CASE STUDY: ENGINEERS AND ARCHITECTS TEAM UP TO DESIGN A SUSTAINABLE ICON FOR BEIJING</h3>
-                                    <div className="studies_desc--p">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                    </div>
-                                    <div>
-                                        <p className="next_action" onClick={_nextArrow}>Next Case</p>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
+                        {data.studies.map((item,i)=>{
+                            return(
+                                <Row className="studies_sliderWrapper">
+                                    <Col xs={12} md={8}>
+                                        <div className="studies_img mt-5">
+                                            <img src={`http://api.sato.id/images/${item.imageName}`} width="100%" />
+                                            <ul className="btn-arrow">
+                                                <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                                <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                            </ul>
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} md={4}>
+                                        <div className="studies_desc mt-5">
+                                            <h3>{`CASE STUDY: ${item.title_en}`}</h3>
+                                            <div className="studies_desc--p">
+                                            <p>{item.description_en}</p>
+                                            </div>
+                                            <div>
+                                                <p className="next_action" onClick={_nextArrow}>Next Case</p>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            )
+                        })}
                     </Slider>
                 </div>
             </motion.div>
@@ -103,4 +83,20 @@ const Studies = () => {
     )
 }
 
+Studies.getInitialProps = async (ctx) => {
+    const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3013'
+    const pageRequest = `http://api.sato.id/api/studies`
+    const res = await fetch(pageRequest)
+    const json = await res.json()
+
+
+    console.log(json);
+
+    return { data: json}
+}
+
 export default Studies
+
+
+
+

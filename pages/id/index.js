@@ -1,92 +1,80 @@
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
 import Head from 'next/head'
+import Slider from 'react-slick';
+import Link from 'next/link'
+import { motion } from 'framer-motion';
+import parser from 'html-react-parser'
 
-export const config = { amp: true }
+const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows:false
+};
+const Index = ({data}) => {
+    const refSlider = useRef(null)
 
-const Index = () => {
+    function to(key) {
+        refSlider.current.slickGoTo(key)
+    }
+
+    useEffect(() => {
+        console.log(data.data);
+    }, [])
+
+
     return (
         <React.Fragment>
              <Head>
                 <title>SATO</title>
             </Head>
-            <amp-story 
-                standalone="" 
-                supports-landscape=""
-                title="Stories in AMP - Hello World"
-                publisher="AMP Project"
-                publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
-                poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
-                poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
-                poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg"
-                >
-
-                <amp-story-page id="page-1">
-                    <amp-story-grid-layer template="fill">
-                    <amp-img src="/static/sato-bg.jpg"
-                    width="1920"
-                    height="1277" layout="responsive"></amp-img>
-                    </amp-story-grid-layer>
-                    <amp-story-grid-layer template="vertical" position="landscape-half-left">
-                        <amp-img
-                        alt="logo sato"
-                        src="/static/logo-sato.svg"
-                        width="170px"
-                        height="170px"
-                        className="logo"
-                        >
-                        </amp-img>
-                    </amp-story-grid-layer>
-                    <amp-story-grid-layer template="thirds">
-                        <h1 grid-area="lower-third">BUILDING <br/>WITHIN YOUR <br/>FRAME</h1>
-                    </amp-story-grid-layer>
-                    <amp-story-grid-layer template="thirds">
-                        <a className="linkarrow" grid-area="lower-third" href="/en/project" align-self="end" justify-self="end">
-                            <amp-img
-                                alt="logo sato"
-                                src="/static/arrow.png"
-                                width="20"
-                                height="32"
-                                className="logolink"
-                            >
-
-                            </amp-img>
-                        </a>
-                    </amp-story-grid-layer>
-                </amp-story-page>
-                {/* <amp-story-bookend src="https://amp.dev/static/samples/json/bookend.json" layout="nodisplay">
-                </amp-story-bookend> */}
-                <style jsx>{`
-                    h1 {
-                        color: white;
-                        font-family: "Futura-Light-font";
-                        font-size:3rem;
-                        margin-left:2rem;
-                    }
-                    .logo{
-                        margin-left:2rem;
-                    }
-                    .linkarrow{
-                        margin-right:2rem
-                    }
-                    .logolink{
-                        width:20px;
-                        height:32px;
-                    }
-                    .amp-carousel-button { display: none }
-                    [orientation=landscape] [position=landscape-half-left] {
-                        width: 50%;
-                        left: 2%;
-                        right: auto;
-                    }
-                    @font-face {
-                        font-family: "Futura-Light-font";
-                        src:
-                            url('/fonts/Futura-Light-font.woff') format('woff')
-                    }
-                `}</style>
-            </amp-story>
+            <motion.div initial='initial' animate='animate' exit="exit">
+            <Slider {...settings} ref={refSlider}>
+                {data.slider.map((item,i)=>{
+                    return (
+                        <div key={i} className="fullImgSlider">
+                            <img src={`http://api.sato.id/images/${item.imageName}`} width="100%" height="100%" alt="bg sato"/>
+                            <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
+                            <div className="text">
+                                {parser(item.description_en)}
+                            </div>
+                            <Link href="/en/project/">
+                                <a><img className="linkToGo" src="/arrow.png"/></a>
+                            </Link>
+                            <ul className="dots-slider">
+                                {data.slider.map((item2,i2)=>{
+                                    if (i == i2) {
+                                        return(
+                                            <li className="active" onClick={() => to(i2)}></li>
+                                        )
+                                    } else {
+                                        return(
+                                            <li onClick={() => to(i2)}></li>
+                                        )
+                                    }
+                                })}
+                            </ul>
+                        </div>
+                    )
+                })}
+            </Slider>
+            </motion.div>
         </React.Fragment>
     )
 }
+
+Index.getInitialProps = async (ctx) => {
+    const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3014'
+    const pageRequest = `http://api.sato.id/api/slider`
+    const res = await fetch(pageRequest)
+    const json = await res.json()
+
+
+    return { data: json }
+}
+
 
 export default Index

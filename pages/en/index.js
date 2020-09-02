@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Slider from 'react-slick';
 import Link from 'next/link'
 import { motion } from 'framer-motion';
+import parser from 'html-react-parser'
 
 const settings = {
     dots: false,
@@ -13,7 +14,7 @@ const settings = {
     fade: true,
     arrows:false
 };
-const Index = () => {
+const Index = ({data}) => {
     const refSlider = useRef(null)
 
     function to(key) {
@@ -21,11 +22,7 @@ const Index = () => {
     }
 
     useEffect(() => {
-        console.log(refSlider);
-        console.log(process.env.MYSQL_HOST);
-        console.log(process.env.MYSQL_DATABASE);
-        console.log(process.env.MYSQL_USER);
-        console.log(process.env.MYSQL_PORT);
+        console.log(data.data);
     }, [])
 
 
@@ -36,49 +33,48 @@ const Index = () => {
             </Head>
             <motion.div initial='initial' animate='animate' exit="exit">
             <Slider {...settings} ref={refSlider}>
-                <div className="fullImgSlider">
-                    <img src="/sato-bg.jpg" width="100%" height="100%" alt="bg sato"/>
-                    <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
-                    <h1 className="text">BUILDING <br/>WITHIN YOUR <br/>FRAME</h1>
-                    <Link href="/en/project/">
-                        <a><img className="linkToGo" src="/arrow.png"/></a>
-                    </Link>
-                    <ul className="dots-slider">
-                        <li className="active" onClick={() => to(0)}></li>
-                        <li onClick={() => to(1)}></li>
-                        <li onClick={() => to(2)}></li>
-                    </ul>
-                </div>
-                <div className="fullImgSlider">
-                    <img src="https://source.unsplash.com/random/1476x1361" width="100%" height="100%" alt="bg sato"/>
-                    <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
-                    <h1 className="text">BUILDING <br/>WITHIN YOUR <br/>FRAME</h1>
-                    <Link href="/en/project/">
-                        <a><img className="linkToGo" src="/arrow.png"/></a>
-                    </Link>
-                    <ul className="dots-slider">
-                        <li onClick={() => to(0)}></li>
-                        <li className="active" onClick={() => to(1)}></li>
-                        <li onClick={() => to(2)}></li>
-                    </ul>
-                </div>
-                <div className="fullImgSlider">
-                    <img src="https://source.unsplash.com/random/1476x1362" width="100%" height="100%" alt="bg sato"/>
-                    <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
-                    <h1 className="text">BUILDING <br/>WITHIN YOUR <br/>FRAME</h1>
-                    <Link href="/en/project/">
-                        <a><img className="linkToGo" src="/arrow.png"/></a>
-                    </Link>
-                    <ul className="dots-slider">
-                        <li onClick={() => to(0)}></li>
-                        <li onClick={() => to(1)}></li>
-                        <li className="active" onClick={() => to(2)}></li>
-                    </ul>
-                </div>
+                {data.slider.map((item,i)=>{
+                    return (
+                        <div key={i} className="fullImgSlider">
+                            <img src={`http://api.sato.id/images/${item.imageName}`} width="100%" height="100%" alt="bg sato"/>
+                            <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
+                            <div className="text">
+                                {parser(item.description_en)}
+                            </div>
+                            <Link href="/en/project/">
+                                <a><img className="linkToGo" src="/arrow.png"/></a>
+                            </Link>
+                            <ul className="dots-slider">
+                                {data.slider.map((item2,i2)=>{
+                                    if (i == i2) {
+                                        return(
+                                            <li className="active" onClick={() => to(i2)}></li>
+                                        )
+                                    } else {
+                                        return(
+                                            <li onClick={() => to(i2)}></li>
+                                        )
+                                    }
+                                })}
+                            </ul>
+                        </div>
+                    )
+                })}
             </Slider>
             </motion.div>
         </React.Fragment>
     )
 }
+
+Index.getInitialProps = async (ctx) => {
+    const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3014'
+    const pageRequest = `http://api.sato.id/api/slider`
+    const res = await fetch(pageRequest)
+    const json = await res.json()
+
+
+    return { data: json }
+}
+
 
 export default Index

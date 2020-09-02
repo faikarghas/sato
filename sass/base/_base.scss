@@ -12,10 +12,11 @@ html{
     /* font-size: 10px; */
     font-size: 62.5%;
     scroll-behavior: smooth;
+
+
     @include respond(big-desktop) { // width >= 1800
         font-size: 77%; //1rem = 12, 12/16
     }
-
     @include respond(tab-land) { // width <= 1240?
         font-size: 56.25%; //1rem = 9px, 9/16
     }
@@ -36,7 +37,6 @@ body {
     box-sizing: border-box;
     background-color: #1C1E1E;
     transition: all 0.4s ease-out;
-
     @include respond(tab-port) { // width <= 900
         padding: 0 ;
     }

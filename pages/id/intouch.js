@@ -3,12 +3,14 @@ import {Row,Col, Container} from 'react-bootstrap'
 import { AnimatePresence,motion } from "framer-motion";
 import Slider from 'react-slick';
 import Link from 'next/link'
-
+import parse from 'html-react-parser';
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
+
+import {urlsato, urlapisato} from '../../lib/url'
 
 const settings = {
     dots: false,
@@ -21,14 +23,9 @@ const settings = {
 };
 
 
-const Intouch = () => {
+const Intouch = ({data1,data2,data3,data4}) => {
     const refSlider = useRef(null)
     const [lang, setLang] = useState()
-
-    useEffect(() => {
-        setLang(window.location.href.split('/')[3])
-    }, [])
-
     const [] = useState([
         {id:0},
         {id:1},
@@ -38,6 +35,10 @@ const Intouch = () => {
         refSlider.current.slickGoTo(key)
     }
 
+    useEffect(() => {
+        setLang(window.location.href.split('/')[3])
+    }, [])
+
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
@@ -46,69 +47,57 @@ const Intouch = () => {
                 <div className="intouch page_intouch">
                     <section className="section_slider">
                         <Slider {...settings} ref={refSlider}>
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="page_intouch-titleProject">
-                                        <h2><span>LATEST PROJECT:</span></h2>
-                                        <h2>COMPACT DESIGN <br/> FOR SMALL SPACE</h2>
-                                    </div>
-                                    <div className="page_intouch-imgProject">
-                                        <img src="https://source.unsplash.com/random/1076x360" width="100%" height="360px"/>
+                            {data2.project.map((item,i)=>{
+                                return (
+                                    <Row>
+                                        <Col xs={12}>
+                                            <div className="page_intouch-titleProject">
+                                                <h2><span>LATEST PROJECT:</span></h2>
+                                                <h2>{item.name}</h2>
+                                            </div>
+                                            <div className="page_intouch-imgProject">
+                                                <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="360px"/>
 
-                                        <ul className="actionSlides">
-                                            <li className="active" onClick={()=>to(0)}></li>
-                                            <li onClick={()=>to(1)}></li>
-                                        </ul>
-                                    </div>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="page_intouch-titleProject">
-                                        <h2><span>LATEST PROJECT:</span></h2>
-                                        <h2>TURN YOUR HOME <br/> INTO A RESORT</h2>
-                                    </div>
-                                    <div className="page_intouch-imgProject">
-                                        <img src="https://source.unsplash.com/random/1076x361" width="100%" height="360px"/>
+                                                <ul className="actionSlides">
+                                                    {data2.project.map((item2,i2)=>{
+                                                        if (i == i2) {
+                                                            return(
+                                                                <li className="active" onClick={()=>to(i2)}></li>
+                                                            )
+                                                        } else {
+                                                            return(
+                                                                <li onClick={()=>to(i2)}></li>
+                                                            )
+                                                        }
 
-                                        <ul className="actionSlides">
-                                            <li onClick={()=>to(0)}></li>
-                                            <li className="active" onClick={()=>to(1)}></li>
-                                        </ul>
-                                    </div>
-                                </Col>
-                            </Row>
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                )
+                            })}
                         </Slider>
                     </section>
                     <section className="section_info">
                         <Row>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-desc">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    {parse(data1.intouch[0].content)}
                                 </div>
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-acc">
                                     <h4>Projects Accomplisment</h4>
                                     <ul>
-                                        <li>
-                                            <Link href={`/${lang}/resedentials`}><a><span className="box">12</span></a></Link>
-                                            <Link href={`/${lang}/resedentials`}><a>RESEDENTIALS</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/${lang}/offices`}><a><span className="box">9</span></a></Link>
-                                            <Link href={`/${lang}/offices`}><a>offices</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/${lang}/retails`}><a><span className="box">8</span></a></Link>
-                                            <Link href={`/${lang}/retails`}><a>retails</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href={`/${lang}/show-units`}><a><span className="box">5</span></a></Link>
-                                            <Link href={`/${lang}/show-units`}><a>show units</a></Link>
-                                        </li>
+                                        {data3.projectAccom.map((item,i)=>{
+                                            return(
+                                                <li>
+                                                    <Link href={`/${lang}/resedentials`}><a><span className="box">{item.total}</span></a></Link>
+                                                    <Link href={`/${lang}/resedentials`}><a>{item.category}</a></Link>
+                                                </li>
+                                            )
+                                        })}
                                     </ul>
                                 </div>
                             </Col>
@@ -124,15 +113,31 @@ const Intouch = () => {
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-img">
-                                    <img src="/static/contact-img.png" width="100%" height="360px"/>
+                                    <img src="/contact-img.png" width="100%" height="360px"/>
                                 </div>
                             </Col>
                         </Row>
                     </section>
                     <section className="section_others">
-                        <h2>OTHERS PROJECTS</h2>
+                        <h2>OTHER PROJECTS</h2>
                         <Row>
-                            <Col xs={12} md={4}>
+                            {data4.map((item,i)=>{
+                                return(
+                                    <Col xs={12} md={4}>
+                                        <div className="section_others-boxImg">
+                                            <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
+                                                <a>
+                                                    <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="100%"/>
+                                                    <div className="img-overlay-skew">
+                                                        <h4>{item.name}</h4>
+                                                    </div>
+                                                </a>
+                                            </Link>
+                                        </div>
+                                    </Col>
+                                )
+                            })}
+                            {/* <Col xs={12} md={4}>
                                 <div className="section_others-boxImg">
                                     <Link href="/">
                                         <a>
@@ -234,7 +239,7 @@ const Intouch = () => {
                                         </a>
                                     </Link>
                                 </div>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </section>
                 </div>
@@ -244,6 +249,37 @@ const Intouch = () => {
             </motion.div>
         </div>
     )
+}
+
+Intouch.getInitialProps = async (ctx) => {
+    const pageRequest = `http://api.sato.id/api/intouch`
+    const res = await fetch(pageRequest)
+    const json = await res.json()
+
+    const pageRequest2 = `http://api.sato.id/api/latestProject`
+    const res2 = await fetch(pageRequest2)
+    const json2 = await res2.json()
+
+    const pageRequest3 = `http://api.sato.id/api/projectAccom`
+    const res3 = await fetch(pageRequest3)
+    const json3 = await res3.json()
+
+    const pageRequest4 = `http://api.sato.id/api/getOtherProjects`
+    const res4 = await fetch(pageRequest4)
+    const json4 = await res4.json()
+
+    const pageRequest5 = `http://api.sato.id/api/project`
+    const res5 = await fetch(pageRequest5)
+    const json5 = await res5.json()
+
+    let l = json4.other_projects[0].listproject.split(',').map(Number)
+
+    let p = json5.project.filter((item,i)=>{
+        return l.includes(item.idProject)
+    })
+
+
+    return { data1: json,data2: json2,data3: json3,data4: p}
 }
 
 export default Intouch

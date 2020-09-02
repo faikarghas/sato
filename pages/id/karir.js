@@ -11,12 +11,14 @@ import Menu from '../../components/menuMobile/index'
 
 const settings ={}
 
-const Career = () => {
+const Career = ({data}) => {
     const [show,setShow] = useState(false)
 
     function ShowInfo(params) {
         setShow(!show)
     }
+
+    console.log(data);
 
     return (
         <div className="page_layout">
@@ -32,7 +34,7 @@ const Career = () => {
                     <Row className="page_career-cw">
                         <Col xs={12} md={5}>
                             <div className="page_career-img">
-                                <img src="/static/career-p.jpg" width="100%" />
+                                <img src="/career-p.jpg" width="100%" />
                             </div>
                             <div className="page_career-contact">
                                 <p>PLEASE SENT YOUR CV TO</p>
@@ -43,9 +45,11 @@ const Career = () => {
                         <Col xs={12} md={7}>
                             <div className="page_career-info">
                                 <h4>APPLY FOR</h4>
-                                <TitleCareer />
-                                <TitleCareer />
-                                <TitleCareer />
+                                {data.map((item,i)=>{
+                                    return(
+                                        <TitleCareer key={i} title={item.name} desc={item.description_en}/>
+                                    )
+                                })}
                             </div>
                         </Col>
                     </Row>
@@ -56,4 +60,13 @@ const Career = () => {
     )
 }
 
+Career.getInitialProps = async (ctx) => {
+    const pageRequest = `http://api.sato.id/api/career`
+    const res = await fetch(pageRequest)
+    const json = await res.json()
+
+    return { data: json.career}
+}
+
 export default Career
+

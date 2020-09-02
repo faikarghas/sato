@@ -4,10 +4,6 @@
     overflow: hidden;
     position: relative;
 
-    // background-image: url('/sato-bg.jpg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     .logo{
         width: 170px;
         position: absolute;
@@ -18,11 +14,14 @@
         position: absolute;
         bottom: 10%;
         left: 5%;
-        color: white;
-        font-family: "Futura-Light-font";
-        font-size: 5rem;
-        font-weight: bold;
-        letter-spacing: normal;
+        p{
+            color: white;
+            font-family: "Futura-Light-font";
+            font-size: 5rem;
+            font-weight: bold;
+            letter-spacing: normal;
+            line-height: 1em;
+        }
     }
     .linkToGo{
         position: absolute;

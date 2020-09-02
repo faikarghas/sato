@@ -4,7 +4,7 @@ import Link from 'next/link'
 import HamburgerMenu from 'react-hamburger-menu'
 import TabProject from '../../components/tabProject/index'
 
-const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject}) => {
+const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
     const [state, dispatch] = useContext(Context);
     const [lang, setLang] = useState()
     const [menu, setMenu] = useState(false)
@@ -64,7 +64,7 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject}) => {
                 </div>
             </div>
         </div>
-        <TabProject className="hide-desktop" activeMenu={activeMenu} thisproject={thisproject}/>
+        <TabProject className="hide-desktop" activeMenu={{act:'active',menu: data}} data={data} slug={slug}/>
         <div className="br-bottom"></div>
         </React.Fragment>
     )

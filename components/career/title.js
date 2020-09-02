@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Row,Col} from 'react-bootstrap'
 
-const Title = () => {
+const Title = ({title,desc}) => {
     const [show,setShow] = useState(false)
 
     function ShowInfo(params) {
@@ -11,7 +11,7 @@ const Title = () => {
     return (
         <React.Fragment>
             <div className="page_career-title">
-                <h3>MECHANICAL ENGINEERING (SR)</h3>
+                <h3>{title}</h3>
                 <ul className="hidebt" onClick={ShowInfo}>
                     <li><p className="hidebt-text">{show? 'hide detail': 'show detail'}</p></li>
                     <li><img src="/hidebt.png"/></li>
@@ -21,7 +21,7 @@ const Title = () => {
             <div className={`page_career-detail ${show ? 'show' : ''}`}>
                 <Row>
                     <Col xs={12}>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                        <p>{desc}</p>
                     </Col>
                 </Row>
             </div>
