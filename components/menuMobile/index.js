@@ -8,6 +8,7 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
     const [state, dispatch] = useContext(Context);
     const [lang, setLang] = useState()
     const [menu, setMenu] = useState(false)
+    const [curpage, setCurpage] = useState(false)
 
     function _openMenuHandler(params) {
         dispatch({type:'SHOW_MENU',payload:'openn'})
@@ -22,6 +23,7 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
     useEffect(() => {
         dispatch({type:'CLOSE_MENU',payload:'closee'})
         setLang(window.location.href.split('/')[3])
+        setCurpage(window.location.href.split('/')[5])
     }, [])
 
     return (
@@ -64,7 +66,7 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
                 </div>
             </div>
         </div>
-        <TabProject className="hide-desktop" activeMenu={{act:'active',menu: data}} data={data} slug={slug}/>
+        <TabProject className="hide-desktop" activeMenu={{act:'active',menu: curpage === undefined ? 'all' : data}} data={data} slug={slug}/>
         <div className="br-bottom"></div>
         </React.Fragment>
     )

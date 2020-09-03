@@ -41,7 +41,7 @@ const Project = ({data}) => {
                         {
                             data.listImg.map((item,i)=>{
                                 return(
-                                    <img src={`http://localhost:3009/images/${item.name}`} width="100%"/>
+                                    <img src={`http://api.sato.id/images/${item.name}`} width="100%"/>
                                 )
                             })
                         }

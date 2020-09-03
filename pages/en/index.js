@@ -48,11 +48,11 @@ const Index = ({data}) => {
                                 {data.slider.map((item2,i2)=>{
                                     if (i == i2) {
                                         return(
-                                            <li className="active" onClick={() => to(i2)}></li>
+                                            <li key={i2} className="active" onClick={() => to(i2)}></li>
                                         )
                                     } else {
                                         return(
-                                            <li onClick={() => to(i2)}></li>
+                                            <li key={i2} onClick={() => to(i2)}></li>
                                         )
                                     }
                                 })}

@@ -17,7 +17,6 @@ const Projects = ({data,data2}) => {
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-        console.log(data2.projectTitle);
     }, [])
 
     return (

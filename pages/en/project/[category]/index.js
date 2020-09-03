@@ -33,7 +33,7 @@ const Offices = ({data,slug,data2,data3}) => {
                                 return(
                                     <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
-                                            <img src={`http://localhost:3009/images/${res.thumbnail}`} />
+                                            <img src={`http://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">
                                                 <h4>{res.name}</h4>
                                             </div>
@@ -50,7 +50,7 @@ const Offices = ({data,slug,data2,data3}) => {
                                 return(
                                     <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
-                                            <img src={`http://localhost:3009/images/${res.thumbnail}`} />
+                                            <img src={`http://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">
                                                 <h4>{res.name}</h4>
                                             </div>
