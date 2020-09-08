@@ -19,6 +19,7 @@ const Projects = ({data,data2}) => {
         setLang(window.location.href.split('/')[3])
     }, [])
 
+
     return (
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
@@ -30,7 +31,7 @@ const Projects = ({data,data2}) => {
                     <div className="page_project_list">
                     <div>
                         {
-                            data2.project.slice(0,Math.floor(data.length/2)).map((res,item)=>{
+                            data2.project.slice(0,Math.floor(data2.project.length/2)).map((res,item)=>{
                                 return(
                                         <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>
@@ -47,7 +48,7 @@ const Projects = ({data,data2}) => {
                         </div>
                         <div>
                         {
-                            data2.project.slice(Math.floor(data.length/2),data.length).map((res,item)=>{
+                            data2.project.slice(Math.floor(data2.project.length/2),data2.project.length).map((res,item)=>{
                                 return(
                                         <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>

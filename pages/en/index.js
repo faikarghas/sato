@@ -31,7 +31,7 @@ const Index = ({data}) => {
              <Head>
                 <title>SATO</title>
             </Head>
-            <motion.div initial='initial' animate='animate' exit="exit">
+            <motion.div initial='initial' animate='animate' exit='exit'>
             <Slider {...settings} ref={refSlider}>
                 {data.slider.map((item,i)=>{
                     return (

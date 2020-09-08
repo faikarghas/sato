@@ -110,7 +110,7 @@ const About = ({data,data2,data3}) => {
                             <br/>
                             <br/>
                             <h3>IN <span>PARTNERSHIP</span> <br/>WITH SASO ARCHITECTURE</h3>
-                            <img className="logoSaso" src="/saso-logo.png" alt="saso" />
+                            <a href="http://www.sasoarchitects.com" target="_blank"><img className="logoSaso" src="/saso-logo.png" alt="saso" /></a>
                             {parse(data3[0].content)}
                             <br/>
                             <br/>
@@ -118,6 +118,7 @@ const About = ({data,data2,data3}) => {
                             <a href="http://www.sasoarchitects.com" target="_blank">www.sasoarchitects.com</a>
                         </div>
                     </div>
+                    <img className="scrollIndicator" src="/arrow.png" />
                 </div>
                 <Slider {...settings} ></Slider>
             </motion.div>

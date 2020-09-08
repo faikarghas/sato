@@ -122,124 +122,33 @@ const Intouch = ({data1,data2,data3,data4}) => {
                         <h2>OTHER PROJECTS</h2>
                         <Row>
                             {data4.map((item,i)=>{
-                                return(
-                                    <Col xs={12} md={4}>
-                                        <div className="section_others-boxImg">
-                                            <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
-                                                <a>
-                                                    <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="100%"/>
-                                                    <div className="img-overlay-skew">
-                                                        <h4>{item.name}</h4>
-                                                    </div>
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    </Col>
-                                )
+                                if (i === 4) {
+                                    return (
+                                        <Col xs={12} md={4}>
+                                            <div className="section_others-boxImg moreAbout">
+                                                <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
+                                                    <a>MORE<br/>ABOUT<br/>SATO</a>
+                                                </Link>
+                                            </div>
+                                        </Col>
+                                    )
+                                } else {
+                                    return(
+                                        <Col xs={12} md={4}>
+                                            <div className="section_others-boxImg">
+                                                <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
+                                                    <a>
+                                                        <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="100%"/>
+                                                        <div className="img-overlay-skew">
+                                                            <h4>{item.name}</h4>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </Col>
+                                    )
+                                }
                             })}
-                            {/* <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x261" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x262" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x263" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x264" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg moreAbout">
-                                    <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
-                                        <a>MORE<br/>ABOUT<br/>SATO</a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x265" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x266" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x267" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x268" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col> */}
                         </Row>
                     </section>
                 </div>
@@ -277,6 +186,12 @@ Intouch.getInitialProps = async (ctx) => {
     let p = json5.project.filter((item,i)=>{
         return l.includes(item.idProject)
     })
+
+    Array.prototype.insert = function ( index, item ) {
+        this.splice( index, 0, item );
+    };
+
+    p.insert(4, {"name": "about sato"});
 
 
     return { data1: json,data2: json2,data3: json3,data4: p}
