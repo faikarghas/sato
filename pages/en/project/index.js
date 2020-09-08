@@ -22,7 +22,7 @@ const Projects = ({data,data2}) => {
     return (
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
-            <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject="thisproject"/>
+            <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
             <motion.div className="page_layout-main"  initial="initial" animate="animate" exit="exit">
                 <div className="page_project">
                     <h2>{data2.projectTitle[0].description_en}</h2>

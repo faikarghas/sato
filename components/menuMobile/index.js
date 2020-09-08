@@ -26,6 +26,13 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
         setCurpage(window.location.href.split('/')[5])
     }, [])
 
+
+    function tabMobile(params) {
+        if (thisproject) {
+            return (<TabProject className="hide-desktop" activeMenu={{act:'active',menu: curpage === undefined ? 'all' : data}} data={data} slug={slug}/>)
+        }
+    }
+
     return (
         <React.Fragment>
         <div className="menuMobile">
@@ -66,7 +73,8 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
                 </div>
             </div>
         </div>
-        <TabProject className="hide-desktop" activeMenu={{act:'active',menu: curpage === undefined ? 'all' : data}} data={data} slug={slug}/>
+        {tabMobile()}
+        {/* <TabProject className="hide-desktop" activeMenu={{act:'active',menu: curpage === undefined ? 'all' : data}} data={data} slug={slug}/> */}
         <div className="br-bottom"></div>
         </React.Fragment>
     )

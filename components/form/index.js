@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Form,Col,Row,Button} from 'react-bootstrap'
+import Loading from '../loading'
 
 const Contact = ({bgButton}) => {
     const [inputValues, setInputValues] = useState({
@@ -17,11 +18,6 @@ const Contact = ({bgButton}) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log(inputValues.name)
-        console.log(inputValues.phoneNumber)
-        console.log(inputValues.email)
-        console.log(inputValues.message)
-
         let data = {
             name: inputValues.name,
             phoneNumber: inputValues.phoneNumber,
@@ -29,7 +25,7 @@ const Contact = ({bgButton}) => {
             message: inputValues.message,
         }
 
-        fetch('http://localhost:3009/api/insertContact',{
+        fetch('http://api.sato.id/api/insertContact',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)
@@ -60,7 +56,7 @@ const Contact = ({bgButton}) => {
                     </Form.Group>
                 </Form.Row>
                 <Button className={bgButton} type="submit" disabled={loading} >
-                    {loading ? '--' : 'SENT'}
+                    {loading ? <Loading/> : 'SENT'}
                 </Button>
             </Form>
         </div>

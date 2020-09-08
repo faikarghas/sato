@@ -1,25 +1,49 @@
 import React,{useState,useEffect} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
+import {Modal,Button} from 'react-bootstrap'
 
 import SideBar from '../../../../../components/sidebar/index'
 import InfoDetailM from '../../../../../components/infoProjectM/index'
 import InfoDetail from '../../../../../components/infoProject/index'
 import Menu from '../../../../../components/menuMobile/index'
 
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="xl"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body>
+            <img src={`http://api.sato.id/images/${props.imgModal}`} width="100%"/>
+            <div className="hide-modal" onClick={props.onHide}>X</div>
+        </Modal.Body>
+      </Modal>
+    );
+}
+
 const Project = ({data}) => {
     const [show,setShow] = useState(false)
     const [lang, setLang] = useState()
+    const [modalShow, setModalShow] = useState(false)
+    const [imgModal, setImgModal] = useState('')
+
 
     function ShowInfo(params) {
         setShow(!show)
+    }
+
+    function ShowModal(params) {
+        setModalShow(true)
+        setImgModal(params)
     }
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
     }, [])
 
-    console.log(data.listImg);
 
     return (
         <div className="page_layout">
@@ -41,19 +65,23 @@ const Project = ({data}) => {
                         {
                             data.listImg.map((item,i)=>{
                                 return(
-                                    <img src={`http://api.sato.id/images/${item.name}`} width="100%"/>
+                                    <img onClick={() => ShowModal(item.name)} src={`http://api.sato.id/images/${item.name}`} width="100%" style={{cursor:'pointer'}}/>
                                 )
                             })
                         }
                     </div>
                 </div>
             </motion.div>
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                imgModal={imgModal}
+            />
         </div>
     )
 }
 
 Project.getInitialProps = async (ctx) => {
-    const host = ctx.req ? ctx.req.headers['host'] : 'dev.sato.id'
     const slug = ctx.query.slug
     const pageRequest = `http://dev.sato.id/api/projectDetail/${slug}`
 

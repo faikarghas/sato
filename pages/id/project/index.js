@@ -17,7 +17,6 @@ const Projects = ({data,data2}) => {
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-        console.log(data2.projectTitle);
     }, [])
 
     return (
@@ -71,11 +70,11 @@ const Projects = ({data,data2}) => {
 }
 
 Projects.getInitialProps = async (ctx) => {
-    const pageRequest = `http://localhost:3013/api/category`
+    const pageRequest = `http://dev.sato.id/api/category`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `http://localhost:3013/api/project`
+    const pageRequest2 = `http://dev.sato.id/api/project`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 

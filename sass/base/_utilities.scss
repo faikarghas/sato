@@ -118,3 +118,22 @@ background: transparent;
     right: 15px;
     bottom: 17px;
 }
+
+.modal-body{
+    position: relative;
+    padding: 0;
+}
+
+.modal-backdrop.show {
+    opacity: 0.9;
+}
+
+.hide-modal{
+    position: absolute;
+    right: -44px;
+    top: -56px;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+}
