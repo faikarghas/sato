@@ -17,7 +17,7 @@ function MyVerticallyCenteredModal(props) {
         centered
       >
         <Modal.Body>
-            <img src={`http://api.sato.id/images/${props.imgModal}`} width="100%"/>
+            <img src={`https://api.sato.id/images/${props.imgModal}`} width="100%"/>
             <div className="hide-modal" onClick={props.onHide}>X</div>
         </Modal.Body>
       </Modal>
@@ -65,7 +65,7 @@ const Project = ({data}) => {
                         {
                             data.listImg.map((item,i)=>{
                                 return(
-                                    <img onClick={() => ShowModal(item.name)} src={`http://api.sato.id/images/${item.name}`} width="100%" style={{cursor:'pointer'}}/>
+                                    <img onClick={() => ShowModal(item.name)} src={`https://api.sato.id/images/${item.name}`} width="100%" style={{cursor:'pointer'}}/>
                                 )
                             })
                         }
@@ -83,7 +83,7 @@ const Project = ({data}) => {
 
 Project.getInitialProps = async (ctx) => {
     const slug = ctx.query.slug
-    const pageRequest = `http://dev.sato.id/api/projectDetail/${slug}`
+    const pageRequest = `https://dev.sato.id/api/projectDetail/${slug}`
 
     const res = await fetch(pageRequest)
     const json = await res.json()

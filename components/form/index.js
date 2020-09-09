@@ -25,7 +25,7 @@ const Contact = ({bgButton}) => {
             message: inputValues.message,
         }
 
-        fetch('http://api.sato.id/api/insertContact',{
+        fetch('https://api.sato.id/api/insertContact',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)

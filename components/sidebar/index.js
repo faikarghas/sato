@@ -72,7 +72,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
         let data = {
             phone: inputValues.phone
         }
-        fetch('http://api.sato.id/api/insertWhatsapp',{
+        fetch('https://api.sato.id/api/insertWhatsapp',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)

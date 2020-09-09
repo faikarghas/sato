@@ -61,7 +61,7 @@ const Career = ({data}) => {
 }
 
 Career.getInitialProps = async (ctx) => {
-    const pageRequest = `http://api.sato.id/api/career`
+    const pageRequest = `https://api.sato.id/api/career`
     const res = await fetch(pageRequest)
     const json = await res.json()
 

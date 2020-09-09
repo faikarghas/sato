@@ -110,12 +110,12 @@ const About = ({data,data2,data3}) => {
                             <br/>
                             <br/>
                             <h3>IN <span>PARTNERSHIP</span> <br/>WITH SASO ARCHITECTURE</h3>
-                            <a href="http://www.sasoarchitects.com" target="_blank"><img className="logoSaso" src="/saso-logo.png" alt="saso" /></a>
+                            <a href="https://www.sasoarchitects.com" target="_blank"><img className="logoSaso" src="/saso-logo.png" alt="saso" /></a>
                             {parse(data3[0].content)}
                             <br/>
                             <br/>
                             <p><span>PLEASE VISIT US FOR MORE INFORMATION</span></p>
-                            <a href="http://www.sasoarchitects.com" target="_blank">www.sasoarchitects.com</a>
+                            <a href="https://www.sasoarchitects.com" target="_blank">www.sasoarchitects.com</a>
                         </div>
                     </div>
                     <img className="scrollIndicator" src="/arrow.png" />
@@ -127,15 +127,15 @@ const About = ({data,data2,data3}) => {
 }
 
 About.getInitialProps = async (ctx) => {
-    const pageRequest1 = `http://api.sato.id/api/testimonials`
+    const pageRequest1 = `https://api.sato.id/api/testimonials`
     const res1 = await fetch(pageRequest1)
     const json1 = await res1.json()
 
-    const pageRequest2 = `http://api.sato.id/api/our_team`
+    const pageRequest2 = `https://api.sato.id/api/our_team`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
-    const pageRequest3 = `http://api.sato.id/api/partnership`
+    const pageRequest3 = `https://api.sato.id/api/partnership`
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 

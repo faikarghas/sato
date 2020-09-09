@@ -161,23 +161,23 @@ const Intouch = ({data1,data2,data3,data4}) => {
 }
 
 Intouch.getInitialProps = async (ctx) => {
-    const pageRequest = `http://api.sato.id/api/intouch`
+    const pageRequest = `https://api.sato.id/api/intouch`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `http://api.sato.id/api/latestProject`
+    const pageRequest2 = `https://api.sato.id/api/latestProject`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
-    const pageRequest3 = `http://api.sato.id/api/projectAccom`
+    const pageRequest3 = `https://api.sato.id/api/projectAccom`
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 
-    const pageRequest4 = `http://api.sato.id/api/getOtherProjects`
+    const pageRequest4 = `https://api.sato.id/api/getOtherProjects`
     const res4 = await fetch(pageRequest4)
     const json4 = await res4.json()
 
-    const pageRequest5 = `http://api.sato.id/api/project`
+    const pageRequest5 = `https://api.sato.id/api/project`
     const res5 = await fetch(pageRequest5)
     const json5 = await res5.json()
 

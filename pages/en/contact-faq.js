@@ -29,7 +29,7 @@ const Contact = ({data}) => {
                         <div className="vid-contact-wrapper">
                             <p>PLAN TO VISIT OUR OFFICE</p>
                             <div className="vid-contact-wrapper--iframe">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.09379435286!2d106.79978586977536!3d-6.22763339999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1495f1fddc9%3A0xfe3d872dbc2b760a!2sGoogle%20Indonesia!5e0!3m2!1sen!2sid!4v1596714735837!5m2!1sen!2sid" width="100%" height="200" frameBorder="0" style={{border:'0'}} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
+                            <iframe src="httpss://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.09379435286!2d106.79978586977536!3d-6.22763339999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1495f1fddc9%3A0xfe3d872dbc2b760a!2sGoogle%20Indonesia!5e0!3m2!1sen!2sid!4v1596714735837!5m2!1sen!2sid" width="100%" height="200" frameBorder="0" style={{border:'0'}} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ const Contact = ({data}) => {
 }
 
 Contact.getInitialProps = async (ctx) => {
-    const pageRequest = `http://api.sato.id/api/faq`
+    const pageRequest = `https://api.sato.id/api/faq`
     const res = await fetch(pageRequest)
     const json = await res.json()
 

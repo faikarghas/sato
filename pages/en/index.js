@@ -36,7 +36,7 @@ const Index = ({data}) => {
                 {data.slider.map((item,i)=>{
                     return (
                         <div key={i} className="fullImgSlider">
-                            <img src={`http://api.sato.id/images/${item.imageName}`} width="100%" height="100%" alt="bg sato"/>
+                            <img src={`https://api.sato.id/images/${item.imageName}`} width="100%" height="100%" alt="bg sato"/>
                             <img className="logo" src="/logo-sato.svg" alt="logo sato"/>
                             <div className="text">
                                 {parser(item.description_en)}
@@ -68,7 +68,7 @@ const Index = ({data}) => {
 
 Index.getInitialProps = async (ctx) => {
     const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3014'
-    const pageRequest = `http://api.sato.id/api/slider`
+    const pageRequest = `https://api.sato.id/api/slider`
     const res = await fetch(pageRequest)
     const json = await res.json()
 

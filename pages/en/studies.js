@@ -55,7 +55,7 @@ const Studies = ({data}) => {
                                 <Row className="studies_sliderWrapper">
                                     <Col xs={12} md={8}>
                                         <div className="studies_img mt-5">
-                                            <img src={`http://api.sato.id/images/${item.imageName}`} width="100%" />
+                                            <img src={`https://api.sato.id/images/${item.imageName}`} width="100%" />
                                             <ul className="btn-arrow">
                                                 <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
                                                 <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
@@ -85,7 +85,7 @@ const Studies = ({data}) => {
 
 Studies.getInitialProps = async (ctx) => {
     const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3013'
-    const pageRequest = `http://api.sato.id/api/studies`
+    const pageRequest = `https://api.sato.id/api/studies`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
