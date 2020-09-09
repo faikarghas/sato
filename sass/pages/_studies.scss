@@ -20,6 +20,30 @@
         color: $color_darkBlue;
         font-size: 1.4rem;
     }
+
+    .img_next_wrapper{
+        position: relative;
+        cursor: pointer;
+        &-img{
+            opacity: 0.3;
+            filter: grayscale(0.2);
+        }
+        &-text{
+            font-size: 1rem;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+            padding: 3rem;
+            span{
+                font-size: 1.2rem;
+                color: $color_red;
+            }
+        }
+    }
+
     .studies_desc{
         p{
             color: white;
@@ -67,7 +91,6 @@
                 width: 124px;
                 align-items: center;
                 justify-content: space-around;
-    
                 li{
                     display: inline-block;
                     list-style: none;
@@ -82,13 +105,16 @@
                 }
                 .arrow_next{
                     cursor: pointer;
+                    width: 11px;
+                    object-fit: contain;
                 }
                 .arrow_prev{
                     cursor: pointer;
+                    width: 11px;
+                    object-fit: contain;
                 }
             }
         }
     }
     }
 
-    

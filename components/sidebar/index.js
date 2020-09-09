@@ -171,7 +171,6 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                             <li><p className="color_lightGrey">T +62 882 1226 4250</p></li>
                             <br/>
                             <li><p className="color_lightGrey m-0">GRAHA SUNTER PRATAMA<br/>Jl. SELAT MADURA N/20-14,<br/>SUNTER AGUNG, TANJUNG PRIOK,<br/>14350, JAKARTA UTARA, INDONESIA</p></li>
-
                         </ul>
                     </div>
                 </div>
@@ -188,7 +187,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
             />
 
             </aside>
-            <Link href="/"><a className="wa-float"><img src="/wa-sato2.png" alt="wa-logo"/></a></Link>
+            <a className="wa-float" onClick={ShowModal}><img src="/wa-sato2.png" alt="wa-logo"/></a>
         </React.Fragment>
     )
 }
