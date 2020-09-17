@@ -1,3 +1,19 @@
+// Responsive
+
+.forMobile{
+    display: none;
+    @include respond(down-tab-land){
+        display: block;
+    }
+}
+
+.forDesktop{
+    display: block;
+    @include respond(down-tab-land){
+        display: none;
+    }
+}
+
 // SCROLL
 
 ::-webkit-scrollbar {
@@ -165,13 +181,15 @@ background: transparent;
         padding-left: 1.5rem;
     }
     button{
-        background-color: white;
+        background-color: $color_red;
         border: 1px solid $color_red;
-        color: $color_red;
+        color: white;
         margin-top: 2.5rem;
+        width: 100%;
+        height: 30px;
         &:hover{
-            color: white !important;
-            background-color: $color_red !important;
+            color: $color_red !important;
+            background-color: white !important;
             border: 1px solid $color_red !important;
         }
         &:active{
@@ -180,8 +198,8 @@ background: transparent;
         }
     }
     .btn-primary {
-        color: $color_red;
-        background-color: white !important;
+        color: white;
+        background-color: $color_red !important;
         border-color: $color_red !important;
         box-shadow: none !important;
     }

@@ -49,12 +49,12 @@ const Studies = ({data}) => {
             <Menu langEn='studies' langId='pembelajaran'/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="studies page_studies">
-                    <Row>
+                    <Row className="no-gutters">
                         <Col xs={12} md={8}>
                             <h2>CASE STUDIES</h2>
                             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                         </Col>
-                        <Col xs={12} md={4}>
+                        <Col xs={12} md={4} className="forDesktop">
                             {[data.studies[nextkasus]].map((item,i)=>{
                                 return (
                                     <div className="img_next_wrapper" onClick={_nextArrow}>
@@ -84,10 +84,20 @@ const Studies = ({data}) => {
                                             <div className="studies_desc--p">
                                             <p>{item.description_en}</p>
                                             </div>
-                                            <div>
+                                            <div className="forDesktop">
                                                 <p className="next_action" onClick={_nextArrow}>Next Case</p>
                                             </div>
                                         </div>
+                                    </Col>
+                                    <Col xs={12} md={4} className="forMobile">
+                                        {[data.studies[nextkasus]].map((item,i)=>{
+                                            return (
+                                                <div className="img_next_wrapper" onClick={_nextArrow}>
+                                                    <img className="img_next_wrapper-img mbl" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
+                                                    <p className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
+                                                </div>
+                                            )
+                                        })}
                                     </Col>
                                 </Row>
                             )

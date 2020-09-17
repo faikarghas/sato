@@ -67,7 +67,6 @@ const Index = ({data}) => {
 }
 
 Index.getInitialProps = async (ctx) => {
-    const host = ctx.req ? ctx.req.headers['host'] : 'localhost:3014'
     const pageRequest = `https://api.sato.id/api/slider`
     const res = await fetch(pageRequest)
     const json = await res.json()

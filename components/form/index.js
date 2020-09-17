@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Form,Col,Row,Button} from 'react-bootstrap'
 import Loading from '../loading'
 
-const Contact = ({bgButton}) => {
+const Contact = ({bgButton,url}) => {
     const [inputValues, setInputValues] = useState({
         name: '', email: '',phoneNumber:'',message:''
     });
@@ -25,7 +25,7 @@ const Contact = ({bgButton}) => {
             message: inputValues.message,
         }
 
-        fetch('https://api.sato.id/api/insertContact',{
+        fetch(url,{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)

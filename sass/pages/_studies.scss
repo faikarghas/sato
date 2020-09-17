@@ -6,7 +6,7 @@
     .slick-list {overflow: unset;}
     @include respond(down-tab-land){
         height:unset;
-
+        padding-bottom: 6rem;
         .slick-slider{
             padding-top: 5rem;
         }
@@ -24,9 +24,18 @@
     .img_next_wrapper{
         position: relative;
         cursor: pointer;
-        &-img{
+        &:hover{
+            img{
+                opacity: 0.3;
+                filter: grayscale(0.2);
+            }
+        }
+        .mbl{
             opacity: 0.3;
             filter: grayscale(0.2);
+        }
+        &-img{
+            transition: all 0.3s linear;
         }
         &-text{
             font-size: 1rem;
@@ -55,7 +64,9 @@
         }
 
         &--p{
-            // height: 450px;
+            @include respond(down-tab-land){
+                margin-bottom: 4rem;
+            }
         }
         .next_action{
             color: $color_red;

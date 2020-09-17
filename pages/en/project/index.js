@@ -12,11 +12,12 @@ import {urlsato,urlapisato} from '../../../lib/url'
 
 const settings = {}
 
-const Projects = ({data,data2}) => {
+const Projects = ({data,data2,url}) => {
     const [lang, setLang] = useState()
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
+        console.log(url);
     }, [])
 
 
@@ -70,17 +71,35 @@ const Projects = ({data,data2}) => {
     )
 }
 
+function absoluteUrl(req, setLocalhost) {
+    var protocol = "https:";
+    var host = req
+      ? req.headers["x-forwarded-host"] || req.headers["host"]
+      : window.location.host;
+    if (host.indexOf("localhost") > -1) {
+      if (setLocalhost) host = setLocalhost;
+      protocol = "http:";
+    }
+    return {
+      protocol: protocol,
+      host: host,
+      origin: protocol + "//" + host,
+    };
+}
+
 Projects.getInitialProps = async (ctx) => {
-    const pageRequest = `https://dev.sato.id/api/category`
+    const { origin } = absoluteUrl(ctx.req, "localhost:3013");
+
+    const pageRequest = `${origin}/api/category`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `https://dev.sato.id/api/project`
+    const pageRequest2 = `${origin}/api/project`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
 
-    return { data: json.category, data2 : json2 }
+    return { data: json.category, data2 : json2,url:origin }
 }
 
 

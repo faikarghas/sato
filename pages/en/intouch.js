@@ -108,7 +108,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-form">
                                     <h3>AS SOON AS YOUR CONTACT IS IN OUR EXPERT TEAM, THIS WILL BE THE ONLY FORM YOU HAVE TO FILL IN !</h3>
-                                    <ContactForm bgButton={'bg-blueHover'}/>
+                                    <ContactForm bgButton={'bg-blueHover'} url='http://localhost:3009/api/insertContactPromo'/>
                                 </div>
                             </Col>
                             <Col xs={12} md={6}>
