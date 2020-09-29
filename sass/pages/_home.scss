@@ -4,31 +4,42 @@
     overflow: hidden;
     position: relative;
 
+    .sideSlider{
+        position: absolute;
+        left: 0;
+        width: 440px;
+        height: 100vh;
+        top: 0;
+        padding: 2rem 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .logo{
         width: 170px;
-        position: absolute;
-        top: 10%;
-        left: 5%;
+        margin-left: -54px;
     }
     .text{
-        position: absolute;
-        bottom: 10%;
-        left: 5%;
         p{
             color: white;
             font-family: "Futura-Light-font";
-            font-size: 5rem;
+            font-size: 6.5rem;
             font-weight: bold;
             letter-spacing: normal;
-            line-height: 1em;
+            line-height: 0.8em;
+            text-transform: uppercase;
+            @include respond(down-tab-port){
+                font-size: 5rem;
+            }
         }
     }
     .linkToGo{
         position: absolute;
-        bottom: 10%;
-        right: 5%;
-        width: 15px;
-        object-fit: contain;
+        bottom: 15%;
+        right: -2%;
+        z-index: 90;
+        text-decoration: none;
     }
     img{
         width: 100%;
@@ -47,11 +58,15 @@
             width: 30px;
             height: 3px;
             background-color: rgba(211, 211, 211, 0.678);
+            background: linear-gradient(to left, rgba(211, 211, 211, 0.678) 50%, $color_red 50%);
+            background-size: 200% 100%;
+            background-position:right bottom;
             margin: 0 2.5px;
             cursor: pointer;
             z-index: 10;
             &.active{
-                background-color: $color_red;
+                background-position:left bottom;
+                transition:all 4.2s;
             }
         }
     }

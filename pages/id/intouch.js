@@ -49,7 +49,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                         <Slider {...settings} ref={refSlider}>
                             {data2.project.map((item,i)=>{
                                 return (
-                                    <Row>
+                                    <Row key={i}>
                                         <Col xs={12}>
                                             <div className="page_intouch-titleProject">
                                                 <h2><span>LATEST PROJECT:</span></h2>
@@ -62,11 +62,11 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                                     {data2.project.map((item2,i2)=>{
                                                         if (i == i2) {
                                                             return(
-                                                                <li className="active" onClick={()=>to(i2)}></li>
+                                                                <li className="active" onClick={()=>to(i2)} key={i2}></li>
                                                             )
                                                         } else {
                                                             return(
-                                                                <li onClick={()=>to(i2)}></li>
+                                                                <li onClick={()=>to(i2)} key={i2}></li>
                                                             )
                                                         }
 
@@ -92,7 +92,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                     <ul>
                                         {data3.projectAccom.map((item,i)=>{
                                             return(
-                                                <li>
+                                                <li key={i}>
                                                     <Link href={`/${lang}/resedentials`}><a><span className="box">{item.total}</span></a></Link>
                                                     <Link href={`/${lang}/resedentials`}><a>{item.category}</a></Link>
                                                 </li>
@@ -108,7 +108,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-form">
                                     <h3>AS SOON AS YOUR CONTACT IS IN OUR EXPERT TEAM, THIS WILL BE THE ONLY FORM YOU HAVE TO FILL IN !</h3>
-                                    <ContactForm bgButton={'bg-blueHover'}/>
+                                    <ContactForm bgButton={'bg-blueHover'} url='http://localhost:3009/api/insertContactPromo'/>
                                 </div>
                             </Col>
                             <Col xs={12} md={6}>
@@ -122,124 +122,33 @@ const Intouch = ({data1,data2,data3,data4}) => {
                         <h2>OTHER PROJECTS</h2>
                         <Row>
                             {data4.map((item,i)=>{
-                                return(
-                                    <Col xs={12} md={4}>
-                                        <div className="section_others-boxImg">
-                                            <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
-                                                <a>
-                                                    <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="100%"/>
-                                                    <div className="img-overlay-skew">
-                                                        <h4>{item.name}</h4>
-                                                    </div>
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    </Col>
-                                )
+                                if (i === 4) {
+                                    return (
+                                        <Col xs={12} md={4} key={i}>
+                                            <div className="section_others-boxImg moreAbout">
+                                                <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
+                                                    <a>MORE<br/>ABOUT<br/>SATO</a>
+                                                </Link>
+                                            </div>
+                                        </Col>
+                                    )
+                                } else {
+                                    return(
+                                        <Col xs={12} md={4} key={i}>
+                                            <div className="section_others-boxImg">
+                                                <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
+                                                    <a>
+                                                        <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="100%"/>
+                                                        <div className="img-overlay-skew">
+                                                            <h4>{item.name}</h4>
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </Col>
+                                    )
+                                }
                             })}
-                            {/* <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x261" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x262" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x263" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x264" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg moreAbout">
-                                    <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
-                                        <a>MORE<br/>ABOUT<br/>SATO</a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x265" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x266" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x267" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <div className="section_others-boxImg">
-                                    <Link href="/">
-                                        <a>
-                                            <img src="https://source.unsplash.com/random/266x268" width="100%"/>
-                                            <div className="img-overlay-skew">
-                                                <h4>PANTAI MUTIARA RESIDENTIAL</h4>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </Col> */}
                         </Row>
                     </section>
                 </div>
@@ -252,23 +161,23 @@ const Intouch = ({data1,data2,data3,data4}) => {
 }
 
 Intouch.getInitialProps = async (ctx) => {
-    const pageRequest = `http://api.sato.id/api/intouch`
+    const pageRequest = `https://api.sato.id/api/intouch`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `http://api.sato.id/api/latestProject`
+    const pageRequest2 = `https://api.sato.id/api/latestProject`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
-    const pageRequest3 = `http://api.sato.id/api/projectAccom`
+    const pageRequest3 = `https://api.sato.id/api/projectAccom`
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 
-    const pageRequest4 = `http://api.sato.id/api/getOtherProjects`
+    const pageRequest4 = `https://api.sato.id/api/getOtherProjects`
     const res4 = await fetch(pageRequest4)
     const json4 = await res4.json()
 
-    const pageRequest5 = `http://api.sato.id/api/project`
+    const pageRequest5 = `https://api.sato.id/api/project`
     const res5 = await fetch(pageRequest5)
     const json5 = await res5.json()
 
@@ -277,6 +186,12 @@ Intouch.getInitialProps = async (ctx) => {
     let p = json5.project.filter((item,i)=>{
         return l.includes(item.idProject)
     })
+
+    Array.prototype.insert = function ( index, item ) {
+        this.splice( index, 0, item );
+    };
+
+    p.insert(4, {"name": "about sato"});
 
 
     return { data1: json,data2: json2,data3: json3,data4: p}

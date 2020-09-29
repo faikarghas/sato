@@ -8,6 +8,8 @@ import InfoDetailM from '../../../../../components/infoProjectM/index'
 import InfoDetail from '../../../../../components/infoProject/index'
 import Menu from '../../../../../components/menuMobile/index'
 
+import {absoluteUrl} from '../../../../../lib/absoluteUrl'
+
 function MyVerticallyCenteredModal(props) {
     return (
       <Modal
@@ -82,8 +84,10 @@ const Project = ({data}) => {
 }
 
 Project.getInitialProps = async (ctx) => {
+    const { origin } = absoluteUrl(ctx.req, "localhost:3013");
     const slug = ctx.query.slug
-    const pageRequest = `https://dev.sato.id/api/projectDetail/${slug}`
+
+    const pageRequest = `${origin}/api/projectDetail/${slug}`
 
     const res = await fetch(pageRequest)
     const json = await res.json()

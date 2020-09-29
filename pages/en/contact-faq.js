@@ -25,7 +25,7 @@ const Contact = ({data}) => {
                             <h2>CONTACT <span className="color_red">US</span></h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</p>
                         </div>
-                        <ContactForm bgButton={'bg-redHover'} url='https://api.sato.id/api/insertContact'/>
+                        <ContactForm bgButton={'bg-redHover'} url='http://localhost:3009/api/insertContact'/>
                         <div className="vid-contact-wrapper">
                             <p>PLAN TO VISIT OUR OFFICE</p>
                             <div className="vid-contact-wrapper--iframe">

@@ -18,8 +18,6 @@ const Career = ({data}) => {
         setShow(!show)
     }
 
-    console.log(data);
-
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>

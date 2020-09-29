@@ -9,6 +9,9 @@ import SideBar from '../../../../components/sidebar/index'
 import TabProject from '../../../../components/tabProject/index'
 import Menu from '../../../../components/menuMobile/index'
 
+import {absoluteUrl} from '../../../../lib/absoluteUrl'
+
+
 const settings = {}
 
 const Offices = ({data,slug,data2,data3}) => {
@@ -70,18 +73,20 @@ const Offices = ({data,slug,data2,data3}) => {
 
 
 Offices.getInitialProps = async (ctx) => {
-    const pageRequest = `https://dev.sato.id/api/category`
+    const { origin } = absoluteUrl(ctx.req, "localhost:3013");
+
+    const pageRequest = `${origin}/api/category`
     const category = ctx.query.category
 
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `https://dev.sato.id/api/getCategory/${category}`
+    const pageRequest2 = `${origin}/api/getCategory/${category}`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
 
-    const pageRequest3 = `https://dev.sato.id/api/projectTitle`
+    const pageRequest3 = `${origin}/api/projectTitle`
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 
@@ -95,15 +100,11 @@ Offices.getInitialProps = async (ctx) => {
 
     let rdct = categoryArray.includes(category)
 
-    console.log(category);
-
     if (!rdct) {
         if(process.browser){
             Router.push('/')
-            console.log('client');
         } else {
             ctx.res.redirect('/')
-            console.log('server');
         }
     }
 

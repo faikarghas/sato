@@ -8,16 +8,18 @@ import SideBar from '../../../components/sidebar/index'
 import TabProject from '../../../components/tabProject/index'
 import Menu from '../../../components/menuMobile/index'
 
+
 import {urlsato,urlapisato} from '../../../lib/url'
+import {absoluteUrl} from '../../../lib/absoluteUrl'
 
 const settings = {}
 
-const Projects = ({data,data2,url}) => {
+const Projects = ({data,data2,urltest}) => {
     const [lang, setLang] = useState()
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-        console.log(url);
+        console.log(urltest);
     }, [])
 
 
@@ -32,9 +34,9 @@ const Projects = ({data,data2,url}) => {
                     <div className="page_project_list">
                     <div>
                         {
-                            data2.project.slice(0,Math.floor(data2.project.length/2)).map((res,item)=>{
+                            data2.project.slice(0,Math.floor(data2.project.length/2)).map((res,i)=>{
                                 return(
-                                        <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                        <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>
                                                 <img src={`${urlapisato}/images/${res.thumbnail}`} />
                                                 <div className="img-overlay-skew">
@@ -49,9 +51,9 @@ const Projects = ({data,data2,url}) => {
                         </div>
                         <div>
                         {
-                            data2.project.slice(Math.floor(data2.project.length/2),data2.project.length).map((res,item)=>{
+                            data2.project.slice(Math.floor(data2.project.length/2),data2.project.length).map((res,i)=>{
                                 return(
-                                        <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                        <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>
                                                 <img src={`${urlapisato}/images/${res.thumbnail}`} />
                                                 <div className="img-overlay-skew">
@@ -71,21 +73,6 @@ const Projects = ({data,data2,url}) => {
     )
 }
 
-function absoluteUrl(req, setLocalhost) {
-    var protocol = "https:";
-    var host = req
-      ? req.headers["x-forwarded-host"] || req.headers["host"]
-      : window.location.host;
-    if (host.indexOf("localhost") > -1) {
-      if (setLocalhost) host = setLocalhost;
-      protocol = "http:";
-    }
-    return {
-      protocol: protocol,
-      host: host,
-      origin: protocol + "//" + host,
-    };
-}
 
 Projects.getInitialProps = async (ctx) => {
     const { origin } = absoluteUrl(ctx.req, "localhost:3013");
@@ -99,7 +86,7 @@ Projects.getInitialProps = async (ctx) => {
     const json2 = await res2.json()
 
 
-    return { data: json.category, data2 : json2,url:origin }
+    return { data: json.category, data2 : json2,urltest:origin }
 }
 
 

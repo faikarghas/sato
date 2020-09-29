@@ -18,8 +18,6 @@ const Career = ({data}) => {
         setShow(!show)
     }
 
-    console.log(data);
-
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>
@@ -61,7 +59,7 @@ const Career = ({data}) => {
 }
 
 Career.getInitialProps = async (ctx) => {
-    const pageRequest = `http://api.sato.id/api/career`
+    const pageRequest = `https://api.sato.id/api/career`
     const res = await fetch(pageRequest)
     const json = await res.json()
 

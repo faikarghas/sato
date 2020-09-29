@@ -8,21 +8,25 @@ import SideBar from '../../../components/sidebar/index'
 import TabProject from '../../../components/tabProject/index'
 import Menu from '../../../components/menuMobile/index'
 
+
 import {urlsato,urlapisato} from '../../../lib/url'
+import {absoluteUrl} from '../../../lib/absoluteUrl'
 
 const settings = {}
 
-const Projects = ({data,data2}) => {
+const Projects = ({data,data2,urltest}) => {
     const [lang, setLang] = useState()
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
+        console.log(urltest);
     }, [])
+
 
     return (
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
-            <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject="thisproject"/>
+            <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
             <motion.div className="page_layout-main"  initial="initial" animate="animate" exit="exit">
                 <div className="page_project">
                     <h2>{data2.projectTitle[0].description_en}</h2>
@@ -30,9 +34,9 @@ const Projects = ({data,data2}) => {
                     <div className="page_project_list">
                     <div>
                         {
-                            data2.project.slice(0,Math.floor(data.length/2)).map((res,item)=>{
+                            data2.project.slice(0,Math.floor(data2.project.length/2)).map((res,i)=>{
                                 return(
-                                        <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                        <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>
                                                 <img src={`${urlapisato}/images/${res.thumbnail}`} />
                                                 <div className="img-overlay-skew">
@@ -47,9 +51,9 @@ const Projects = ({data,data2}) => {
                         </div>
                         <div>
                         {
-                            data2.project.slice(Math.floor(data.length/2),data.length).map((res,item)=>{
+                            data2.project.slice(Math.floor(data2.project.length/2),data2.project.length).map((res,i)=>{
                                 return(
-                                        <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                        <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                             <a>
                                                 <img src={`${urlapisato}/images/${res.thumbnail}`} />
                                                 <div className="img-overlay-skew">
@@ -69,17 +73,20 @@ const Projects = ({data,data2}) => {
     )
 }
 
+
 Projects.getInitialProps = async (ctx) => {
-    const pageRequest = `http://dev.sato.id/api/category`
+    const { origin } = absoluteUrl(ctx.req, "localhost:3013");
+
+    const pageRequest = `${origin}/api/category`
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-    const pageRequest2 = `http://dev.sato.id/api/project`
+    const pageRequest2 = `${origin}/api/project`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
 
 
-    return { data: json.category, data2 : json2 }
+    return { data: json.category, data2 : json2,urltest:origin }
 }
 
 

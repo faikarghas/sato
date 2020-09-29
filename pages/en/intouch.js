@@ -49,7 +49,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                         <Slider {...settings} ref={refSlider}>
                             {data2.project.map((item,i)=>{
                                 return (
-                                    <Row>
+                                    <Row key={i}>
                                         <Col xs={12}>
                                             <div className="page_intouch-titleProject">
                                                 <h2><span>LATEST PROJECT:</span></h2>
@@ -62,11 +62,11 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                                     {data2.project.map((item2,i2)=>{
                                                         if (i == i2) {
                                                             return(
-                                                                <li className="active" onClick={()=>to(i2)}></li>
+                                                                <li className="active" onClick={()=>to(i2)} key={i2}></li>
                                                             )
                                                         } else {
                                                             return(
-                                                                <li onClick={()=>to(i2)}></li>
+                                                                <li onClick={()=>to(i2)} key={i2}></li>
                                                             )
                                                         }
 
@@ -92,7 +92,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                     <ul>
                                         {data3.projectAccom.map((item,i)=>{
                                             return(
-                                                <li>
+                                                <li key={i}>
                                                     <Link href={`/${lang}/resedentials`}><a><span className="box">{item.total}</span></a></Link>
                                                     <Link href={`/${lang}/resedentials`}><a>{item.category}</a></Link>
                                                 </li>
@@ -124,7 +124,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                             {data4.map((item,i)=>{
                                 if (i === 4) {
                                     return (
-                                        <Col xs={12} md={4}>
+                                        <Col xs={12} md={4} key={i}>
                                             <div className="section_others-boxImg moreAbout">
                                                 <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
                                                     <a>MORE<br/>ABOUT<br/>SATO</a>
@@ -134,7 +134,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                     )
                                 } else {
                                     return(
-                                        <Col xs={12} md={4}>
+                                        <Col xs={12} md={4} key={i}>
                                             <div className="section_others-boxImg">
                                                 <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${item.category}/${item.slug}`}>
                                                     <a>

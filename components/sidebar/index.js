@@ -3,6 +3,7 @@ import {Context} from '../../hocs/store'
 import Link from 'next/link'
 import {Modal,Button} from 'react-bootstrap'
 import Loading from '../loading'
+import Router from 'next/router'
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -32,6 +33,29 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function MyVerticallyCenteredModal2(props) {
+    const [inputValues, setInputValues] = useState({ search: '' });
+    const [lang, setLang] = useState()
+
+    const handleOnChange = event => {
+        const { name, value } = event.target;
+        setInputValues({ ...inputValues, [name]: value });
+    };
+
+    const searchEnter=(e)=>{
+        if(e.key === 'Enter'){
+            Router.push(`/${lang}/search/[search]`,`/${lang}/search/${inputValues.search}`)
+        }
+    }
+
+    const searchButton=()=>{
+        Router.push(`/${lang}/search/[search]`,`/${lang}/search/${inputValues.search}`)
+    }
+
+    useEffect(() => {
+        setLang(window.location.href.split('/')[3])
+    }, [])
+
+
     return (
       <Modal
         {...props}
@@ -44,8 +68,10 @@ function MyVerticallyCenteredModal2(props) {
                 <div className="modal-wa-header">
                     <h4>SEARCH ANY KEYWORD</h4>
                 </div>
-                <input type="text"/>
-                <Button>SUBMIT</Button>
+                <input type="text" name="search" onChange={handleOnChange} onKeyPress={searchEnter}/>
+                <Button onClick={searchButton}>
+                    SUBMIT
+                </Button>
             </div>
         </Modal.Body>
       </Modal>
@@ -133,7 +159,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                                     <li className="mb-2"><a><img src="/instagram.png" alt="logo sosmed"/></a></li>
                                     <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li>
                                 </div>
-                                {withSlug? 
+                                {withSlug?
                                     <div className="lang">
                                         <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
                                         <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
