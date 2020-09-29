@@ -8,7 +8,7 @@ import parser from 'html-react-parser'
 
 const Index = ({data}) => {
     const refSlider = useRef(null)
-    const [nextkasus, setNextkasus] = useState(1)
+    const [nextkasus, setNextkasus] = useState(0)
 
     const settings = {
         dots: false,
@@ -20,7 +20,7 @@ const Index = ({data}) => {
         arrows:false,
         autoplay: true,
         autoplaySpeed: 4500,
-        pauseOnHover:true,
+        pauseOnHover:false,
         beforeChange: (oldIndex,newIndex) => {
             setNextkasus(newIndex)
         }

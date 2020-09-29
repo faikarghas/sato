@@ -46,7 +46,7 @@ const About = ({data,data2,data3}) => {
         listOurTeam = data2.map((item,i)=>{
             return (
                 <li>
-                    <span style={{width:'100px'}}>
+                    <span style={{width:'140px'}}>
                         <p className="color_white">{item.name}</p>
                     </span>
                     <p className="color_lightGrey">{item.jobTitle}</p>
@@ -102,10 +102,10 @@ const About = ({data,data2,data3}) => {
                                 {listOurTeam}
                             </ol>
                             <p className="color_white">
-                            LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
+                            SATO was founded by highly passionate team in 2017. We provide partner and team for businesses, retail commercials and some residentials interior construction. We are based in Jakarta, but works in many other cities. Our story is still growing, keep counting from …… projects including residentials, office, retails, show units and many more ahead with growing clients.
                             </p>
                             <p className="color_white">
-                            LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
+                            {/* LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT. */}
                             </p>
                             <br/>
                             <br/>
