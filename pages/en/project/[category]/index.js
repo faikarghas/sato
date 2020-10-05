@@ -32,9 +32,9 @@ const Offices = ({data,slug,data2,data3}) => {
                     <div className="page_project_list">
                         <div>
                         {
-                            data2.dataCategory.slice(0,Math.floor(data.length/2)).map((res,item)=>{
+                            data2.dataCategory.slice(0,Math.floor(data2.dataCategory.length/2)).map((res,i)=>{
                                 return(
-                                    <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                    <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
                                             <img src={`https://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">
@@ -49,9 +49,9 @@ const Offices = ({data,slug,data2,data3}) => {
                         </div>
                         <div>
                         {
-                            data2.dataCategory.slice(Math.floor(data.length/2),data.length).map((res,item)=>{
+                            data2.dataCategory.slice(Math.floor(data2.dataCategory.length/2),data2.dataCategory.length).map((res,i)=>{
                                 return(
-                                    <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                    <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
                                             <img src={`https://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">
