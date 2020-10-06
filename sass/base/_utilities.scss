@@ -134,7 +134,24 @@ background: transparent;
     right: 15px;
     bottom: 17px;
     width: 9px;
+    animation: upsideDown 2000ms infinite;
+    transition: 2000ms;
 }
+
+@keyframes upsideDown {
+    0% {
+        transform: translateY(-40%);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40%);
+    }
+}
+
 
 .modal-body{
     position: relative;

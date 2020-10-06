@@ -86,7 +86,7 @@ const About = ({data,data2,data3}) => {
                         </div>
                         <div className="content-about-wrapper">
                             <h4>GET TO KNOW OUR A TEAM</h4>
-                            <img className="mb-4" src="https://source.unsplash.com/random/400x301" width="100%"/>
+                            <img className="mb-4" src="/crew_sato.jpg" width="100%"/>
                             <ol className="mb-5">
                                 {listOurTeam}
                             </ol>

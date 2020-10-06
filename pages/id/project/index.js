@@ -29,7 +29,7 @@ const Projects = ({data,data2,urltest}) => {
             <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
             <motion.div className="page_layout-main"  initial="initial" animate="animate" exit="exit">
                 <div className="page_project">
-                    <h2>{data2.projectTitle[0].description_en}</h2>
+                    <h2>{data2.projectTitle[0].description_id}</h2>
                     <TabProject className="hide-mobile" activeMenu={{act:'active',menu:'all'}} data={data}/>
                     <div className="page_project_list">
                     <div>

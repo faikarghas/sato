@@ -30,10 +30,10 @@ const About = ({data,data2,data3}) => {
                         <p>{item.jobTitle}</p>
                     </div>
                     <div className="client-qt">
-                        <p>{item.title_en}</p>
+                        <p>{item.title_id}</p>
                     </div>
                     <div className="client-desc">
-                        <p>{item.description_en}</p>
+                        <p>{item.description_id}</p>
                     </div>
                 </Col>
             )
@@ -46,7 +46,7 @@ const About = ({data,data2,data3}) => {
         listOurTeam = data2.map((item,i)=>{
             return (
                 <li>
-                    <span style={{width:'100px'}}>
+                    <span style={{width:'140px'}}>
                         <p className="color_white">{item.name}</p>
                     </span>
                     <p className="color_lightGrey">{item.jobTitle}</p>
@@ -97,7 +97,7 @@ const About = ({data,data2,data3}) => {
                         </div>
                         <div className="content-about-wrapper">
                             <h4>GET TO KNOW OUR A TEAM</h4>
-                            <img className="mb-4" src="https://source.unsplash.com/random/400x301" width="100%"/>
+                            <img className="mb-4" src="/crew_sato.jpg" width="100%"/>
                             <ol className="mb-5">
                                 {listOurTeam}
                             </ol>

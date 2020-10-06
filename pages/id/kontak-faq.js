@@ -43,8 +43,8 @@ const Contact = ({data}) => {
                             {data.faq.map((item,i)=>{
                                 return(
                                     <ul key={i}>
-                                        <li className="mb-5"><p><span className="pr-3 color_red">Q:</span>{item.question_en}</p></li>
-                                        <li><p><span className="pr-3 color_red">A:</span>{item.answer_en}</p></li>
+                                        <li className="mb-5"><p><span className="pr-3 color_red">Q:</span>{item.question_id}</p></li>
+                                        <li><p><span className="pr-3 color_red">A:</span>{item.answer_id}</p></li>
                                     </ul>
                                 )
                             })}

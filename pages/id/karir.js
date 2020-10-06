@@ -45,7 +45,7 @@ const Career = ({data}) => {
                                 <h4>APPLY FOR</h4>
                                 {data.map((item,i)=>{
                                     return(
-                                        <TitleCareer key={i} title={item.name} desc={item.description_en}/>
+                                        <TitleCareer key={i} title={item.name} desc={item.description_id}/>
                                     )
                                 })}
                             </div>

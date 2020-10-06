@@ -11,6 +11,11 @@
             padding-top: 5rem;
         }
     }
+
+    .studies_head{
+        margin-bottom: 10rem;
+    }
+
     h2{
         color: $color_red;
         font-size: 3rem;
@@ -24,15 +29,9 @@
     .img_next_wrapper{
         position: relative;
         cursor: pointer;
-        &:hover{
-            img{
-                opacity: 0.3;
-                filter: grayscale(0.2);
-            }
-        }
-        .mbl{
+        &-img{
             opacity: 0.3;
-            filter: grayscale(0.2);
+            filter: grayscale(1);
         }
         &-img{
             transition: all 0.3s linear;
@@ -59,7 +58,7 @@
             font-size: 1.1rem;
         }
         h3{
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: $color_red;
         }
 
