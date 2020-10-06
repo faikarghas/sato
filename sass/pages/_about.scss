@@ -50,7 +50,7 @@
     }
     .client-desc{
         min-height: 200px;
-        max-height: 350px;
+        max-height: 700px;
         overflow-y: hidden;
         @include respond(down-tab-land){
             height: 200px;
