@@ -30,6 +30,8 @@
         .hidebt{
             cursor: pointer;
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
             @include respond(down-tab-medium){
                 display: flex;
                 align-items: center;
@@ -51,6 +53,13 @@
                 color: $color_red;
                 font-size: 1.4rem;
                 text-transform: uppercase;
+            }
+            img{
+                transform: rotate(180deg);
+                transition: 0.5 all;
+            }
+            .rotateImg{
+                transform: rotate(0);
             }
         }
     }

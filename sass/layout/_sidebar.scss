@@ -160,6 +160,9 @@
             margin-bottom: 0;
             margin-right: 2rem;
         }
+        @include respond(down-phone){
+            padding: 4rem 3rem 4rem 3rem;
+        }
         &--top{
             img{
                 margin-bottom: 4rem;

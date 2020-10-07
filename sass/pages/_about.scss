@@ -6,6 +6,9 @@
     max-height: 250px;
     height: 225px;
     margin-bottom: 2rem;
+    @include respond(down-phone){
+        height: unset;
+    }
 }
 
 .content-about-wrapper{
@@ -53,7 +56,7 @@
         max-height: 700px;
         overflow-y: hidden;
         @include respond(down-tab-land){
-            height: 200px;
+            // height: 200px;
         }
         p{
             color: white;

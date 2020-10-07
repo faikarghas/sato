@@ -58,7 +58,7 @@ const Project = ({data}) => {
                         <h3>{data.project[0].name}</h3>
                         <ul className="hidebt" onClick={ShowInfo}>
                             <li><p className="hidebt-text">{show? 'hide detail': 'show detail'}</p></li>
-                            <li><img src="/hidebt.png"/></li>
+                            <li><img src="/hidebt.png" className={`${show ? 'rotateImg': ''}`}/></li>
                         </ul>
                     </div>
                     <InfoDetailM data={data} show={show?'show':''}/>

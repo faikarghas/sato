@@ -2,6 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
+import parse from 'html-react-parser';
 
 import {dataSlides} from '../../lib/data'
 
@@ -52,7 +53,7 @@ const Studies = ({data}) => {
                     <Row className="no-gutters studies_head">
                         <Col xs={12} md={8}>
                             <h2>CASE STUDIES</h2>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                            <p>Kami senang untuk membagikan beberapa hal mengenai arsitektur, ide-ide baru, jalan keluar dari permasalahan ruang Anda, dan hal-hal lainnya.</p>
                         </Col>
                     </Row>
                     <Slider {...settings} ref={refSlider}>
@@ -85,7 +86,7 @@ const Studies = ({data}) => {
                                         <div className="studies_desc mt-5">
                                             <h3>{`CASE STUDY: ${item.title_id}`}</h3>
                                             <div className="studies_desc--p">
-                                            <p>{item.description_id}</p>
+                                            {parse(item.description_id)}
                                             </div>
                                         </div>
                                     </Col>

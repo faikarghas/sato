@@ -23,6 +23,9 @@
             flex-wrap: wrap;
             height: unset;
         }
+        @include respond(down-phone){
+            padding: 0 3rem;
+        }
     }
 
     .page_layout-main2{
@@ -45,6 +48,9 @@
     overflow-y: auto;
     padding: 0 5rem;
     padding-bottom: 20px;
+    @include respond(down-phone){
+        padding: 0 3rem;
+    }
 }
 
 .wa-float{

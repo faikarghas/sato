@@ -14,13 +14,23 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include respond(down-phone){
+            padding: 2rem 2rem;
+            width: 100%;
+        }
     }
 
     .logo{
         width: 170px;
         margin-left: -54px;
+        @include respond(down-phone){
+            margin-left: 0px;
+        }
     }
     .text{
+        @include respond(down-phone){
+            margin-bottom: 8rem;
+        }
         p{
             color: white;
             font-family: "Futura-Light-font";
@@ -40,6 +50,10 @@
         right: -2%;
         z-index: 90;
         text-decoration: none;
+        @include respond(down-phone){
+            right: -14%;
+            bottom: 23%;
+        }
     }
     img{
         width: 100%;

@@ -16,15 +16,24 @@
                 }
             }
         }
+        @include respond(down-phone){
+            padding: 0 3rem;
+        }
     }
 
     .section_info{
         padding: 0 5rem;
+        @include respond(down-phone){
+            padding: 0 3rem;
+        }
     }
 
     .section_form{
         padding: 5rem;
         margin-top: 4rem;
+        @include respond(down-phone){
+            padding: 0 3rem;
+        }
 
         .page_intouch-form{
             padding-right: 4rem;
@@ -41,6 +50,9 @@
     .section_others{
         padding: 0 5rem;
         margin-top: 4rem;
+        @include respond(down-phone){
+            padding: 0 3rem;
+        }
         h2{
             color: white;
             margin-bottom: 2rem;

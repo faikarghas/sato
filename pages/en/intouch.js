@@ -23,7 +23,7 @@ const settings = {
 };
 
 
-const Intouch = ({data1,data2,data3,data4}) => {
+const Intouch = ({data1,data2,data3,data4,data5}) => {
     const refSlider = useRef(null)
     const [lang, setLang] = useState()
     const [] = useState([
@@ -47,7 +47,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                 <div className="intouch page_intouch">
                     <section className="section_slider">
                         <Slider {...settings} ref={refSlider}>
-                            {data2.project.map((item,i)=>{
+                            {data5.intouch.map((item,i)=>{
                                 return (
                                     <Row key={i}>
                                         <Col xs={12}>
@@ -56,7 +56,7 @@ const Intouch = ({data1,data2,data3,data4}) => {
                                                 <h2>{item.name}</h2>
                                             </div>
                                             <div className="page_intouch-imgProject">
-                                                <img src={`${urlapisato}/images/${item.thumbnail}`} width="100%" height="360px"/>
+                                                <img src={`${urlapisato}/images/intouch/${item.images}`} width="100%" height="360px"/>
 
                                                 <ul className="actionSlides">
                                                     {data2.project.map((item2,i2)=>{
@@ -181,6 +181,10 @@ Intouch.getInitialProps = async (ctx) => {
     const res5 = await fetch(pageRequest5)
     const json5 = await res5.json()
 
+    const pageRequest6 = `https://api.sato.id/api/intouchSlider`
+    const res6 = await fetch(pageRequest6)
+    const json6 = await res6.json()
+
     let l = json4.other_projects[0].listproject.split(',').map(Number)
 
     let p = json5.project.filter((item,i)=>{
@@ -194,7 +198,7 @@ Intouch.getInitialProps = async (ctx) => {
     p.insert(4, {"name": "about sato"});
 
 
-    return { data1: json,data2: json2,data3: json3,data4: p}
+    return { data1: json,data2: json2,data3: json3,data4: p,data5: json6}
 }
 
 export default Intouch

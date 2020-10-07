@@ -90,6 +90,9 @@ background: transparent;
         width: 100%;
         // display: none;
     }
+    @include respond(down-phone){
+        margin: 0 3rem;
+    }
     &.thisproject{
         @include respond(down-tab-land){
             display: block !important;
@@ -136,6 +139,9 @@ background: transparent;
     width: 9px;
     animation: upsideDown 2000ms infinite;
     transition: 2000ms;
+    @include respond(down-phone){
+        display: none;
+    }
 }
 
 @keyframes upsideDown {

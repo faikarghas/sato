@@ -23,7 +23,7 @@ const Contact = ({data}) => {
                     <div className='content_scroll'>
                         <div className="title-contact-wrapper">
                             <h2>CONTACT <span className="color_red">US</span></h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</p>
+                            <p>Diskusikan lebih lanjut bersama kami</p>
                         </div>
                         <ContactForm bgButton={'bg-redHover'} url='http://localhost:3009/api/insertContact'/>
                         <div className="vid-contact-wrapper">

@@ -65,7 +65,7 @@ const About = ({data,data2,data3}) => {
                 <div className="about-first page_about">
                     <div className='content_scroll'>
                         <div className="title-about-wrapper">
-                            <h2>WHAT<span className="color_red">WE</span>HEARD ABOUT US</h2>
+                            <h2>WHAT<span className="color_red"> WE <br/></span>HEARD ABOUT US</h2>
                         </div>
                         <div className="content-about-wrapper">
                             <h4>TESTIMONIALS FROM OUR CLIENTS</h4>

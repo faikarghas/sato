@@ -2,6 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
+import parse from 'html-react-parser';
 
 import {dataSlides} from '../../lib/data'
 
@@ -52,7 +53,7 @@ const Studies = ({data}) => {
                     <Row className="no-gutters studies_head">
                         <Col xs={12} md={8}>
                             <h2>CASE STUDIES</h2>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                            <p>We are happy to share a couple of ideas about architecture, a unique concept, a solution to your space strategies, and many other things.</p>
                         </Col>
                     </Row>
                     <Slider {...settings} ref={refSlider}>
@@ -74,9 +75,6 @@ const Studies = ({data}) => {
                                                 <div className="img_next_wrapper" onClick={_nextArrow}>
                                                     <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
                                                     <p className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
-                                                    {/* <div className="forDesktop">
-                                                        <p className="next_action" onClick={_nextArrow}>Next Case</p>
-                                                    </div> */}
                                                 </div>
                                             )
                                         })}
@@ -85,7 +83,7 @@ const Studies = ({data}) => {
                                         <div className="studies_desc mt-5">
                                             <h3>{`CASE STUDY: ${item.title_en}`}</h3>
                                             <div className="studies_desc--p">
-                                            <p>{item.description_en}</p>
+                                            {parse(item.description_en)}
                                             </div>
                                         </div>
                                     </Col>
