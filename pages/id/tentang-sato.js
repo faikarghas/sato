@@ -73,20 +73,7 @@ const About = ({data,data2,data3}) => {
                                 {listTestimonials}
                             </Row>
                         </div>
-                        {/* <h2>NOW IT’S TIME TO US TELL A BIT ABOUT OUR SELF</h2> */}
-                        {/* <h3 className="mb-5"><span className="color_red">WE ALWAYS PUT YOU INTO THE FRAME.</span> EVERYTHING WE DO IS ALL ABOUT OUR CLIENT. OUR GOAL IS TO BUILD AN EXCEPTIONAL  ARCHITECTURAL, INTERIOR AND CONSTRUCTION PROJECT. AS A FIRM, WE ARE COMMITTED TO AND STRIVE FOR CREATE A UNIQUE AND INNOVATIVE DESIGN SOLUTIONS THAT RESPOND TO EACH CLIENT'S AESTHETIC AND BUDGETARY NEEDS.</h3> */}
                         <h3>WE STRIVE TO CREATE UNIQUE AND INNOVATIVE SOLUTIONS, AS OUR RESPOND TO CLIENT'S DISTINCTIVE NEEDS AND BUDGETS</h3>
-                        {/* <p className="color_darkblue">RECOQNITIONS :</p>
-                        <Row className="award-img">
-                            <Col xs={4}><img src="/award.png" width="100%" alt="award"/></Col>
-                            <Col xs={4}><img src="/award2.png" width="100%" alt="award"/></Col>
-                            <Col xs={4}><img src="/award3.png" width="100%" alt="award"/></Col>
-                        </Row>
-                        <p className="color_white">
-                        LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
-
-                        LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
-                        </p> */}
                     </div>
                     <img className="scrollIndicator" src="/arrow.png" />
                 </div>
@@ -96,16 +83,13 @@ const About = ({data,data2,data3}) => {
                             <h2>OUR<br/><span className="color_red">A</span> TEAM</h2>
                         </div>
                         <div className="content-about-wrapper">
-                            <h4>GET TO KNOW OUR A TEAM</h4>
+                            <h4>KENALI TIM KAMI</h4>
                             <img className="mb-4" src="/crew_sato.jpg" width="100%"/>
                             <ol className="mb-5">
                                 {listOurTeam}
                             </ol>
                             <p className="color_white">
-                            LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
-                            </p>
-                            <p className="color_white">
-                            LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT.
+                            SATO didirikan oleh tim yang sangat berdidikasi penuh pada tahun 2017 lalu. Kami menyediakan partner dan tim untuk bisnis, retail commercial, dan beberapa konstruksi interior untuk tempat tinggal. Berlokasi di Jakarta, akan tetapi kami juga bekerja di banyak kota lain. Cerita kami masih akan terus berlanjut. Project kami termasuk tempat tinggal, kantor, show units, dan masih banyak lagi seiring bertambahnya klien. 
                             </p>
                             <br/>
                             <br/>

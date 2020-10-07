@@ -10,7 +10,7 @@ const Contact = ({bgButton,url}) => {
 
 
     const handleOnChange = event => {
-    const { name, value } = event.target;
+        const { name, value } = event.target;
         setInputValues({ ...inputValues, [name]: value });
     };
 

@@ -32,7 +32,7 @@ const Career = ({data}) => {
                     <Row className="page_career-cw">
                         <Col xs={12} md={5}>
                             <div className="page_career-img">
-                                <img src="/career-p.jpg" width="100%" />
+                                <img src="/career.jpg" width="100%" />
                             </div>
                             <div className="page_career-contact">
                                 <p>PLEASE SENT YOUR CV TO</p>

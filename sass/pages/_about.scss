@@ -9,6 +9,7 @@
 }
 
 .content-about-wrapper{
+    margin-bottom: 3rem;
     h4{
         color: white;
         margin-bottom: 2rem;
@@ -38,12 +39,11 @@
         }
     }
     .client-qt{
-        height: 40px;
-        max-height: 40px;
+        max-height: 70px;
         overflow-y: hidden;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         p{
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             line-height: 1em;
             color: $color_darkBlue;
         }
@@ -94,6 +94,7 @@
 
     .row{
         .padding-rl{
+            margin-bottom: 1rem;
             &:nth-child(odd){
                 padding-right: 1rem;
                 @include respond(down-tab-land){

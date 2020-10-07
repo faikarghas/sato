@@ -65,7 +65,7 @@ const About = ({data,data2,data3}) => {
                 <div className="about-first page_about">
                     <div className='content_scroll'>
                         <div className="title-about-wrapper">
-                            <h2>WHAT <span className="color_red">THEY</span> SAID ABOUT US</h2>
+                            <h2>WHAT<span className="color_red">WE</span>HEARD ABOUT US</h2>
                         </div>
                         <div className="content-about-wrapper">
                             <h4>TESTIMONIALS FROM OUR CLIENTS</h4>
@@ -73,8 +73,6 @@ const About = ({data,data2,data3}) => {
                                 {listTestimonials}
                             </Row>
                         </div>
-                        {/* <h2>NOW IT’S TIME TO US TELL A BIT ABOUT OUR SELF</h2> */}
-                        {/* <h3 className="mb-5"><span className="color_red">WE ALWAYS PUT YOU INTO THE FRAME.</span> EVERYTHING WE DO IS ALL ABOUT OUR CLIENT. OUR GOAL IS TO BUILD AN EXCEPTIONAL  ARCHITECTURAL, INTERIOR AND CONSTRUCTION PROJECT. AS A FIRM, WE ARE COMMITTED TO AND STRIVE FOR CREATE A UNIQUE AND INNOVATIVE DESIGN SOLUTIONS THAT RESPOND TO EACH CLIENT'S AESTHETIC AND BUDGETARY NEEDS.</h3> */}
                         <h3>WE STRIVE TO CREATE UNIQUE AND INNOVATIVE SOLUTIONS, AS OUR RESPOND TO CLIENT'S DISTINCTIVE NEEDS AND BUDGETS</h3>
                     </div>
                     <img className="scrollIndicator" src="/arrow.png" />
@@ -91,10 +89,7 @@ const About = ({data,data2,data3}) => {
                                 {listOurTeam}
                             </ol>
                             <p className="color_white">
-                            SATO was founded by highly passionate team in 2017. We provide partner and team for businesses, retail commercials and some residentials interior construction. We are based in Jakarta, but works in many other cities. Our story is still growing, keep counting from …… projects including residentials, office, retails, show units and many more ahead with growing clients.
-                            </p>
-                            <p className="color_white">
-                            {/* LOREM IPSUM DOLOR SIT AMET, CONS ECTETUER ADIPISCING ELIT, SED DIAM NONUMMY NIBH EUISMOD TINCIDUNT UT LAOREET DOLORE MAGNA ALIQUAM ERAT VOLUTPAT. UT WISI ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCI TATION ULLAMCORPER SUSCIPIT LOBORTIS NISL UT ALIQUIP EX EA COMMODO CONSEQUAT. */}
+                            SATO was founded by highly passionate team in 2017. We provide partner and team for businesses, retail commercials and some residential interior construction. We are based in Jakarta but works in many other cities. Our story is still growing. Our projects include residential, office, retails, show units and many more ahead as the client grows.
                             </p>
                             <br/>
                             <br/>

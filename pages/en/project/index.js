@@ -19,7 +19,8 @@ const Projects = ({data,data2,urltest}) => {
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-        console.log(urltest);
+        console.log(data2.project.slice(0,Math.floor(data2.project.length/2)));
+        console.log(data2.project);
     }, [])
 
 

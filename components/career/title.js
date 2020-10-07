@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Row,Col} from 'react-bootstrap'
+import parser from 'html-react-parser'
 
 const Title = ({title,desc}) => {
     const [show,setShow] = useState(false)
@@ -21,7 +22,7 @@ const Title = ({title,desc}) => {
             <div className={`page_career-detail ${show ? 'show' : ''}`}>
                 <Row>
                     <Col xs={12}>
-                        <p>{desc}</p>
+                        {parser(desc)}
                     </Col>
                 </Row>
             </div>

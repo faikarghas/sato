@@ -4,7 +4,7 @@ const escape = require('sql-template-strings')
 
 export default  async (req, res) => {
   const project = await db.query(escape`
-    select * from project
+    select * from project order by reorder ASC
   `)
 
   const projectTitle = await db.query(escape`
