@@ -33,7 +33,7 @@ const Contact = ({bgButton,url}) => {
         .then((response) => response.json())
         .then((dataRes) => {
             setLoading(false)
-            alert('berhasil')
+            // alert('berhasil')
         })
 
     }

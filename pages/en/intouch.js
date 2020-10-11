@@ -153,7 +153,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                     </section>
                 </div>
                 <div className="freequote">
-                    <a  href="#form">GET A FREE QUOTE</a>
+                    <a href="#form">GET A FREE QUOTE</a>
                 </div>
             </motion.div>
         </div>

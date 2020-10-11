@@ -25,7 +25,7 @@ const Contact = ({data}) => {
                             <h2>HUBUNGI <span className="color_red">KAMI</span></h2>
                             <p>Diskusikan lebih lanjut bersama kami</p>
                         </div>
-                        <ContactForm bgButton={'bg-redHover'} url='http://localhost:3009/api/insertContact'/>
+                        <ContactForm bgButton={'bg-redHover'} url={`${urlapisato}/api/insertContact`}/>
                         <div className="vid-contact-wrapper">
                             <p>PLAN TO VISIT OUR OFFICE</p>
                             <div className="vid-contact-wrapper--iframe">
