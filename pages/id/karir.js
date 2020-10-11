@@ -11,7 +11,7 @@ import Menu from '../../components/menuMobile/index'
 
 const settings ={}
 
-const Career = ({data}) => {
+const Karir = ({data}) => {
     const [show,setShow] = useState(false)
 
     function ShowInfo(params) {
@@ -26,7 +26,7 @@ const Career = ({data}) => {
                 <div className="career page_career">
                     <Row>
                         <Col xs={12} md={7}>
-                            <h2>JOIN <span>SATO</span>, YOU'LL MAKE WORLD-CLASS WORK WITH A FRIENDLY & TALENTED TEAM.</h2>
+                            <h2>BERGABUNG  BERSAMA <span>SATO</span>, PEKERJAAN KELAS DUNIA DENGAN TIM YANG BERBAKAT DAN BERSAHABAT.</h2>
                         </Col>
                     </Row>
                     <Row className="page_career-cw">
@@ -35,9 +35,9 @@ const Career = ({data}) => {
                                 <img src="/career.jpg" width="100%" />
                             </div>
                             <div className="page_career-contact">
-                                <p>PLEASE SENT YOUR CV TO</p>
+                                <p>KIRIM CV & PORTOFOLIO MU KE</p>
                                 <h4>CARRER@SATO.ID</h4>
-                                <p>PDF & WORD FILES ARE ACCEPTABLE <br/> MAX. SIZE 2MB.</p>
+                                <p>HANYA MENERIMA PDF DAN WORD <br/> MAKS. UKURAN 2 MB.</p>
                             </div>
                         </Col>
                         <Col xs={12} md={7}>
@@ -58,7 +58,7 @@ const Career = ({data}) => {
     )
 }
 
-Career.getInitialProps = async (ctx) => {
+Karir.getInitialProps = async (ctx) => {
     const pageRequest = `https://api.sato.id/api/career`
     const res = await fetch(pageRequest)
     const json = await res.json()
@@ -66,5 +66,5 @@ Career.getInitialProps = async (ctx) => {
     return { data: json.career}
 }
 
-export default Career
+export default Karir
 

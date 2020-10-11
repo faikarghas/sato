@@ -57,6 +57,9 @@ background: transparent;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.1rem;
+    &:hover{
+        color: white;
+    }
 }
 
 // slick

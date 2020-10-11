@@ -38,7 +38,9 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
         <div className="menuMobile">
             <div className="menuMobile_wrapper">
                 <div className="menuMobile-1">
-                    <img src="/logo-sato.svg" alt="logo sato" />
+                    <Link href={`/${lang}`}>
+                    <a><img src="/logo-sato.svg" alt="logo sato" /></a>
+                    </Link>
                     {withSlug?
                         <ul className="lang">
                             <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>

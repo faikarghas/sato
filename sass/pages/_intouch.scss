@@ -238,6 +238,12 @@
     @include respond(down-tab-land){
         top: 170px;
     }
+
+    @include respond(down-phone){
+        right: 3rem;
+        width: calc(100% - 6rem);
+    }
+
     a{
         color: $color_red;
         font-size: 1.4rem;

@@ -105,6 +105,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
         })
         .then((response) => response.json())
         .then((dataRes) => {
+            window.open("https://api.whatsapp.com/send/?phone=6281901993060&text&app_absent=0")
             setLoading(false)
         })
 

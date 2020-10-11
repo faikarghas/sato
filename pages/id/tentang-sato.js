@@ -65,22 +65,22 @@ const About = ({data,data2,data3}) => {
                 <div className="about-first page_about">
                     <div className='content_scroll'>
                         <div className="title-about-wrapper">
-                            <h2>WHAT <span className="color_red">THEY</span> SAID ABOUT US</h2>
+                            <h2>APA <span className="color_red">YANG KITA</span> DENGAR TENTANG KAMI</h2>
                         </div>
                         <div className="content-about-wrapper">
-                            <h4>TESTIMONIALS FROM OUR CLIENTS</h4>
+                            <h4>KESAN DARI KLIEN KAMI</h4>
                             <Row noGutters={true}>
                                 {listTestimonials}
                             </Row>
                         </div>
-                        <h3>WE STRIVE TO CREATE UNIQUE AND INNOVATIVE SOLUTIONS, AS OUR RESPOND TO CLIENT'S DISTINCTIVE NEEDS AND BUDGETS</h3>
+                        <h3>KAMI BERUSAHA UNTUK MENCIPTAKAN SESUATU YANG UNIK DAN SOLUSI INOVATIF, UNTUK MERESPON KEBUTUHAN DAN ANGGARAN KLIEN YANG BERAGAM</h3>
                     </div>
                     <img className="scrollIndicator" src="/arrow.png" />
                 </div>
                 <div className="about-second page_about">
                     <div className="content_scroll">
                         <div className="title-about-wrapper">
-                            <h2>OUR<br/><span className="color_red">A</span> TEAM</h2>
+                            <h2>TIM<br/><span className="color_red">INTI</span> KAMI</h2>
                         </div>
                         <div className="content-about-wrapper">
                             <h4>KENALI TIM KAMI</h4>
@@ -93,9 +93,9 @@ const About = ({data,data2,data3}) => {
                             </p>
                             <br/>
                             <br/>
-                            <h3>IN <span>PARTNERSHIP</span> <br/>WITH SASO ARCHITECTURE</h3>
+                            <h3><span>MITRA</span> STUDIO <br/> ARSITEK SASO</h3>
                             <a href="https://www.sasoarchitects.com" target="_blank"><img className="logoSaso" src="/saso-logo.png" alt="saso" /></a>
-                            {parse(data3[0].content)}
+                            {parse(data3[0].content_id)}
                             <br/>
                             <br/>
                             <p><span>PLEASE VISIT US FOR MORE INFORMATION</span></p>
