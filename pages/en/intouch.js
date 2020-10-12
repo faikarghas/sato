@@ -12,6 +12,7 @@ import Menu from '../../components/menuMobile/index'
 
 import {urlsato, urlapisato} from '../../lib/url'
 
+
 const settings = {
     dots: false,
     infinite: true,
@@ -35,6 +36,25 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
         refSlider.current.slickGoTo(key)
     }
 
+    function scrollToTargetAdjusted(){
+        var element = document.getElementById('form');
+        var headerOffset = window.innerWidth > 1024 ? 0 : 150;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition - headerOffset;
+
+        if (window.innerWidth > 1024 ) {
+            document.getElementById("scroll").scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+           });
+        } else {
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+           });
+        }
+    }
+
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
     }, [])
@@ -44,7 +64,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
             <Menu langEn='intouch' langId='intouch'/>
             <motion.div className="page_layout-main2"  initial='initial' animate='animate' exit="exit">
-                <div className="intouch page_intouch">
+                <div className="intouch page_intouch" id="scroll">
                     <section className="section_slider">
                         <Slider {...settings} ref={refSlider}>
                             {data5.intouch.map((item,i)=>{
@@ -153,7 +173,9 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                     </section>
                 </div>
                 <div className="freequote">
-                    <a href="#form">GET A FREE QUOTE</a>
+                    <a  onClick={scrollToTargetAdjusted}>
+                        GET A FREE QUOTE
+                    </a>
                 </div>
             </motion.div>
         </div>

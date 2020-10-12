@@ -147,7 +147,7 @@
         position: relative;
         img{
             width: 100%;
-            // object-fit: cover;
+            object-fit: cover;
         }
         .actionSlides{
             position: absolute;
@@ -236,6 +236,11 @@
     background-color: #1C1E1E;
     padding: 1rem;
     border: 1px solid white;
+    &:hover{
+        a{
+            color: $color_red;
+        }
+    }
     @include respond(down-tab-land){
         top: 170px;
     }
@@ -249,5 +254,11 @@
         color: $color_red;
         font-size: 1.4rem;
         text-decoration: none;
+        cursor: pointer;
+        &:hover{
+            a{
+                color: $color_red;
+            }
+        }
     }
 }

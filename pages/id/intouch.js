@@ -35,6 +35,25 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
         refSlider.current.slickGoTo(key)
     }
 
+    function scrollToTargetAdjusted(){
+        var element = document.getElementById('form');
+        var headerOffset = window.innerWidth > 1024 ? 0 : 150;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition - headerOffset;
+
+        if (window.innerWidth > 1024 ) {
+            document.getElementById("scroll").scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+           });
+        } else {
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+           });
+        }
+    }
+
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
     }, [])
@@ -153,7 +172,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                     </section>
                 </div>
                 <div className="freequote">
-                    <a  href="#form">GET A FREE QUOTE</a>
+                    <a  onClick={scrollToTargetAdjusted}>GET A FREE QUOTE</a>
                 </div>
             </motion.div>
         </div>
