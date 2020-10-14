@@ -1,16 +1,16 @@
 // Responsive
 
 .forMobile{
-    display: none;
+    display: none !important;
     @include respond(down-tab-land){
-        display: block;
+        display: block !important;
     }
 }
 
 .forDesktop{
-    display: block;
+    display: block !important;
     @include respond(down-tab-land){
-        display: none;
+        display: none !important;
     }
 }
 
@@ -86,7 +86,7 @@ background: transparent;
     top: 0;
     z-index: 10;
     @include respond(down-tab-land){
-        top: 171px;
+        top: 169px;
         margin: 0 4.9rem 0 4.9rem;
         padding: 0;
         z-index: 4;

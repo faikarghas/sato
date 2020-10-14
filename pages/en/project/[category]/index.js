@@ -27,7 +27,7 @@ const Offices = ({data,slug,data2,data3}) => {
             <Menu data={data} slug={slug} activeMenu={{act:'active',menu: data}} langEn='offices' langId='offices' thisproject="thisproject"/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
-                    <h2>{data3.projectTitle[0].description_en}</h2>
+                    <h2 className="forDesktop">{data3.projectTitle[0].description_en}</h2>
                     <TabProject className="hide-mobile" activeMenu={{act:'active',menu: data}} data={data} slug={slug}/>
                     <div className="page_project_list">
                         <div>

@@ -20,7 +20,7 @@ function MyVerticallyCenteredModal(props) {
       >
         <Modal.Body>
             <img src={`https://api.sato.id/images/${props.imgModal}`} width="100%"/>
-            <div className="hide-modal" onClick={props.onHide}>X</div>
+            <div className="hide-modal" onClick={props.onHide}><img src="/close-button.png" width="32px"/></div>
         </Modal.Body>
       </Modal>
     );

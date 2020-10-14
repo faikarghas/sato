@@ -76,7 +76,8 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                                 <h2>{item.name}</h2>
                                             </div>
                                             <div className="page_intouch-imgProject">
-                                                <img src={`${urlapisato}/images/intouch/${item.images}`} width="100%" height="360px"/>
+                                                <img className="forDesktop" src={`${urlapisato}/images/intouch/desktop/${item.images}`} width="100%" height="360px"/>
+                                                <img className="forMobile" src={`${urlapisato}/images/intouch/mobile/${item.imageMobile}`} width="100%" height="360px"/>
 
                                                 <ul className="actionSlides">
                                                     {data2.project.map((item2,i2)=>{

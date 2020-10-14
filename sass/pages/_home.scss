@@ -7,7 +7,7 @@
     .sideSlider{
         position: absolute;
         left: 0;
-        width: 440px;
+        width: 460px;
         height: 100vh;
         top: 0;
         padding: 2rem 8rem;
@@ -15,7 +15,7 @@
         flex-direction: column;
         justify-content: space-between;
         @include respond(down-phone){
-            padding: 2rem 2rem;
+            padding: 3.5rem 3rem;
             width: 100%;
         }
     }
@@ -25,6 +25,8 @@
         margin-left: -54px;
         @include respond(down-phone){
             margin-left: 0px;
+            width: 131px;
+            height: 100px;
         }
     }
     .text{

@@ -59,7 +59,7 @@ const Studies = ({data}) => {
                     <Slider {...settings} ref={refSlider}>
                         {data.studies.map((item,i)=>{
                             return(
-                                <Row className="studies_sliderWrapper">
+                                <Row key={i} className="studies_sliderWrapper">
                                     <Col xs={12} md={8}>
                                         <div className="studies_img">
                                             <img src={`https://api.sato.id/images/${item.imageName}`} width="100%" />
@@ -114,7 +114,6 @@ Studies.getInitialProps = async (ctx) => {
     const json = await res.json()
 
 
-    console.log(json);
 
     return { data: json}
 }
