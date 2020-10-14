@@ -9,6 +9,9 @@ import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
 
+import {urlsato, urlapisato} from '../../lib/url'
+
+
 const settings ={}
 
 const Contact = ({data}) => {
