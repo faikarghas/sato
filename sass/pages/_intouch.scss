@@ -234,7 +234,6 @@
     top: 5rem;
     right: 5rem;
     background-color: #1C1E1E;
-    padding: 1rem;
     border: 1px solid white;
     &:hover{
         a{
@@ -252,10 +251,12 @@
     }
 
     a{
-        color: $color_red;
+        color: $color_red !important;
         font-size: 1.4rem;
         text-decoration: none;
         cursor: pointer;
+        display: block;
+        padding: 1rem;
         &:hover{
             a{
                 color: $color_red;

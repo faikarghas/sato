@@ -72,10 +72,12 @@ const Studies = ({data}) => {
                                     <Col xs={12} md={4} className="forDesktop">
                                         {[data.studies[nextkasus]].map((item,i)=>{
                                             return (
-                                                <div className="img_next_wrapper" onClick={_nextArrow}>
-                                                    <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
-                                                    <p className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
-                                                </div>
+                                                <React.Fragment>
+                                                    <div key={i} className="img_next_wrapper" onClick={_nextArrow}>
+                                                        <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
+                                                    </div>
+                                                    <p onClick={_nextArrow} className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
+                                                </React.Fragment>
                                             )
                                         })}
                                     </Col>

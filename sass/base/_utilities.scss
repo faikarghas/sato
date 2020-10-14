@@ -174,8 +174,7 @@ background: transparent;
 .hide-modal{
     position: absolute;
     right: 17px;
-    top: 0px;
-    font-size: 4rem;
+    top: 17px;
     font-weight: bold;
     cursor: pointer;
     color: #ffffff;
@@ -240,5 +239,23 @@ background: transparent;
     img{
         width: 13px;
         object-fit: contain;
+    }
+}
+
+.modalProject{
+    @include respond(down-phone){
+        padding: 3rem;
+    }
+    .modal-content{
+        background-color: transparent;
+        .modal-body{
+            .imgProject{
+                height: 418px;
+                object-fit: cover;
+                @include respond(down-phone){
+                    object-fit: contain;
+                }
+            }
+        }
     }
 }
