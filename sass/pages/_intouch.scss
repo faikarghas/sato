@@ -248,6 +248,7 @@
     @include respond(down-phone){
         right: 3rem;
         width: calc(100% - 6rem);
+        text-align: center;
     }
 
     a{
