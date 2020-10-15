@@ -85,9 +85,9 @@ const About = ({data,data2,data3}) => {
                         <div className="content-about-wrapper">
                             <h4>KENALI TIM KAMI</h4>
                             <img className="mb-4" src="/crew_sato.jpg" width="100%"/>
-                            <ol className="mb-5">
+                            {/* <ol className="mb-5">
                                 {listOurTeam}
-                            </ol>
+                            </ol> */}
                             <p className="color_white">
                             SATO didirikan oleh tim yang sangat berdidikasi penuh pada tahun 2017 lalu. Kami menyediakan partner dan tim untuk bisnis, retail commercial, dan beberapa konstruksi interior untuk tempat tinggal. Berlokasi di Jakarta, akan tetapi kami juga bekerja di banyak kota lain. Cerita kami masih akan terus berlanjut. Project kami termasuk tempat tinggal, kantor, show units, dan masih banyak lagi seiring bertambahnya klien. 
                             </p>

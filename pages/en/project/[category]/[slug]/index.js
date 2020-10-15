@@ -53,7 +53,6 @@ function MyVerticallyCenteredModal(props) {
                     </Slider>
                 </Modal.Body>
                 <div className="hide-modal" onClick={props.onHide}><img src="/close-button.png" width="32px"/></div>
-
             </Modal>
         </React.Fragment>
     );

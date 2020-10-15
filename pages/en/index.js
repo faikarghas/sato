@@ -31,7 +31,6 @@ const Index = ({data}) => {
     }
 
     useEffect(() => {
-        console.log(nextkasus);
     }, [nextkasus])
 
 

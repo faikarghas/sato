@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import {Modal,Button} from 'react-bootstrap'
+import Slider from 'react-slick';
 
 import SideBar from '../../../../../components/sidebar/index'
 import InfoDetailM from '../../../../../components/infoProjectM/index'
@@ -11,18 +12,49 @@ import Menu from '../../../../../components/menuMobile/index'
 import {absoluteUrl} from '../../../../../lib/absoluteUrl'
 
 function MyVerticallyCenteredModal(props) {
+    const refSlider = useRef(null)
+    const [nextkasus, setNextkasus] = useState(0)
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        initialSlide: props.activeSlide,
+        slidesToScroll: 1,
+        fade: true,
+        arrows:true,
+        autoplay: false,
+        autoplaySpeed: 4500,
+        pauseOnHover:false,
+        beforeChange: (oldIndex,newIndex) => {
+            setNextkasus(newIndex)
+        }
+    };
+
+    function to(key) {
+        refSlider.current.slickGoTo(key)
+    }
+
+
     return (
-      <Modal
-        {...props}
-        size="xl"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Body>
-            <img src={`https://api.sato.id/images/${props.imgModal}`} width="100%"/>
-            <div className="hide-modal" onClick={props.onHide}><img src="/close-button.png" width="32px"/></div>
-        </Modal.Body>
-      </Modal>
+        <React.Fragment>
+            <Modal
+                {...props}
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                className="modalProject"
+                size="lg"
+            >
+                <Modal.Body>
+                    <Slider {...settings} ref={refSlider}>
+                        {props.imgModal.map((item,i)=>{
+                            return <img key={i} className="imgProject" src={`https://api.sato.id/images/${item.name}`} width="100%" />
+                        })}
+                    </Slider>
+                </Modal.Body>
+                <div className="hide-modal" onClick={props.onHide}><img src="/close-button.png" width="32px"/></div>
+            </Modal>
+        </React.Fragment>
     );
 }
 
@@ -31,6 +63,7 @@ const Project = ({data}) => {
     const [lang, setLang] = useState()
     const [modalShow, setModalShow] = useState(false)
     const [imgModal, setImgModal] = useState('')
+    const [imgIndex, setImgIndex] = useState()
 
 
     function ShowInfo(params) {
@@ -40,6 +73,7 @@ const Project = ({data}) => {
     function ShowModal(params) {
         setModalShow(true)
         setImgModal(params)
+        setImgIndex(i)
     }
 
     useEffect(() => {
@@ -77,7 +111,8 @@ const Project = ({data}) => {
             <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                imgModal={imgModal}
+                imgModal={data.listImg}
+                activeSlide={imgIndex}
             />
         </div>
     )

@@ -79,7 +79,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                                 <img className="forMobile" src={`${urlapisato}/images/intouch/mobile/${item.imageMobile}`} width="100%" height="360px"/>
 
                                                 <ul className="actionSlides">
-                                                    {data2.project.map((item2,i2)=>{
+                                                    {data5.intouch.map((item2,i2)=>{
                                                         if (i == i2) {
                                                             return(
                                                                 <li className="active" onClick={()=>to(i2)} key={i2}></li>

@@ -173,8 +173,8 @@ background: transparent;
 
 .hide-modal{
     position: absolute;
-    right: 17px;
-    top: 17px;
+    right: -20%;
+    top: 0;
     font-weight: bold;
     cursor: pointer;
     color: #ffffff;
@@ -250,8 +250,8 @@ background: transparent;
         background-color: transparent;
         .modal-body{
             .imgProject{
-                height: 418px;
-                object-fit: cover;
+                height: 600px;
+                object-fit: contain;
                 @include respond(down-phone){
                     object-fit: contain;
                 }
