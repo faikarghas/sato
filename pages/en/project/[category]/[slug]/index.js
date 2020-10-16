@@ -43,7 +43,7 @@ function MyVerticallyCenteredModal(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 className="modalProject"
-                size="lg"
+                size="xl"
             >
                 <Modal.Body>
                     <Slider {...settings} ref={refSlider}>
