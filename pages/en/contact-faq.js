@@ -26,7 +26,7 @@ const Contact = ({data}) => {
                     <div className='content_scroll'>
                         <div className="title-contact-wrapper">
                             <h2>CONTACT <span className="color_red">US</span></h2>
-                            <p>It is a pleasure to have a discussion with you</p>
+                            <p>DROP YOUR QUESTIONS & MESSAGES. KINDLY FILL YOUR RELEVANT EMAIL FOR US TO FOLLOW UP. LOOKING FORWARD!</p>
                         </div>
                         <ContactForm bgButton={'bg-redHover'} url={`${urlapisato}/api/insertContact`} />
                         <div className="vid-contact-wrapper">

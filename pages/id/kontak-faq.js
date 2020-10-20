@@ -26,7 +26,7 @@ const Contact = ({data}) => {
                     <div className='content_scroll'>
                         <div className="title-contact-wrapper">
                             <h2>HUBUNGI <span className="color_red">KAMI</span></h2>
-                            <p>Diskusikan lebih lanjut bersama kami</p>
+                            <p>AJUKAN PERTANYAAN ATAU KIRIM PESAN. SECEPATNYA, TIM KAMI AKAN SEGERA MENGHUBUNGI ANDA!</p>
                         </div>
                         <ContactForm bgButton={'bg-redHover'} url={`${urlapisato}/api/insertContact`}/>
                         <div className="vid-contact-wrapper">

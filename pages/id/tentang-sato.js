@@ -65,7 +65,7 @@ const About = ({data,data2,data3}) => {
                 <div className="about-first page_about">
                     <div className='content_scroll'>
                         <div className="title-about-wrapper">
-                            <h2>APA <span className="color_red">YANG KITA</span> DENGAR TENTANG KAMI</h2>
+                            <h2>APA <span className="color_red">YANG MEREKA </span>KATAKAN TENTANG KAMI</h2>
                         </div>
                         <div className="content-about-wrapper">
                             <h4>KESAN DARI KLIEN KAMI</h4>
@@ -73,7 +73,7 @@ const About = ({data,data2,data3}) => {
                                 {listTestimonials}
                             </Row>
                         </div>
-                        <h3>KAMI BERUSAHA UNTUK MENCIPTAKAN SESUATU YANG UNIK DAN SOLUSI INOVATIF, UNTUK MERESPON KEBUTUHAN DAN ANGGARAN KLIEN YANG BERAGAM</h3>
+                        <h3>KAMI SELALU BEKERJA DENGAN SEMANGAT SOLUTIF DAN TERBUKA TERHADAP INOVASI, SEBAGAI RESPON AKAN KEBUTUHAN KLIEN YANG SELALU UNIK DAN BERAGAM.</h3>
                     </div>
                     <img className="scrollIndicator" src="/arrow.png" />
                 </div>
@@ -89,7 +89,7 @@ const About = ({data,data2,data3}) => {
                                 {listOurTeam}
                             </ol> */}
                             <p className="color_white">
-                            SATO didirikan oleh tim yang sangat berdidikasi penuh pada tahun 2017 lalu. Kami menyediakan partner dan tim untuk bisnis, retail commercial, dan beberapa konstruksi interior untuk tempat tinggal. Berlokasi di Jakarta, akan tetapi kami juga bekerja di banyak kota lain. Cerita kami masih akan terus berlanjut. Project kami termasuk tempat tinggal, kantor, show units, dan masih banyak lagi seiring bertambahnya klien. 
+                            SATO DIDIRIKAN OLEH TIM YANG SANGAT BERDEDIKASI TERHADAP KONSTRUKSI PADA TAHUN 2017 SILAM. SEMANGAT KAMI UNTUK BUKAN HANYA MENJADI EKSEKUTOR KEBUTUHAN KONSTRUKSI, MELAINKAN MENJADI REKAN DAN TIM UNTUK ANDA, DALAM SEGALA JENIS KEBUTUHAN SEPERTI RETAIL, KANTOR, ATAU RESIDENTIAL. KANTOR KAMI BERLOKASI DI JAKARTA, NAMUN DENGAN MEMANFAATKAN TEKNOLOGI & MENGEDEPANKAN KOMUNIKASI KAMI MENYELESAIKAN BANYAK PROYEK BERBAGAI KOTA LAINNYA. SEIRING PERJALANAN, KAMI AKAN TERUS BERKEMBANG MELALUI KEPERCAYAAN YANG TELAH DIBERIKAN KEPADA KAMI.
                             </p>
                             <br/>
                             <br/>

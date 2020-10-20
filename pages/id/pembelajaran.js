@@ -53,7 +53,7 @@ const Studies = ({data}) => {
                     <Row className="no-gutters studies_head">
                         <Col xs={12} md={8}>
                             <h2>CASE STUDIES</h2>
-                            <p>Kami senang untuk membagikan beberapa hal mengenai arsitektur, ide-ide baru, jalan keluar dari permasalahan ruang Anda, dan hal-hal lainnya.</p>
+                            <p>KAMI SENANG UNTUK MEMBAGIKAN PENGETAHUAN KAMI TERKAIT KONSTRUKSI INTERIOR, IDE-IDE BARU, DAN SOLUSI SESUAI KEAHLIAN KAMI.</p>
                         </Col>
                     </Row>
                     <Slider {...settings} ref={refSlider}>
