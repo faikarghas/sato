@@ -32,7 +32,7 @@ const Contact = ({data}) => {
                         <div className="vid-contact-wrapper">
                             <p>PLAN TO VISIT OUR OFFICE</p>
                             <div className="vid-contact-wrapper--iframe">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.726491505595!2d106.7544672!3d-6.206659!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7c663416a2114920!2sSASO%20-%20architecture%20studio!5e0!3m2!1sen!2sid!4v1602067757116!5m2!1sen!2sid" width="100%" height="200" frameBorder="0" style={{border:'0'}} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6079853972034!2d106.75386272917659!3d-6.206616666475118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f73bca7e2351%3A0x64c3621683855c2c!2sJl.%20Perumahan%20Corn%20Kebun%20Jeruk%20Blok%20J-13%20No.9%2C%20RT.9%2FRW.5%2C%20Srengseng%2C%20Kec.%20Kembangan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011630!5e0!3m2!1sen!2sid!4v1603182969035!5m2!1sen!2sid" width="100%" height="200" frameBorder="0" style={{border:'0'}} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
                             </div>
                         </div>
                     </div>

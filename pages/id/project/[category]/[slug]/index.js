@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react'
-import { motion } from "framer-motion";
+import React,{useState,useEffect,useRef} from 'react'
+import { motion } from "framer-motion"
 import Link from 'next/link'
 import {Modal,Button} from 'react-bootstrap'
 import Slider from 'react-slick';
@@ -43,7 +43,7 @@ function MyVerticallyCenteredModal(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 className="modalProject"
-                size="lg"
+                size="xl"
             >
                 <Modal.Body>
                     <Slider {...settings} ref={refSlider}>
@@ -58,19 +58,18 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const Project = ({data}) => {
+const Project = ({data,slug,category}) => {
     const [show,setShow] = useState(false)
     const [lang, setLang] = useState()
     const [modalShow, setModalShow] = useState(false)
     const [imgModal, setImgModal] = useState('')
     const [imgIndex, setImgIndex] = useState()
 
-
     function ShowInfo(params) {
         setShow(!show)
     }
 
-    function ShowModal(params) {
+    function ShowModal(params,i) {
         setModalShow(true)
         setImgModal(params)
         setImgIndex(i)
@@ -83,15 +82,15 @@ const Project = ({data}) => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
-            <Menu langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
+            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
+            <Menu langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
-                    <Link href={`/${lang}/project`} ><a className="back-to">Back to previous page</a></Link>
+                    <Link href={`/${lang}/project`} ><a className="back-to">Kembali</a></Link>
                     <div className="page_project-title">
                         <h3>{data.project[0].name}</h3>
                         <ul className="hidebt" onClick={ShowInfo}>
-                            <li><p className="hidebt-text">{show? 'hide detail': 'show detail'}</p></li>
+                            <li><p className="hidebt-text">{show? 'sembunyikan detail': 'lihat detail'}</p></li>
                             <li><img src="/hidebt.png" className={`${show ? 'rotateImg': ''}`}/></li>
                         </ul>
                     </div>
@@ -101,7 +100,7 @@ const Project = ({data}) => {
                         {
                             data.listImg.map((item,i)=>{
                                 return(
-                                    <img onClick={() => ShowModal(item.name)} src={`https://api.sato.id/images/${item.name}`} width="100%" style={{cursor:'pointer'}}/>
+                                    <img onClick={() => ShowModal(item.name,i)} src={`https://api.sato.id/images/${item.name}`} width="100%" style={{cursor:'pointer'}}/>
                                 )
                             })
                         }
@@ -126,8 +125,9 @@ Project.getInitialProps = async (ctx) => {
 
     const res = await fetch(pageRequest)
     const json = await res.json()
+    const category = json.project[0].category
 
-    return {data: json}
+    return {data: json,slug: slug,category: category}
 }
 
 export default Project

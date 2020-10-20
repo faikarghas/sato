@@ -79,7 +79,7 @@ function MyVerticallyCenteredModal2(props) {
 }
 
 
-const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
+const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
     const [lang, setLang] = useState()
     const [state, dispatch] = useContext(Context);
     const [modalShow, setModalShow] = useState(false)
@@ -131,20 +131,20 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                     <div className="menu_sidebar-content--top">
                         <Link href="/"><a><img className="logo" src="/logo-sato.svg" /></a></Link>
                         <ul className="link">
-                            <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>PROJECT</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'about-sato':'tentang-sato'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'studies':'pembelajaran'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>INTOUCH</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>CAREER</a></Link></li>
-                            <li className="mb-5"><Link href={`/${lang}/${lang === 'en'?'contact-faq':'kontak-faq'}`}><a className={activeMenu.act && activeMenu.menu === 'contact' ? 'active' : ''}>CONTACT + FAQ</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>{lang === 'en'?'PROJECT':'PROJEK'}</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-tim'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>{lang === 'en'?'IDEA + PEOPLE':'IDE + TEAM'}</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'studies':'studi'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>{lang === 'en'?'STUDIES':'STUDI'}</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>{lang === 'en'?'INTOUCH':'INTOUCH'}</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>{lang === 'en'?'CAREER':'KARIR'}</a></Link></li>
+                            <li className="mb-5"><Link href={`/${lang}/${lang === 'en'?'contact-faq':'kontak-faq'}`}><a className={activeMenu.act && activeMenu.menu === 'contact' ? 'active' : ''}>{lang === 'en'?'CONTACT + FAQ':'KONTAK + FAQ'}</a></Link></li>
                             <li><a className="search-button" onClick={ShowModal2}><img src="/search.png"/></a></li>
                         </ul>
                     </div>
                     <div className="menu_sidebar-content--bottom">
                         <ul className="information">
-                            <li className="mb-4"> <a onClick={ShowModal} className="color_wa logo-wrapper" style={{cursor:'pointer'}}>CHAT WITH US</a> </li>
+                            <li className="mb-4"> <a onClick={ShowModal} className="color_wa logo-wrapper" style={{cursor:'pointer'}}>{lang === 'en'?'CHAT WITH US':'CHAT DENGAN KAMI'}</a></li>
                             <br/>
-                            <li className="logo-wrapper"> <p className="color_white">FOR ANY ENQUIRIES,<br/>PLEASE CONTACT</p>
+                            <li className="logo-wrapper"> <p className="color_white">{lang === 'en'?'FOR ANY ENQUIRIES':'UNTUK PERTANYAAN'}<br/>{lang === 'en'?'PLEASE CONTACT':'MOHON HUBUNGI'}</p>
                             </li>
                             <br/>
                             <li><p className="color_lightGrey">sato.contractor@gmail.com</p></li>
@@ -162,8 +162,8 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                                 </div>
                                 {withSlug?
                                     <div className="lang">
-                                        <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[project]`} as={`/id/project/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
-                                        <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[project]`} as={`/en/project/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
+                                        <li><Link href={`/${lang === 'en' ? 'id' : 'en'}/project/[category]/[project]`} as={`/id/project/${category}/${slug}`}><a className={lang === 'id' ? 'active' : ''}>ID.</a></Link></li>
+                                        <li><Link href={`/${lang === 'id' ? 'en' : 'id'}/project/[category]/[project]`} as={`/en/project/${category}/${slug}`}><a className={lang === 'en' ? 'active' : ''}>EN.</a></Link></li>
                                     </div>
                                     :
                                     <div className="lang">
@@ -182,8 +182,8 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug}) => {
                         <Link href="/"><a><img className="logo" src="/logo-sato.svg" /></a></Link>
                         <ul className="link">
                             <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>PROJECT</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'about-sato':'tentang-sato'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'studies':'pembelajaran'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-team'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'studies':'studi'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>INTOUCH</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>CAREER</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'contact-faq':'kontak-faq'}`}><a className={activeMenu.act && activeMenu.menu === 'contact' ? 'active' : ''}>CONTACT + FAQ</a></Link></li>

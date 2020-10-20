@@ -27,14 +27,14 @@ const Offices = ({data,slug,data2,data3}) => {
             <Menu data={data} slug={slug} activeMenu={{act:'active',menu: data}} langEn='offices' langId='offices' thisproject="thisproject"/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
-                    <h2>{data3.projectTitle[0].description_id}</h2>
+                    <h2 className="forDesktop">{data3.projectTitle[0].description_en}</h2>
                     <TabProject className="hide-mobile" activeMenu={{act:'active',menu: data}} data={data} slug={slug}/>
                     <div className="page_project_list">
                         <div>
                         {
-                            data2.dataCategory.slice(0,Math.floor(data.length/2)).map((res,item)=>{
+                            data2.dataCategory.slice(0,Math.floor(data2.dataCategory.length/2)).map((res,i)=>{
                                 return(
-                                    <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                    <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
                                             <img src={`https://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">
@@ -49,9 +49,9 @@ const Offices = ({data,slug,data2,data3}) => {
                         </div>
                         <div>
                         {
-                            data2.dataCategory.slice(Math.floor(data.length/2),data.length).map((res,item)=>{
+                            data2.dataCategory.slice(Math.floor(data2.dataCategory.length/2),data2.dataCategory.length).map((res,i)=>{
                                 return(
-                                    <Link href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
+                                    <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
                                             <img src={`https://api.sato.id/images/${res.thumbnail}`} />
                                             <div className="img-overlay-skew">

@@ -58,7 +58,7 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const Project = ({data}) => {
+const Project = ({data,slug,category}) => {
     const [show,setShow] = useState(false)
     const [lang, setLang] = useState()
     const [modalShow, setModalShow] = useState(false)
@@ -82,8 +82,8 @@ const Project = ({data}) => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
-            <Menu langEn='project' langId='project' slug="pantai-mutiara" withSlug={true}/>
+            <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
+            <Menu langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <Link href={`/${lang}/project`} ><a className="back-to">Back to previous page</a></Link>
@@ -125,8 +125,9 @@ Project.getInitialProps = async (ctx) => {
 
     const res = await fetch(pageRequest)
     const json = await res.json()
+    const category = json.project[0].category
 
-    return {data: json}
+    return {data: json,slug: slug,category: category}
 }
 
 export default Project
