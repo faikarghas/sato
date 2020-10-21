@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import Link from 'next/link'
 
-const Index = ({activeMenu,className,thisproject,data,slug}) => {
+const Index = ({activeMenu,className,thisproject,data,dataCatIn,slug}) => {
     const [lang, setLang] = useState()
     const [page, setPage] = useState()
 
@@ -14,9 +14,33 @@ const Index = ({activeMenu,className,thisproject,data,slug}) => {
 
     let itemsToRender;
 
-    if (data) {
+    if (dataCatIn && data && lang === 'en') {
         itemsToRender = data.map((res,i)=>{
             let fileNameWithoutSpace = res.name.replace(/\s/g, '-').toLowerCase();
+            if (slug === fileNameWithoutSpace) {
+                return (
+                    <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpace}`}><a className='active'>{res.name}</a></Link></li>
+                )
+            } else {
+                return (
+                    <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpace}`}><a className=''>{res.name}</a></Link></li>
+                )
+            }
+        })
+    } else if (dataCatIn) {
+        itemsToRender = dataCatIn.map((res,i)=>{
+            let fileNameWithoutSpace = res.name.replace(/\s/g, '-').toLowerCase();
+
+            if (fileNameWithoutSpace === "hunian") {
+                fileNameWithoutSpace = "residentials"
+            } else if (fileNameWithoutSpace === "unit-contoh"){
+                fileNameWithoutSpace = "show-units"
+            } else if (fileNameWithoutSpace === "retail"){
+                fileNameWithoutSpace = "retails"
+            } else if (fileNameWithoutSpace === "kantor"){
+                fileNameWithoutSpace = "offices"
+            }
+
             if (slug === fileNameWithoutSpace) {
                 return (
                     <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpace}`}><a className='active'>{res.name}</a></Link></li>
@@ -32,7 +56,7 @@ const Index = ({activeMenu,className,thisproject,data,slug}) => {
     return (
         <div className={`tab_menu ${className}`}>
             <ul>
-                <li><Link href={`/${lang}/project`} as={`/${lang}/project`}><a className={activeMenu && activeMenu.act && activeMenu.menu === 'all' ? 'active' : ''}>All Projects</a></Link></li>
+                <li><Link href={`/${lang}/project`} as={`/${lang}/project`}><a className={activeMenu && activeMenu.act && activeMenu.menu === 'all' ? 'active' : ''}>{lang === 'en' ? 'All Projects' : 'Semua Projek' }</a></Link></li>
                 {itemsToRender}
             </ul>
         </div>

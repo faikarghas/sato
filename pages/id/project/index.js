@@ -14,13 +14,11 @@ import {absoluteUrl} from '../../../lib/absoluteUrl'
 
 const settings = {}
 
-const Projects = ({data,data2,urltest}) => {
+const Projects = ({data,data2,dataCatIn,urltest}) => {
     const [lang, setLang] = useState()
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-        console.log(data2.project.slice(0,Math.floor(data2.project.length/2)));
-        console.log(data2.project);
     }, [])
 
 
@@ -30,8 +28,8 @@ const Projects = ({data,data2,urltest}) => {
             <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
             <motion.div className="page_layout-main"  initial="initial" animate="animate" exit="exit">
                 <div className="page_project">
-                    <h2>{data2.projectTitle[0].description_en}</h2>
-                    <TabProject className="hide-mobile" activeMenu={{act:'active',menu:'all'}} data={data}/>
+                    <h2>{data2.projectTitle[0].description_id}</h2>
+                    <TabProject className="hide-mobile" activeMenu={{act:'active',menu:'all'}} data={data} dataCatIn={dataCatIn}/>
                     <div className="page_project_list">
                     <div>
                         {
@@ -87,7 +85,7 @@ Projects.getInitialProps = async (ctx) => {
     const json2 = await res2.json()
 
 
-    return { data: json.category, data2 : json2,urltest:origin }
+    return { data: json.category, data2 : json2,urltest:origin, dataCatIn: json.category_in, }
 }
 
 

@@ -42,7 +42,7 @@ const Karir = ({data}) => {
                         </Col>
                         <Col xs={12} md={7}>
                             <div className="page_career-info">
-                                <h4>APPLY FOR</h4>
+                                <h4>LAMARAN UNTUK</h4>
                                 {data.map((item,i)=>{
                                     return(
                                         <TitleCareer key={i} title={item.name} desc={item.description_id}/>

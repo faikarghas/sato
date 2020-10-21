@@ -32,7 +32,7 @@ const Index = ({show,data}) => {
                         <Col xs={12} md={12}>
                             <div className="detail-wrapper">
                                 <Row noGutters={true}>
-                                    <Col xs={6}><p>{lang === 'en'?'ARCHITECT':'ARCHITECT'}</p></Col>
+                                    <Col xs={6}><p>{lang === 'en'?'ARCHITECT':'ARSITEK'}</p></Col>
                                     <Col xs={6}><p className="color_lightGrey">{data.project[0].architect}</p></Col>
                                 </Row>
                             </div>

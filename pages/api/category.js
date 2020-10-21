@@ -7,6 +7,10 @@ export default  async (req, res) => {
     select * from category
   `)
 
+  const category_in = await db.query(escape`
+    select * from category_in
+  `)
+
   // res.statusCode = 200
-  res.json({ category: category })
+  res.json({ category: category, category_in: category_in })
 }

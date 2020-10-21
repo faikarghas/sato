@@ -33,3 +33,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 multilang
 
 tidak menggunakan [lang] tidak perlu membungkus page dengan withlocale()
+
+
+
+SEMUA PROJEK
+HUNIAN
+UNIT CONTOH
+RETAIL
+KANTOR  

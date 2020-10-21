@@ -132,7 +132,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
                         <Link href="/"><a><img className="logo" src="/logo-sato.svg" /></a></Link>
                         <ul className="link">
                             <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>{lang === 'en'?'PROJECT':'PROJEK'}</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-tim'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>{lang === 'en'?'IDEA + PEOPLE':'IDE + TEAM'}</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-tim'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>{lang === 'en'?'IDEA + PEOPLE':'IDE + TIM'}</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'studies':'studi'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>{lang === 'en'?'STUDIES':'STUDI'}</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>{lang === 'en'?'INTOUCH':'INTOUCH'}</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>{lang === 'en'?'CAREER':'KARIR'}</a></Link></li>
@@ -182,7 +182,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
                         <Link href="/"><a><img className="logo" src="/logo-sato.svg" /></a></Link>
                         <ul className="link">
                             <li><Link href={`/${lang}/${lang === 'en'?'project':'project'}`}><a className={activeMenu.act && activeMenu.menu === 'project' ? 'active' : ''}>PROJECT</a></Link></li>
-                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-team'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
+                            <li><Link href={`/${lang}/${lang === 'en'?'idea-people':'ide-tim'}`}><a className={activeMenu.act && activeMenu.menu === 'about' ? 'active' : ''}>IDEA + PEOPLE</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'studies':'studi'}`}><a className={activeMenu.act && activeMenu.menu === 'studies' ? 'active' : ''}>STUDIES</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'intouch':'intouch'}`}><a className={activeMenu.act && activeMenu.menu === 'intouch' ? 'active' : ''}>INTOUCH</a></Link></li>
                             <li><Link href={`/${lang}/${lang === 'en'?'career':'karir'}`}><a className={activeMenu.act && activeMenu.menu === 'career' ? 'active' : ''}>CAREER</a></Link></li>

@@ -71,7 +71,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                     <Row key={i}>
                                         <Col xs={12}>
                                             <div className="page_intouch-titleProject">
-                                                <h2><span>LATEST PROJECT:</span></h2>
+                                                <h2><span>PROJEK TERBARU:</span></h2>
                                                 <h2>{item.name}</h2>
                                             </div>
                                             <div className="page_intouch-imgProject">
@@ -103,12 +103,12 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                         <Row>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-desc">
-                                    {parse(data1.intouch[0].content)}
+                                    {parse(data1.intouch[0].content_id)}
                                 </div>
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-acc">
-                                    <h4>Projects Accomplisment</h4>
+                                    <h4>PENCAPAIAN PROJEK</h4>
                                     <ul>
                                         {data3.projectAccom.map((item,i)=>{
                                             return(
@@ -139,7 +139,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                         </Row>
                     </section>
                     <section className="section_others">
-                        <h2>OTHER PROJECTS</h2>
+                        <h2>PROJEK LAINNYA</h2>
                         <Row>
                             {data4.map((item,i)=>{
                                 if (i === 4) {
@@ -147,7 +147,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                         <Col xs={12} md={4} key={i}>
                                             <div className="section_others-boxImg moreAbout">
                                                 <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
-                                                    <a>MORE<br/>ABOUT<br/>SATO</a>
+                                                    <a>TENTANG<br/>SATO</a>
                                                 </Link>
                                             </div>
                                         </Col>

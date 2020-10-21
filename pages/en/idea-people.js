@@ -60,7 +60,7 @@ const About = ({data,data2,data3}) => {
     return (
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='about-sato' langId='tentang-sato'/>
-            <Menu langEn='about-sato' langId='tentang-sato'/>
+            <Menu langEn='about-sato' langId='idea-people'/>
             <motion.div className="page_layout-main d-flex p-0"  initial='initial' animate='animate' exit="exit">
                 <div className="about-first page_about">
                     <div className='content_scroll'>

@@ -14,7 +14,7 @@ import {absoluteUrl} from '../../../../lib/absoluteUrl'
 
 const settings = {}
 
-const Offices = ({data,slug,data2,data3}) => {
+const Offices = ({data,slug,data2,data3,dataCatIn}) => {
     const [lang, setLang] = useState()
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Offices = ({data,slug,data2,data3}) => {
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="page_project">
                     <h2 className="forDesktop">{data3.projectTitle[0].description_en}</h2>
-                    <TabProject className="hide-mobile" activeMenu={{act:'active',menu: data}} data={data} slug={slug}/>
+                    <TabProject className="hide-mobile" activeMenu={{act:'active',menu: data}} data={data} dataCatIn={dataCatIn} slug={slug}/>
                     <div className="page_project_list">
                         <div>
                         {
@@ -76,7 +76,19 @@ Offices.getInitialProps = async (ctx) => {
     const { origin } = absoluteUrl(ctx.req, "localhost:3013");
 
     const pageRequest = `${origin}/api/category`
-    const category = ctx.query.category
+    let category = ctx.query.category
+
+    if (category === "hunian") {
+        category = "residentials"
+    } else if (category === "unit-contoh"){
+        category = "show-units"
+    } else if (category === "retail"){
+        category = "retails"
+    } else if (category === "kantor"){
+        category = "offices"
+    }
+
+    console.log(category);
 
     const res = await fetch(pageRequest)
     const json = await res.json()
@@ -108,7 +120,7 @@ Offices.getInitialProps = async (ctx) => {
         }
     }
 
-    return { data: json.category,slug:category, data2:json2,data3:json3 }
+    return { data: json.category,slug:category, data2:json2,data3:json3, dataCatIn: json.category_in }
 }
 
 
