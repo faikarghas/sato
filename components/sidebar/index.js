@@ -105,7 +105,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
         })
         .then((response) => response.json())
         .then((dataRes) => {
-            window.open("https://api.whatsapp.com/send/?phone=6281901993060&text&app_absent=0")
+            window.open("https://api.whatsapp.com/send/?phone=6281315192239&text&app_absent=0")
             setLoading(false)
         })
 
@@ -147,10 +147,10 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
                             <li className="logo-wrapper"> <p className="color_white">{lang === 'en'?'FOR ANY ENQUIRIES':'UNTUK PERTANYAAN'}<br/>{lang === 'en'?'PLEASE CONTACT':'MOHON HUBUNGI'}</p>
                             </li>
                             <br/>
-                            <li><p className="color_lightGrey">sato.contractor@gmail.com</p></li>
+                            <li><p className="color_lightGrey">sato.id.marketing@gmail.com</p></li>
                             <li><p className="color_lightGrey">T 021-2126 0833</p></li>
                             <br/>
-                            <li><p className="color_lightGrey m-0">Jl PERUMAHAN INTERCOM<br/>KEBUN JERUK J13/NO 9<br/>SRENGSENG<br/>JAKARTA BARAT, INDONESIA</p></li>
+                            <li><p className="color_lightGrey m-0">Jl PERUMAHAN INTERCON<br/>KEBUN JERUK J13/NO 9<br/>SRENGSENG<br/>JAKARTA BARAT, INDONESIA</p></li>
 
                             <ul className="logo_info">
                                 <div className="sosmed">

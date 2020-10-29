@@ -87,9 +87,9 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
 Offices.getInitialProps = async (ctx) => {
     const { origin } = absoluteUrl(ctx.req, "localhost:3013");
 
-    const pageRequest = `${origin}/api/category`
     const category = ctx.query.category
 
+    const pageRequest = `${origin}/api/category`
     const res = await fetch(pageRequest)
     const json = await res.json()
 

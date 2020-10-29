@@ -16,10 +16,22 @@ const settings = {}
 
 const Offices = ({data,slug,data2,data3,dataCatIn}) => {
     const [lang, setLang] = useState()
+    const [dvdVal1, setDvdval1] = useState(2)
+
+
 
     useEffect(() => {
         setLang(window.location.href.split('/')[3])
-    }, [])
+
+        console.log('fire');
+
+        if (data2.dataCategory.length === 1) {
+            setDvdval1(1)
+        } else {
+            setDvdval1(2)
+        }
+
+    }, [data2])
 
     return (
         <div className="page_layout">
@@ -32,7 +44,7 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
                     <div className="page_project_list">
                         <div>
                         {
-                            data2.dataCategory.slice(0,Math.floor(data2.dataCategory.length/2)).map((res,i)=>{
+                            data2.dataCategory.slice(0,Math.floor(data2.dataCategory.length / dvdVal1)).map((res,i)=>{
                                 return(
                                     <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
@@ -49,7 +61,7 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
                         </div>
                         <div>
                         {
-                            data2.dataCategory.slice(Math.floor(data2.dataCategory.length/2),data2.dataCategory.length).map((res,i)=>{
+                            data2.dataCategory.slice(Math.floor(data2.dataCategory.length/2),data2.dataCategory.length === 1 ? 0 : data2.dataCategory.length).map((res,i)=>{
                                 return(
                                     <Link key={i} href={`/${lang}/project/[category]/[slug]`} as={`/${lang}/project/${res.category}/${res.slug}`}>
                                         <a>
@@ -75,21 +87,9 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
 Offices.getInitialProps = async (ctx) => {
     const { origin } = absoluteUrl(ctx.req, "localhost:3013");
 
+    const category = ctx.query.category
+
     const pageRequest = `${origin}/api/category`
-    let category = ctx.query.category
-
-    if (category === "hunian") {
-        category = "residentials"
-    } else if (category === "unit-contoh"){
-        category = "show-units"
-    } else if (category === "retail"){
-        category = "retails"
-    } else if (category === "kantor"){
-        category = "offices"
-    }
-
-    console.log(category);
-
     const res = await fetch(pageRequest)
     const json = await res.json()
 
@@ -120,7 +120,7 @@ Offices.getInitialProps = async (ctx) => {
         }
     }
 
-    return { data: json.category,slug:category, data2:json2,data3:json3, dataCatIn: json.category_in }
+    return { data: json.category,slug:category, data2:json2,data3:json3,dataCatIn :json.category_in }
 }
 
 
