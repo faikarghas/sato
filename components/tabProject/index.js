@@ -29,6 +29,7 @@ const Index = ({activeMenu,className,thisproject,data,dataCatIn,slug}) => {
             return thisData
         } else {
             let thisData = data.map((res,i)=>{
+                let fileNameWithoutSpaceSlug = res.name.replace(/\s/g, '-').toLowerCase();
                 let fileNameWithoutSpace = res.name.replace(/\s/g, '-').toLowerCase();
                 if (fileNameWithoutSpace === "residentials") {
                     fileNameWithoutSpace = "hunian"
@@ -44,11 +45,11 @@ const Index = ({activeMenu,className,thisproject,data,dataCatIn,slug}) => {
 
                 if (slug === res.name.replace(/\s/g, '-').toLowerCase()) {
                     return (
-                        <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpace}`}><a className='active'>{fileNameWithoutSpace}</a></Link></li>
+                        <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpaceSlug}`}><a className='active'>{fileNameWithoutSpace}</a></Link></li>
                     )
                 } else {
                     return (
-                        <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpace}`}><a className=''>{fileNameWithoutSpace}</a></Link></li>
+                        <li key={i}><Link href={`/${lang}/project/[category]`} as={`/${lang}/project/${fileNameWithoutSpaceSlug}`}><a className=''>{fileNameWithoutSpace}</a></Link></li>
                     )
                 }
             })
