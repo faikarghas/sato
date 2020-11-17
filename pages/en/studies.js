@@ -46,7 +46,7 @@ const Studies = ({data}) => {
 
     return (
         <div className="page_layout">
-            <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='pembelajaran'/>
+            <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='studi'/>
             <Menu langEn='studies' langId='pembelajaran'/>
             <motion.div className="page_layout-main"  initial='initial' animate='animate' exit="exit">
                 <div className="studies page_studies">

@@ -1,0 +1,10 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/satoid/sato.id"
+PassengerBaseURI "/"
+PassengerNodejs "/home/satoid/nodevenv/sato.id/10/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+
+piJv0lLO+XK(

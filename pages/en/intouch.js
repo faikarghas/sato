@@ -149,7 +149,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                     return (
                                         <Col xs={12} md={4} key={i}>
                                             <div className="section_others-boxImg moreAbout">
-                                                <Link href={`/${lang}/${lang === 'en'? 'about-sato':'tentang-sato'}`}>
+                                                <Link href={`/${lang}/${lang === 'en'? 'idea-people':'ide-tim'}`}>
                                                     <a>MORE<br/>ABOUT<br/>SATO</a>
                                                 </Link>
                                             </div>
