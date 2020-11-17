@@ -34,10 +34,3 @@ multilang
 
 tidak menggunakan [lang] tidak perlu membungkus page dengan withlocale()
 
-
-
-SEMUA PROJEK
-HUNIAN
-UNIT CONTOH
-RETAIL
-KANTOR  

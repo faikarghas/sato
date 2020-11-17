@@ -190,6 +190,10 @@
             color: white;
             text-transform: uppercase;
         }
+        img{
+            width:100%;
+            object-fit: contain;
+        }
     }
 
     &-acc{
