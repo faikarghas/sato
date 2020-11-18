@@ -18,17 +18,24 @@ const Studies = ({data}) => {
 
     const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
     beforeChange: (oldIndex,newIndex) => {
+
         if (newIndex === data.studies.length - 1) {
             setNextkasus(newIndex - 1)
+        } else if(newIndex === 0){
+            setNextkasus(newIndex + 1)
         } else {
             setNextkasus(newIndex + 1)
         }
+
+        // if(oldIndex === 0 && newIndex === 2) {
+        //     setNextkasus(0)
+        // }
     }
 };
 
@@ -41,7 +48,6 @@ const Studies = ({data}) => {
     }
 
     useEffect(() => {
-        console.log(data.studies[nextkasus]);
     }, [nextkasus])
 
     return (
@@ -58,14 +64,15 @@ const Studies = ({data}) => {
                     </Row>
                     <Slider {...settings} ref={refSlider}>
                         {data.studies.map((item,i)=>{
+                            var currSlide = i
                             return(
                                 <Row key={i} className="studies_sliderWrapper">
                                     <Col xs={12} md={8}>
                                         <div className="studies_img">
                                             <img src={`https://api.sato.id/images/${item.imageName}`} width="100%" />
                                             <ul className="btn-arrow">
-                                                <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
-                                                <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                                <li onClick={_prevArrow}><img className={i === 0 ? "arrow_next op":"arrow_next"} src="/arrow.png" width="100%" /></li>
+                                                <li onClick={_nextArrow}><img className={i === data.studies.length - 1 ? "arrow_next op":"arrow_next"} src="/arrow.png" width="100%" /></li>
                                             </ul>
                                         </div>
                                     </Col>
@@ -73,10 +80,10 @@ const Studies = ({data}) => {
                                         {[data.studies[nextkasus]].map((item,i)=>{
                                             return (
                                                 <React.Fragment>
-                                                    <div key={i} className="img_next_wrapper" onClick={_nextArrow}>
+                                                    <div data-next={nextkasus} className="img_next_wrapper" className={currSlide === data.studies.length - 1 ? "img_next_wrapper op":"img_next_wrapper"}>
                                                         <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
                                                     </div>
-                                                    <p onClick={_nextArrow} className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
+                                                    <p className={currSlide === data.studies.length - 1 ? "img_next_wrapper-text op":"img_next_wrapper-text"}><span>NEXT :</span><br/>{item.title_en}</p>
                                                 </React.Fragment>
                                             )
                                         })}

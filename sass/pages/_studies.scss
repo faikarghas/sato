@@ -29,9 +29,13 @@
     .img_next_wrapper{
         position: relative;
         cursor: pointer;
+        &.op{
+            display: none;
+        }
         &-img{
             opacity: 0.3;
             filter: grayscale(1);
+
         }
         &-img{
             transition: all 0.3s linear;
@@ -46,6 +50,9 @@
             width: 100%;
             padding: 3rem 0;
             cursor: pointer;
+            &.op{
+                display: none;
+            }
             span{
                 font-size: 1.2rem;
                 color: $color_red;
@@ -118,6 +125,9 @@
                     cursor: pointer;
                     width: 11px;
                     object-fit: contain;
+                    &.op{
+                        opacity: 0.2;
+                    }
                 }
                 .arrow_prev{
                     cursor: pointer;
