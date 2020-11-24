@@ -7,7 +7,7 @@
     .sideSlider{
         position: absolute;
         left: 0;
-        width: 460px;
+        width: 555px;
         height: 100vh;
         top: 0;
         padding: 2rem 8rem;
@@ -34,15 +34,22 @@
             margin-bottom: 8rem;
         }
         p{
-            color: white;
             font-family: "Futura-Light-font";
             font-size: 6.5rem;
             font-weight: bold;
             letter-spacing: normal;
             line-height: 0.8em;
             text-transform: uppercase;
-            @include respond(down-tab-port){
-                font-size: 5rem;
+            span{
+                font-family: "Futura-Light-font";
+                font-size: 6.5rem;
+                font-weight: bold;
+                letter-spacing: normal;
+                line-height: 0.8em;
+                text-transform: uppercase;
+                @include respond(down-tab-port){
+                    font-size: 5rem;
+                }
             }
         }
     }

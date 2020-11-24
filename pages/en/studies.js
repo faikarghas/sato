@@ -18,7 +18,7 @@ const Studies = ({data}) => {
 
     const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -71,19 +71,21 @@ const Studies = ({data}) => {
                                         <div className="studies_img">
                                             <img src={`https://api.sato.id/images/${item.imageName}`} width="100%" />
                                             <ul className="btn-arrow">
-                                                <li onClick={_prevArrow}><img className={i === 0 ? "arrow_next op":"arrow_next"} src="/arrow.png" width="100%" /></li>
-                                                <li onClick={_nextArrow}><img className={i === data.studies.length - 1 ? "arrow_next op":"arrow_next"} src="/arrow.png" width="100%" /></li>
+                                                <li onClick={_prevArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
+                                                <li onClick={_nextArrow}><img className="arrow_next" src="/arrow.png" width="100%" /></li>
                                             </ul>
                                         </div>
                                     </Col>
                                     <Col xs={12} md={4} className="forDesktop">
-                                        {[data.studies[nextkasus]].map((item,i)=>{
+                                        {[data.studies[currSlide === data.studies.length - 1 ? 0 : nextkasus]].map((item,i)=>{
                                             return (
                                                 <React.Fragment>
-                                                    <div data-next={nextkasus} className="img_next_wrapper" className={currSlide === data.studies.length - 1 ? "img_next_wrapper op":"img_next_wrapper"}>
+                                                    {/* <div data-next={nextkasus} className="img_next_wrapper" className={currSlide === data.studies.length - 1 ? "img_next_wrapper op":"img_next_wrapper"}> */}
+                                                    <div data-next={nextkasus} className="img_next_wrapper" className="img_next_wrapper">
                                                         <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
                                                     </div>
-                                                    <p className={currSlide === data.studies.length - 1 ? "img_next_wrapper-text op":"img_next_wrapper-text"}><span>NEXT :</span><br/>{item.title_en}</p>
+                                                    {/* <p className={currSlide === data.studies.length - 1 ? "img_next_wrapper-text op":"img_next_wrapper-text"}><span>NEXT :</span><br/>{item.title_en}</p> */}
+                                                    <p className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
                                                 </React.Fragment>
                                             )
                                         })}
