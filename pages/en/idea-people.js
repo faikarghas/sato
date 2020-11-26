@@ -123,7 +123,6 @@ About.getInitialProps = async (ctx) => {
     const res3 = await fetch(pageRequest3)
     const json3 = await res3.json()
 
-    console.log(json3);
 
     return { data: json1.testimonials, data2: json2.our_team, data3: json3.partnership}
 }

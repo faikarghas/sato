@@ -194,10 +194,10 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
                             <li className="logo-wrapper"> <p className="color_white">FOR ANY ENQUIRIES,<br/>PLEASE CONTACT</p>
                             </li>
                             <br/>
-                            <li><p className="color_lightGrey">SATO.ARCHITECTURE@GMAIL.COM</p></li>
-                            <li><p className="color_lightGrey">T +62 882 1226 4250</p></li>
+                            <li><p className="color_lightGrey">sato.id.marketing@gmail.com</p></li>
+                            <li><p className="color_lightGrey">T 021-2126 0833</p></li>
                             <br/>
-                            <li><p className="color_lightGrey m-0">GRAHA SUNTER PRATAMA<br/>Jl. SELAT MADURA N/20-14,<br/>SUNTER AGUNG, TANJUNG PRIOK,<br/>14350, JAKARTA UTARA, INDONESIA</p></li>
+                            <li><p className="color_lightGrey m-0">Jl PERUMAHAN INTERCON<br/>KEBUN JERUK J13/NO 9<br/>SRENGSENG<br/>JAKARTA BARAT, INDONESIA</p></li>
                         </ul>
                     </div>
                 </div>

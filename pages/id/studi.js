@@ -117,8 +117,6 @@ Studies.getInitialProps = async (ctx) => {
     const json = await res.json()
 
 
-    console.log(json);
-
     return { data: json}
 }
 

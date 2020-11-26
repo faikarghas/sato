@@ -89,7 +89,6 @@ Index.getInitialProps = async (ctx) => {
     const res = await fetch(pageRequest)
     const json = await res.json()
 
-
     return { data: json }
 }
 
