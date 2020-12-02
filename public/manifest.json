@@ -5,8 +5,8 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "orientation": "portrait",
-    "start_url":"/",
- "icons": [
+    "start_url":"/en",
+    "icons": [
   {
    "src": "icon/android-icon-36x36.png",
    "sizes": "36x36",
