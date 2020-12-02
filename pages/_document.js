@@ -14,10 +14,24 @@ export default class MyDocument extends Document {
                     {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" /> */}
 
                     {/* OPEN GRAP */}
-                    <meta name="keywords" content="dignite,dignite.studio,dignite studio,dignitestudio,Agensi digital,Website bisnis,Desain website,Aplikasi android,Aplikasi IOS,Website e-commerce,Website bisnis,Jasa pembuatan website,Jasa desain website,Buku tahunan sekolah,jasa desain grafis,Agensi digital jakarta,jasa bikin aplikasi" />
-                    <meta name="author" content="Dignite Studio"/>
-                    <meta name="copyright" content="Dignite Studio" />
-                    <meta name="creator" content="Dignite Studio" /> 
+                    <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png"/>
+                    <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png"/>
+                    <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png"/>
+                    <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png"/>
+                    <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png"/>
+                    <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png"/>
+                    <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png"/>
+                    <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png"/>
+                    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png"/>
+                    <link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png"/>
+                    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png"/>
+                    <link rel="manifest" href="/manifest.json"/>
+                    <meta name="msapplication-TileColor" content="#ffffff"/>
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+                    <meta name="theme-color" content="#ffffff"/>
+
                     {/* favicon */}
                     <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
                 </Head>

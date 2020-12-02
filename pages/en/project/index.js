@@ -80,6 +80,7 @@ Projects.getInitialProps = async (ctx) => {
     const res = await fetch(pageRequest)
     const json = await res.json()
 
+
     const pageRequest2 = `${origin}/api/project`
     const res2 = await fetch(pageRequest2)
     const json2 = await res2.json()
