@@ -7,13 +7,12 @@ import Link from 'next/link'
 const Index = () => {
   const router = useRouter()
   React.useEffect(() => {
-    // window.location.href = `/en`
+    window.location.href = `/en`
   })
   return (
-    // <Head>
-    //   <meta name="robots" content="noindex, nofollow" />
-    // </Head>
-    <div>test</div>
+    <Head>
+      <meta name="robots" content="noindex, nofollow" />
+    </Head>
   )
 }
 
