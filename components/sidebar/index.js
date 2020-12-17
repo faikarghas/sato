@@ -156,9 +156,9 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
                                 <div className="sosmed">
                                     <li className="mb-4"><a><img src="/wa-sato.png" alt="logo wa"/></a></li>
                                     <br/>
-                                    <li className="mb-2"><a><img src="/facebook.png" alt="logo sosmed"/></a></li>
-                                    <li className="mb-2"><a><img src="/instagram.png" alt="logo sosmed"/></a></li>
-                                    <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li>
+                                    <li className="mb-2"><a href="https://www.facebook.com/SATO-Contractor-103547724942458/"><img src="/facebook.png" alt="logo sosmed"/></a></li>
+                                    <li className="mb-2"><a href="https://instagram.com/sato_contractor?igshid=1uwp0o8pe007c"><img src="/instagram.png" alt="logo sosmed"/></a></li>
+                                    {/* <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li> */}
                                 </div>
                                 {withSlug?
                                     <div className="lang">

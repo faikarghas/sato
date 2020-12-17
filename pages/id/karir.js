@@ -36,7 +36,7 @@ const Karir = ({data}) => {
                             </div>
                             <div className="page_career-contact">
                                 <p>KIRIM CV & PORTOFOLIO MU KE</p>
-                                <h4>CARRER@SATO.ID</h4>
+                                <h4>career.sato.id@gmail.com</h4>
                                 <p>HANYA MENERIMA PDF DAN WORD <br/> MAKS. UKURAN 2 MB.</p>
                             </div>
                         </Col>

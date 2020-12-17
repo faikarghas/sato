@@ -36,7 +36,7 @@ const Career = ({data}) => {
                             </div>
                             <div className="page_career-contact">
                                 <p>PLEASE SENT YOUR CV TO</p>
-                                <h4>CARRER@SATO.ID</h4>
+                                <h4>career.sato.id@gmail.com</h4>
                                 <p>PDF & WORD FILES ARE ACCEPTABLE <br/> MAX. SIZE 2MB.</p>
                             </div>
                         </Col>

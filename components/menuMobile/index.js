@@ -67,9 +67,9 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
                     />
                     <div className="sosmed">
                         <ul>
-                            <li className="mb-2"><a><img src="/facebook.png" alt="logo sosmed"/></a></li>
-                            <li className="mb-2"><a><img src="/instagram.png" alt="logo sosmed"/></a></li>
-                            <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a href="https://www.facebook.com/SATO-Contractor-103547724942458/"><img src="/facebook.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a href="https://instagram.com/sato_contractor?igshid=1uwp0o8pe007c"><img src="/instagram.png" alt="logo sosmed"/></a></li>
+                            {/* <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li> */}
                         </ul>
                     </div>
                 </div>
