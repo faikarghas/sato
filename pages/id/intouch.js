@@ -71,7 +71,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                     <Row key={i}>
                                         <Col xs={12}>
                                             <div className="page_intouch-titleProject">
-                                                <h2><span>PROJEK TERBARU:</span></h2>
+                                                <h2><span>INFORMASI TERBARU:</span></h2>
                                                 <h2>{item.name}</h2>
                                             </div>
                                             <div className="page_intouch-imgProject">
