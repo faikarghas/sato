@@ -133,7 +133,9 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                             </Col>
                             <Col xs={12} md={6}>
                                 <div className="page_intouch-img">
-                                    <img src="/contact-img.png" width="100%" height="360px"/>
+                                    <h3>CHAT LANGSUNG DENGAN SALES KAMI</h3>
+                                    <a href='https://api.whatsapp.com/send/?phone=6281315192239&text&app_absent=0' target="_blank"><img src="/wa.png" width="100%" alt="logo wa"/></a>
+                                    <div className="orText"><p>OR</p></div>
                                 </div>
                             </Col>
                         </Row>

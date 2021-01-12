@@ -8,6 +8,7 @@ const Index = () => {
   const router = useRouter()
   React.useEffect(() => {
     window.location.href = `/en`
+    console.log('te');
   })
   return (
     <Head>

@@ -35,7 +35,3 @@ multilang
 tidak menggunakan [lang] tidak perlu membungkus page dengan withlocale()
 
 
-pdsi_pertamina
-4osM4^p4
-
-no0M8c5^

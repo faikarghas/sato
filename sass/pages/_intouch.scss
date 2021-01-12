@@ -46,6 +46,38 @@
                 color: white;
             }
         }
+
+        .page_intouch-img{
+            padding-right: 4rem;
+            position: relative;
+            @include respond(down-tab-medium){
+                padding-right: 0;
+                margin-bottom: 4rem;
+            }
+            h3{
+                color: white;
+            }
+            img{
+                margin-top: 9rem;
+                height: 93px;
+                -o-object-fit: contain;
+                object-fit: contain;
+            }
+
+            .orText{
+                position: absolute;
+                top: 83%;
+                left: -20px;
+                transform: translateY(-50%);
+                color: white;
+                @include respond(down-tab-medium){
+                    display: none;
+                }
+                p{
+                    font-size: 17.5px;
+                }
+            }
+        }
     }
 
     .section_others{
