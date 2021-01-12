@@ -9,7 +9,7 @@ import {dataSlides} from '../../lib/data'
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import Menu from '../../components/menuMobile/index'
-
+import GaWrapper from '../../components/GA/index'
 
 
 const Studies = ({data}) => {
@@ -51,6 +51,7 @@ const Studies = ({data}) => {
     }, [nextkasus])
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='studi'/>
             <Menu langEn='studies' langId='pembelajaran'/>
@@ -101,7 +102,7 @@ const Studies = ({data}) => {
                                     <Col xs={12} md={4} className="forMobile">
                                         {[data.studies[nextkasus]].map((item,i)=>{
                                             return (
-                                                <div className="img_next_wrapper" onClick={_nextArrow}>
+                                                <div className="img_next_wrapper" onClick={_nextArrow} key={i}>
                                                     <img className="img_next_wrapper-img" src={`https://api.sato.id/images/${item.imageName}`} alt="studies-img" width="100%" height="190px" />
                                                     <p className="img_next_wrapper-text"><span>NEXT :</span><br/>{item.title_en}</p>
                                                 </div>
@@ -115,6 +116,7 @@ const Studies = ({data}) => {
                 </div>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

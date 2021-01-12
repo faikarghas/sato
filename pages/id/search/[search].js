@@ -5,6 +5,7 @@ import { AnimatePresence,motion } from "framer-motion";
 
 import SideBar from '../../../components/sidebar/index'
 import Menu from '../../../components/menuMobile/index'
+import GaWrapper from '../../../components/GA/index'
 
 
 
@@ -16,6 +17,7 @@ const Search = ({dataSearch,search}) => {
     }, [])
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'search'}} langEn='search' langId='pembelajaran'/>
             <Menu langEn='search' langId='pembelajaran'/>
@@ -32,6 +34,7 @@ const Search = ({dataSearch,search}) => {
                 </div>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

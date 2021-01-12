@@ -9,6 +9,7 @@ import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
+import GaWrapper from '../../components/GA/index'
 
 import {urlsato, urlapisato} from '../../lib/url'
 
@@ -59,6 +60,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
     }, [])
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
             <Menu langEn='intouch' langId='intouch'/>
@@ -179,6 +181,7 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                 </div>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

@@ -7,6 +7,7 @@ import parse from 'html-react-parser';
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import Menu from '../../components/menuMobile/index'
+import GaWrapper from '../../components/GA/index'
 
 import {urlapisato} from '../../lib/url'
 
@@ -58,6 +59,7 @@ const About = ({data,data2,data3}) => {
     console.log(data3);
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='idea-people' langId='ide-tim'/>
             <Menu langEn='about-sato' langId='ide-tim'/>
@@ -107,6 +109,7 @@ const About = ({data,data2,data3}) => {
                 <Slider {...settings} ></Slider>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

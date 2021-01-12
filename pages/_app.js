@@ -4,7 +4,9 @@ import Router from 'next/router';
 import { AnimatePresence } from "framer-motion";
 import Head from 'next/head'
 import NProgress from 'nprogress'
-import firebase from '../lib/firebase'
+// import firebase from '../lib/firebase'
+import { initGA, logPageView } from '../lib/analytics'
+
 
 import Store from '../hocs/store'
 
@@ -24,20 +26,21 @@ class MyApp extends App {
       location.href = as;
     });
 
-    const msg = firebase.messaging()
-    Notification.requestPermission().then(()=>{
-      return msg.getToken()
-    }).then((data)=>{
-      console.log(data);
-    })
+    // const msg = firebase.messaging()
+    // Notification.requestPermission().then(()=>{
+    //   return msg.getToken()
+    // }).then((data)=>{
+    //   console.log(data);
+    // })
 
-    function getMessage() {
-      const messaging = firebase.messaging();
-      messaging.onMessage((message) => console.log("foreground", message));
-    }
+    // function getMessage() {
+    //   const messaging = firebase.messaging();
+    //   messaging.onMessage((message) => console.log("foreground", message));
+    // }
 
-    getMessage()
+    // getMessage()
 
+    
 
   }
   render() {

@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import SideBar from '../../../components/sidebar/index'
 import TabProject from '../../../components/tabProject/index'
 import Menu from '../../../components/menuMobile/index'
+import GaWrapper from '../../../components/GA/index'
 
 
 import {urlsato,urlapisato} from '../../../lib/url'
@@ -23,6 +24,7 @@ const Projects = ({data,data2,dataCatIn,urltest}) => {
 
 
     return (
+        <GaWrapper>
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
             <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
@@ -69,6 +71,7 @@ const Projects = ({data,data2,dataCatIn,urltest}) => {
                 <Slider {...settings} ></Slider>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

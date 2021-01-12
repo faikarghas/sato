@@ -8,6 +8,7 @@ import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import TitleCareer from '../../components/career/title'
 import Menu from '../../components/menuMobile/index'
+import GaWrapper from '../../components/GA/index'
 
 const settings ={}
 
@@ -19,6 +20,7 @@ const Karir = ({data}) => {
     }
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>
             <Menu langEn='career' langId='karir'/>
@@ -55,6 +57,7 @@ const Karir = ({data}) => {
                 <Slider {...settings} ></Slider>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

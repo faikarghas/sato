@@ -9,6 +9,7 @@ import {dataSlides} from '../../lib/data'
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import Menu from '../../components/menuMobile/index'
+import GaWrapper from '../../components/GA/index'
 
 
 
@@ -45,6 +46,7 @@ const Studies = ({data}) => {
     }, [nextkasus])
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='studi'/>
             <Menu langEn='studies' langId='pembelajaran'/>
@@ -107,6 +109,7 @@ const Studies = ({data}) => {
                 </div>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

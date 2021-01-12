@@ -8,6 +8,7 @@ import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
+import GaWrapper from '../../components/GA/index'
 
 import {urlsato, urlapisato} from '../../lib/url'
 
@@ -18,6 +19,7 @@ const Contact = ({data}) => {
 
     console.log(data.faq);
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
             <Menu langEn='contact-faq' langId='kontak-faq'/>
@@ -57,6 +59,7 @@ const Contact = ({data}) => {
                 <Slider {...settings} ></Slider>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

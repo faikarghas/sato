@@ -8,6 +8,7 @@ import SideBar from '../../../../../components/sidebar/index'
 import InfoDetailM from '../../../../../components/infoProjectM/index'
 import InfoDetail from '../../../../../components/infoProject/index'
 import Menu from '../../../../../components/menuMobile/index'
+import GaWrapper from '../../../../../components/GA/index'
 
 import {absoluteUrl} from '../../../../../lib/absoluteUrl'
 
@@ -81,6 +82,7 @@ const Project = ({data,slug,category}) => {
 
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
             <Menu langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
@@ -114,6 +116,7 @@ const Project = ({data,slug,category}) => {
                 activeSlide={imgIndex}
             />
         </div>
+        </GaWrapper>
     )
 }
 

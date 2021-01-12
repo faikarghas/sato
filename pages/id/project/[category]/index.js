@@ -8,6 +8,7 @@ import Router from 'next/router'
 import SideBar from '../../../../components/sidebar/index'
 import TabProject from '../../../../components/tabProject/index'
 import Menu from '../../../../components/menuMobile/index'
+import GaWrapper from '../../../../components/GA/index'
 
 import {absoluteUrl} from '../../../../lib/absoluteUrl'
 
@@ -34,6 +35,7 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
     }, [data2])
 
     return (
+        <GaWrapper>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
             <Menu data={data} slug={slug} activeMenu={{act:'active',menu: data}} langEn='offices' langId='offices' thisproject="thisproject"/>
@@ -80,6 +82,7 @@ const Offices = ({data,slug,data2,data3,dataCatIn}) => {
                 <Slider {...settings} ></Slider>
             </motion.div>
         </div>
+        </GaWrapper>
     )
 }
 

@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import Link from 'next/link'
 import { motion } from 'framer-motion';
 import parser from 'html-react-parser'
+import GaWrapper from '../../components/GA/index'
 
 
 const Index = ({data}) => {
@@ -35,7 +36,7 @@ const Index = ({data}) => {
 
 
     return (
-        <React.Fragment>
+        <GaWrapper>
              <Head>
                 <title>SATO</title>
             </Head>
@@ -80,7 +81,7 @@ const Index = ({data}) => {
                 })}
             </Slider>
             </motion.div>
-        </React.Fragment>
+        </GaWrapper>
     )
 }
 
