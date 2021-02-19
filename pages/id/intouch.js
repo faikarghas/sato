@@ -4,6 +4,7 @@ import { AnimatePresence,motion } from "framer-motion";
 import Slider from 'react-slick';
 import Link from 'next/link'
 import parse from 'html-react-parser';
+import Head from 'next/head'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
@@ -61,6 +62,11 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Intouch</title>
+            <meta name="description" content="Sato didirikan oleh tim yang sangat berdedikasi terhadap konstruksi pada tahun 2017 silam. semangat kami bukan hanya menjadi eksekutor kebutuhan konstruksi, melainkan menjadi rekan dan tim untuk anda."/>
+            <meta name="keywords" content="sato, kontraktor interior,  desain interior, perusahaan konstruksi, perusahaan kontraktor, perusahaan kontraktor di Jakarta, renovasi interior, renovasi furniture, kontraktor interior, kontraktor furniture "/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
             <Menu langEn='intouch' langId='intouch'/>

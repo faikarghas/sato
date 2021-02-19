@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Link from 'next/link'
 import {Modal,Button} from 'react-bootstrap'
 import Slider from 'react-slick';
+import Head from 'next/head'
 
 import SideBar from '../../../../../components/sidebar/index'
 import InfoDetailM from '../../../../../components/infoProjectM/index'
@@ -83,6 +84,11 @@ const Project = ({data,slug,category}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Project</title>
+            <meta name="description" content="We do not create space, yet floor, wall, and ceiling are. With us, they'll be fabricated through discussion and clear coordination at the highest standard achievable."/>
+            <meta name="keywords" content="office interior contractor, office renovation, restaurant renovation, store renovation, mall renovation, modern office design, office furniture, store furniture, restaurant furniture, house renovation"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>
             <Menu langEn='project' langId='project' slug={slug} category={category} withSlug={true}/>

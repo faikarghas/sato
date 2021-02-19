@@ -38,7 +38,9 @@ const Index = ({data}) => {
     return (
         <GaWrapper>
              <Head>
-                <title>SATO</title>
+                <title>SATO | Interior Contractor</title>
+                <meta name="description" content="Sato didirikan oleh tim yang sangat berdedikasi terhadap konstruksi pada tahun 2017 silam. semangat kami bukan hanya menjadi eksekutor kebutuhan konstruksi, melainkan menjadi rekan dan tim untuk anda."/>
+                <meta name="keywords" content="sato, kontraktor interior,  desain interior, perusahaan konstruksi, perusahaan kontraktor, perusahaan kontraktor di Jakarta, renovasi interior, renovasi furniture, kontraktor interior, kontraktor furniture "/>
             </Head>
             <motion.div initial='initial' animate='animate' exit='exit'>
             <Slider {...settings} ref={refSlider}>

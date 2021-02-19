@@ -2,6 +2,7 @@ import React from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col,Form,Button} from 'react-bootstrap'
 import Slider from 'react-slick';
+import Head from 'next/head'
 
 
 import SideBar from '../../components/sidebar/index'
@@ -20,6 +21,11 @@ const Contact = ({data}) => {
     console.log(data.faq);
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Contact FAQ</title>
+            <meta name="description" content="Kindly fill your relevant email for us to follow up, feel free to drop your questions & messages."/>
+            <meta name="keywords" content="contract. address, contact us"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
             <Menu langEn='contact-faq' langId='kontak-faq'/>

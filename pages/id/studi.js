@@ -3,6 +3,7 @@ import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
 import parse from 'html-react-parser';
+import Head from 'next/head'
 
 import {dataSlides} from '../../lib/data'
 
@@ -47,6 +48,11 @@ const Studies = ({data}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Studi</title>
+            <meta name="description" content="Kami senang untuk membagikan pengetahuan kami terkait konstruksi interior, ide-ide baru, dan solusi sesuai keahlian kami."/>
+            <meta name="keywords" content="desain kantor, desain kantor minimalis, design interior mewah, desain interior resto, design interior rumah, renovasi toko"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'studies'}} langEn='studies' langId='studi'/>
             <Menu langEn='studies' langId='pembelajaran'/>

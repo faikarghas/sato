@@ -9,6 +9,7 @@ import Main from '../../components/layout/mainPageLayout'
 import ContactForm from '../../components/form/index'
 import Menu from '../../components/menuMobile/index'
 import GaWrapper from '../../components/GA/index'
+import Head from 'next/head'
 
 import {urlsato, urlapisato} from '../../lib/url'
 
@@ -19,6 +20,11 @@ const Contact = ({data}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Kontak FAQ</title>
+            <meta name="description" content="Ajukan pertanyaan atau kirim pesan. Secepatnya, tim kami akan segara menghubungi Anda."/>
+            <meta name="keywords" content="kontak, alamat, hubungi kami"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'contact'}} langEn='contact-faq' langId='kontak-faq'/>
             <Menu langEn='contact-faq' langId='kontak-faq'/>

@@ -38,7 +38,9 @@ const Index = ({data}) => {
     return (
         <GaWrapper>
              <Head>
-                <title>SATO</title>
+                <title>SATO | Interior Contractor</title>
+                <meta name="description" content="We provide partner and team for businesses, retail commercials and some residential interior construction. We are based in jakarta but works in many other cities."/>
+                <meta name="keywords" content="sato, interior contractor, design interior, contractor jakarta, contractor interior, contractor furniture, furniture renovation, interior renovation, building contractor"/>
             </Head>
             <motion.div initial='initial' animate='animate' exit='exit'>
             <Slider {...settings} ref={refSlider}>

@@ -3,6 +3,7 @@ import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
 import parse from 'html-react-parser';
+import Head from 'next/head'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
@@ -60,6 +61,11 @@ const About = ({data,data2,data3}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Ide + Tim</title>
+            <meta name="description" content="Kami selalu bekerja dengan semangat solutif dan terbuka terhadap inovasi, sebagai respon akan kebutuhan klien yang selalu unik dan beragam."/>
+            <meta name="keywords" content="sato, kontraktor interior, perusahaan kontraktor di Jakarta, perusahaan konstruksi, perusahaan kontraktor, jasa kontraktor"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'about'}} langEn='idea-people' langId='ide-tim'/>
             <Menu langEn='about-sato' langId='ide-tim'/>

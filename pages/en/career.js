@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import { AnimatePresence,motion } from "framer-motion";
 import {Row,Col} from 'react-bootstrap'
 import Slider from 'react-slick';
+import Head from 'next/head'
+
 
 import InfoDetail from '../../components/infoProject/index'
 import SideBar from '../../components/sidebar/index'
@@ -21,6 +23,11 @@ const Career = ({data}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Career</title>
+            <meta name="description" content="Make a world-class work with passionate, friendly & talented team, Join us."/>
+            <meta name="keywords" content="career, vacancy, contractor career, construction vacancy"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'career'}} langEn='career' langId='karir'/>
             <Menu langEn='career' langId='karir'/>

@@ -2,6 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import Slider from 'react-slick';
+import Head from 'next/head'
 
 
 import SideBar from '../../../components/sidebar/index'
@@ -25,6 +26,11 @@ const Projects = ({data,data2,dataCatIn,urltest}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Project</title>
+            <meta name="description" content="We do not create space, yet floor, wall, and ceiling are. With us, they'll be fabricated through discussion and clear coordination at the highest standard achievable."/>
+            <meta name="keywords" content="office interior contractor, office renovation, restaurant renovation, store renovation, mall renovation, modern office design, office furniture, store furniture, restaurant furniture, house renovation"/>
+        </Head>
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
             <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>

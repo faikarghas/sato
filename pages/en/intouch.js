@@ -4,6 +4,7 @@ import { AnimatePresence,motion } from "framer-motion";
 import Slider from 'react-slick';
 import Link from 'next/link'
 import parse from 'html-react-parser';
+import Head from 'next/head'
 
 import SideBar from '../../components/sidebar/index'
 import Main from '../../components/layout/mainPageLayout'
@@ -63,6 +64,11 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Intouch</title>
+            <meta name="description" content="We provide partner and team for businesses, retail commercials and some residential interior construction. We are based in jakarta but works in many other cities."/>
+            <meta name="keywords" content="sato, interior contractor, design interior, contractor jakarta, contractor interior, contractor furniture, furniture renovation, interior renovation, building contractor"/>
+        </Head>
         <div className="page_layout">
             <SideBar activeMenu={{act:'active',menu:'intouch'}} langEn='intouch' langId='intouch'/>
             <Menu langEn='intouch' langId='intouch'/>

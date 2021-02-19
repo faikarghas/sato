@@ -2,6 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import Slider from 'react-slick';
+import Head from 'next/head'
 
 
 import SideBar from '../../../components/sidebar/index'
@@ -25,6 +26,11 @@ const Projects = ({data,data2,dataCatIn,urltest}) => {
 
     return (
         <GaWrapper>
+        <Head>
+            <title>SATO | Proyek</title>
+            <meta name="description" content="Kami tidak membangun ruang melainkan dinding, lantai, dan plafon lah yang kita bangun melalui proses diskusi dan koordinasi yang baik demi terciptanya ruang dengan standard yang terbaik."/>
+            <meta name="keywords" content="desain interior kantor, desain minimalis, desain interior resto, desain eksterior, desain interior kantor minimalis, desain interior minimalis, design interior mewah, design interior rumah, renovasi toko, desain eksterior rumah"/>
+        </Head>
         <div className="page_layout" >
             <SideBar activeMenu={{act:'active',menu:'project'}} langEn='project' langId='project'/>
             <Menu data={data} activeMenu={{act:'active',menu:'all'}} langEn='project' langId='project' thisproject={true}/>
