@@ -118,8 +118,8 @@ const Intouch = ({data1,data2,data3,data4,data5}) => {
                                         {data3.projectAccom.map((item,i)=>{
                                             return(
                                                 <li key={i}>
-                                                    <Link href={`/${lang}/${item.category}`}><a><span className="box">{item.total}</span></a></Link>
-                                                    <Link href={`/${lang}/${item.category}`}><a>{item.category}</a></Link>
+                                                    <Link href={`/${lang}/project/${item.category}`}><a><span className="box">{item.total}</span></a></Link>
+                                                    <Link href={`/${lang}/project/${item.category}`}><a>{item.category}</a></Link>
                                                 </li>
                                             )
                                         })}
