@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {Modal,Button} from 'react-bootstrap'
 import Loading from '../loading'
 import Router from 'next/router'
+import { logEvent } from '../../lib/analytics'
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -113,6 +114,12 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
 
     function ShowModal(params) {
         setModalShow(true)
+        logEvent("Whatsapp","Click","whatsapp_desktop")
+    }
+
+    function ShowModalM(params) {
+        setModalShow(true)
+        logEvent("Whatsapp","Click","whatsapp_mobile")
     }
 
     function ShowModal2(params) {
@@ -214,7 +221,7 @@ const Sidebar = ({activeMenu,langEn,langId,withSlug,slug,category}) => {
             />
 
             </aside>
-            <a className="wa-float" onClick={ShowModal}><img src="/wa-sato2.png" alt="wa-logo"/></a>
+            <a className="wa-float" onClick={ShowModalM}><img src="/wa-sato2.png" alt="wa-logo"/></a>
         </React.Fragment>
     )
 }
