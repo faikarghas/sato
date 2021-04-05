@@ -3,6 +3,8 @@ import {Context} from '../../hocs/store'
 import Link from 'next/link'
 import HamburgerMenu from 'react-hamburger-menu'
 import TabProject from '../../components/tabProject/index'
+import { logEvent } from '../../lib/analytics'
+
 
 const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
     const [state, dispatch] = useContext(Context);
@@ -18,6 +20,14 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
     function _closeMenuHandler(params) {
         dispatch({type:'CLOSE_MENU',payload:'closee'})
         setMenu(false)
+    }
+
+    function evGAFB(params) {
+        logEvent("BUTTON","Click","FB")
+    }
+
+    function evGAIG(params) {
+        logEvent("BUTTON","Click","IG")
     }
 
     useEffect(() => {
@@ -67,8 +77,8 @@ const Menu = ({withSlug,langEn,langId,slug,activeMenu,thisproject,data}) => {
                     />
                     <div className="sosmed">
                         <ul>
-                            <li className="mb-2"><a href="https://www.facebook.com/SATO-Contractor-103547724942458/"><img src="/facebook.png" alt="logo sosmed"/></a></li>
-                            <li className="mb-2"><a href="https://instagram.com/sato_contractor?igshid=1uwp0o8pe007c"><img src="/instagram.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a onClick={evGAFB} href="https://www.facebook.com/SATO-Contractor-103547724942458/" target="_blank" rel="noopener"><img src="/facebook.png" alt="logo sosmed"/></a></li>
+                            <li className="mb-2"><a onClick={evGAIG} href="https://instagram.com/sato_contractor?igshid=1uwp0o8pe007c" target="_blank" rel="noopener"><img src="/instagram.png" alt="logo sosmed"/></a></li>
                             {/* <li className="mb-2"><a><img src="/twitter.png" alt="logo sosmed"/></a></li> */}
                         </ul>
                     </div>
